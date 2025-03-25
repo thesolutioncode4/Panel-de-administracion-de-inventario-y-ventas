@@ -1,0 +1,2211 @@
+
+                <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios - Hugo Tecnología</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/tables.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/usuarios.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">HT</div>
+        <h1>Hugo Tecnología</h1>
+      </div>
+      
+      <div class="nav-item">
+        <i>📊</i> Dashboard
+      </div>
+      <div class="nav-item">
+        <i>📦</i> Inventario
+      </div>
+      <div class="nav-item">
+        <i>🏪</i> Negocios
+      </div>
+      <div class="nav-item">
+        <i>🛒</i> Ventas
+      </div>
+      <div class="nav-item active">
+        <i>👥</i> Usuarios
+      </div>
+      <div class="nav-item">
+        <i>📝</i> Reportes
+      </div>
+      <div class="nav-item">
+        <i>⚙️</i> Configuración
+      </div>
+      
+      <div class="user-info">
+        <div class="user-avatar">
+          <i>👤</i>
+        </div>
+        <div class="user-details">
+          <h4>Admin User</h4>
+          <p>Administrador</p>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div class="header-title">
+          <h2>Gestión de Usuarios</h2>
+          <p>Administre usuarios, permisos y roles del sistema</p>
+        </div>
+        
+        <div class="search-bar">
+          <i>🔍</i>
+          <input type="text" placeholder="Buscar usuarios por nombre, email, rol...">
+        </div>
+      </div>
+      
+      <!-- User Statistics -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Total de Usuarios</h3>
+          <div class="stat-value">358</div>
+          <div class="stat-change positive">
+            <i>↑</i> 12 nuevos este mes
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Usuarios Activos</h3>
+          <div class="stat-value">287</div>
+          <div class="stat-change positive">
+            <i>↑</i> 80.2% del total
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Administradores</h3>
+          <div class="stat-value">15</div>
+          <div class="stat-change neutral">
+            <i>•</i> Sin cambios
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Último Acceso</h3>
+          <div class="stat-value">5 min</div>
+          <div class="stat-change neutral">
+            <i>👤</i> Carlos Rodríguez
+          </div>
+        </div>
+      </div>
+      
+      <!-- User Roles Distribution Chart -->
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Distribución por Roles</h3>
+          </div>
+          <div class="card-body">
+            <div class="pie-chart">
+              <img src="img/roles-chart.jpg" alt="Gráfico de distribución por roles">
+            </div>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #4e73df;"></div>
+                <div class="legend-text">Clientes (60%)</div>
+              </div>
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #1cc88a;"></div>
+                <div class="legend-text">Vendedores (20%)</div>
+              </div>
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #36b9cc;"></div>
+                <div class="legend-text">Técnicos (12%)</div>
+              </div>
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #f6c23e;"></div>
+                <div class="legend-text">Gerentes (4%)</div>
+              </div>
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #e74a3b;"></div>
+                <div class="legend-text">Administradores (4%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Actividad de Usuarios</h3>
+          </div>
+          <div class="card-body">
+            <div class="line-chart">
+              <img src="img/activity-chart.jpg" alt="Gráfico de actividad de usuarios">
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Usuarios por Ubicación</h3>
+          </div>
+          <div class="card-body">
+            <div class="location-stats">
+              <div class="location-item">
+                <div class="location-name">Ciudad Capital</div>
+                <div class="location-bar-container">
+                  <div class="location-bar-fill" style="width: 45%;">45%</div>
+                </div>
+                <div class="location-count">162 usuarios</div>
+              </div>
+              <div class="location-item">
+                <div class="location-name">Zona Norte</div>
+                <div class="location-bar-container">
+                  <div class="location-bar-fill" style="width: 23%;">23%</div>
+                </div>
+                <div class="location-count">82 usuarios</div>
+              </div>
+              <div class="location-item">
+                <div class="location-name">Zona Sur</div>
+                <div class="location-bar-container">
+                  <div class="location-bar-fill" style="width: 18%;">18%</div>
+                </div>
+                <div class="location-count">64 usuarios</div>
+              </div>
+              <div class="location-item">
+                <div class="location-name">Zona Este</div>
+                <div class="location-bar-container">
+                  <div class="location-bar-fill" style="width: 8%;">8%</div>
+                </div>
+                <div class="location-count">29 usuarios</div>
+              </div>
+              <div class="location-item">
+                <div class="location-name">Zona Oeste</div>
+                <div class="location-bar-container">
+                  <div class="location-bar-fill" style="width: 6%;">6%</div>
+                </div>
+                <div class="location-count">21 usuarios</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Actividad Reciente</h3>
+          </div>
+          <div class="card-body">
+            <div class="activity-feed">
+              <div class="activity-item">
+                <div class="activity-icon login">🔑</div>
+                <div class="activity-content">
+                  <div class="activity-title">Inicio de sesión</div>
+                  <div class="activity-details">
+                    <span class="activity-user">Carlos Rodríguez</span>
+                    <span class="activity-time">Hace 5 minutos</span>
+                  </div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon edit">✏️</div>
+                <div class="activity-content">
+                  <div class="activity-title">Perfil actualizado</div>
+                  <div class="activity-details">
+                    <span class="activity-user">María Gómez</span>
+                    <span class="activity-time">Hace 32 minutos</span>
+                  </div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon new">➕</div>
+                <div class="activity-content">
+                  <div class="activity-title">Nuevo usuario registrado</div>
+                  <div class="activity-details">
+                    <span class="activity-user">Pedro López</span>
+                    <span class="activity-time">Hace 2 horas</span>
+                  </div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon login">🔑</div>
+                <div class="activity-content">
+                  <div class="activity-title">Inicio de sesión</div>
+                  <div class="activity-details">
+                    <span class="activity-user">Ana Martínez</span>
+                    <span class="activity-time">Hace 3 horas</span>
+                  </div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon edit">✏️</div>
+                <div class="activity-content">
+                  <div class="activity-title">Permiso actualizado</div>
+                  <div class="activity-details">
+                    <span class="activity-user">Juan Pérez</span>
+                    <span class="activity-time">Hace 5 horas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="action-bar">
+        <div class="action-buttons">
+          <button class="btn btn-primary" data-modal="nuevoUsuario">
+            <i>➕</i> Nuevo Usuario
+          </button>
+          <button class="btn btn-secondary">
+            <i>📥</i> Importar
+          </button>
+          <button class="btn btn-secondary">
+            <i>📤</i> Exportar
+          </button>
+          <button class="btn btn-secondary">
+            <i>✉️</i> Enviar Notificación
+          </button>
+        </div>
+        
+        <div class="filter-controls">
+          <select class="form-control">
+            <option value="">Todos los Roles</option>
+            <option value="administrador">Administradores</option>
+            <option value="gerente">Gerentes</option>
+            <option value="vendedor">Vendedores</option>
+            <option value="tecnico">Técnicos</option>
+            <option value="cliente">Clientes</option>
+          </select>
+          
+          <select class="form-control">
+            <option value="">Todas las Tiendas</option>
+            <option value="tienda-central">Tienda Central</option>
+            <option value="tienda-norte">Tienda Norte</option>
+            <option value="tienda-sur">Tienda Sur</option>
+            <option value="tienda-este">Tienda Este</option>
+            <option value="tienda-oeste">Tienda Oeste</option>
+          </select>
+          
+          <select class="form-control">
+            <option value="">Todos los Estados</option>
+            <option value="activo">Activo</option>
+            <option value="inactivo">Inactivo</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="bloqueado">Bloqueado</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- User Management -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Listado de Usuarios</h3>
+          <div class="view-toggle">
+            <button class="btn-icon active" id="list-view" title="Vista de lista">📋</button>
+            <button class="btn-icon" id="grid-view" title="Vista de cuadrícula">📦</button>
+          </div>
+        </div>
+        
+        <div class="list-view active">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox" class="select-all">
+                  </th>
+                  <th data-sort="id">ID</th>
+                  <th data-sort="name">Nombre</th>
+                  <th data-sort="email">Email</th>
+                  <th data-sort="role">Rol</th>
+                  <th data-sort="store">Tienda</th>
+                  <th data-sort="status">Estado</th>
+                  <th data-sort="lastlogin">Último Acceso</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" class="select-item"></td>
+                  <td>#U001</td>
+                  <td>
+                    <div class="user-cell">
+                      <div class="user-avatar">
+                        <img src="img/avatars/user1.jpg" alt="Juan Pérez">
+                      </div>
+                      <div class="user-name">Juan Pérez</div>
+                    </div>
+                  </td>
+                  <td>juan.perez@example.com</td>
+                  <td><span class="badge badge-primary">Administrador</span></td>
+                  <td>Todas</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>Hace 5 horas</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U001"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U001"><i>👁️</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="select-item"></td>
+                  <td>#U002</td>
+                  <td>
+                    <div class="user-cell">
+                      <div class="user-avatar">
+                        <img src="img/avatars/user2.jpg" alt="María Gómez">
+                      </div>
+                      <div class="user-name">María Gómez</div>
+                    </div>
+                  </td>
+                  <td>maria.gomez@example.com</td>
+                  <td><span class="badge badge-success">Gerente</span></td>
+                  <td>Tienda Central</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>Hace 32 minutos</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U002"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U002"><i>👁️</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="select-item"></td>
+                  <td>#U003</td>
+                  <td>
+                    <div class="user-cell">
+                      <div class="user-avatar">
+                        <img src="img/avatars/user3.jpg" alt="Carlos Rodríguez">
+                      </div>
+                      <div class="user-name">Carlos Rodríguez</div>
+                    </div>
+                  </td>
+                  <td>carlos.rodriguez@example.com</td>
+                  <td><span class="badge badge-info">Vendedor</span></td>
+                  <td>Tienda Norte</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>Hace 5 minutos</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U003"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U003"><i>👁️</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="select-item"></td>
+                  <td>#U004</td>
+                  <td>
+                    <div class="user-cell">
+                      <div class="user-avatar">
+                        <img src="img/avatars/user4.jpg" alt="Ana Martínez">
+                      </div>
+                      <div class="user-name">Ana Martínez</div>
+                    </div>
+                  </td>
+                  <td>ana.martinez@example.com</td>
+                  <td><span class="badge badge-warning">Técnico</span></td>
+                  <td>Tienda Sur</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>Hace 3 horas</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U004"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U004"><i>👁️</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="select-item"></td>
+                  <td>#U005</td>
+                  <td>
+                    <div class="user-cell">
+                      <div class="user-avatar">
+                        <img src="img/avatars/user5.jpg" alt="Roberto Díaz">
+                      </div>
+                      <div class="user-name">Roberto Díaz</div>
+                    </div>
+                  </td>
+                  <td>roberto.diaz@example.com</td>
+                  <td><span class="badge badge-secondary">Cliente</span></td>
+                  <td>N/A</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>Hace 2 días</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U005"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U005"><i>👁️</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="select-item"></td>
+                  <td>#U006</td>
+                  <td>
+                    <div class="user-cell">
+                      <div class="user-avatar">
+                        <img src="img/avatars/user6.jpg" alt="Laura Sánchez">
+                      </div>
+                      <div class="user-name">Laura Sánchez</div>
+                    </div>
+                  </td>
+                  <td>laura.sanchez@example.com</td>
+                  <td><span class="badge badge-info">Vendedor</span></td>
+                  <td>Tienda Este</td>
+                  <td><span class="badge badge-danger">Bloqueado</span></td>
+                  <td>Hace 30 días</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U006"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U006"><i>👁️</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="select-item"></td>
+                  <td>#U007</td>
+                  <td>
+                    <div class="user-cell">
+                      <div class="user-avatar">
+                        <img src="img/avatars/user7.jpg" alt="Pedro López">
+                      </div>
+                      <div class="user-name">Pedro López</div>
+                    </div>
+                  </td>
+                  <td>pedro.lopez@example.com</td>
+                  <td><span class="badge badge-secondary">Cliente</span></td>
+                  <td>N/A</td>
+                  <td><span class="badge badge-warning">Pendiente</span></td>
+                  <td>Nunca</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U007"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U007"><i>👁️</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="pagination-container">
+            <div class="pagination-info">
+              Mostrando 1-7 de 358 usuarios
+            </div>
+            <div class="pagination">
+              <button class="page-nav" disabled><i>◀</i></button>
+              <div class="page-item active">1</div>
+              <div class="page-item">2</div>
+              <div class="page-item">3</div>
+              <div class="page-item">4</div>
+              <div class="page-item">5</div>
+              <div class="page-item">...</div>
+              <div class="page-item">36</div>
+              <button class="page-nav"><i>▶</i></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid-view">
+          <div class="users-grid">
+            <div class="user-card">
+              <div class="user-card-header">
+                <div class="user-avatar">
+                  <img src="img/avatars/user1.jpg" alt="Juan Pérez">
+                </div>
+                <div class="user-status">
+                  <span class="badge badge-success">Activo</span>
+                </div>
+              </div>
+              <div class="user-card-body">
+                <h4 class="user-name">Juan Pérez</h4>
+                <p class="user-role"><span class="badge badge-primary">Administrador</span></p>
+                <p class="user-email">juan.perez@example.com</p>
+                <p class="user-store">Todas las tiendas</p>
+                <p class="user-last-login">Último acceso: Hace 5 horas</p>
+              </div>
+              <div class="user-card-footer">
+                <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U001"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U001"><i>👁️</i></button>
+                <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+              </div>
+            </div>
+            
+            <div class="user-card">
+              <div class="user-card-header">
+                <div class="user-avatar">
+                  <img src="img/avatars/user2.jpg" alt="María Gómez">
+                </div>
+                <div class="user-status">
+                  <span class="badge badge-success">Activo</span>
+                </div>
+              </div>
+              <div class="user-card-body">
+                <h4 class="user-name">María Gómez</h4>
+                <p class="user-role"><span class="badge badge-success">Gerente</span></p>
+                <p class="user-email">maria.gomez@example.com</p>
+                <p class="user-store">Tienda Central</p>
+                <p class="user-last-login">Último acceso: Hace 32 minutos</p>
+              </div>
+              <div class="user-card-footer">
+                <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U002"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U002"><i>👁️</i></button>
+                <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+              </div>
+            </div>
+            
+            <div class="user-card">
+              <div class="user-card-header">
+                <div class="user-avatar">
+                  <img src="img/avatars/user3.jpg" alt="Carlos Rodríguez">
+                </div>
+                <div class="user-status">
+                  <span class="badge badge-success">Activo</span>
+                </div>
+              </div>
+              <div class="user-card-body">
+                <h4 class="user-name">Carlos Rodríguez</h4>
+                <p class="user-role"><span class="badge badge-info">Vendedor</span></p>
+                <p class="user-email">carlos.rodriguez@example.com</p>
+                <p class="user-store">Tienda Norte</p>
+                <p class="user-last-login">Último acceso: Hace 5 minutos</p>
+              </div>
+              <div class="user-card-footer">
+                <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U003"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U003"><i>👁️</i></button>
+                <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+              </div>
+            </div>
+            
+            <div class="user-card">
+              <div class="user-card-header">
+                <div class="user-avatar">
+                  <img src="img/avatars/user4.jpg" alt="Ana Martínez">
+                </div>
+                <div class="user-status">
+                  <span class="badge badge-success">Activo</span>
+                </div>
+              </div>
+              <div class="user-card-body">
+                <h4 class="user-name">Ana Martínez</h4>
+                <p class="user-role"><span class="badge badge-warning">Técnico</span></p>
+                <p class="user-email">ana.martinez@example.com</p>
+                <p class="user-store">Tienda Sur</p>
+                <p class="user-last-login">Último acceso: Hace 3 horas</p>
+              </div>
+              <div class="user-card-footer">
+                <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U004"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U004"><i>👁️</i></button>
+                <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+              </div>
+            </div>
+            
+            <div class="user-card">
+              <div class="user-card-header">
+                <div class="user-avatar">
+                  <img src="img/avatars/user5.jpg" alt="Roberto Díaz">
+                </div>
+                <div class="user-status">
+                  <span class="badge badge-success">Activo</span>
+                </div>
+              </div>
+              <div class="user-card-body">
+                <h4 class="user-name">Roberto Díaz</h4>
+                <p class="user-role"><span class="badge badge-secondary">Cliente</span></p>
+                <p class="user-role"><span class="badge badge-secondary">Cliente</span></p>
+                <p class="user-email">roberto.diaz@example.com</p>
+                <p class="user-store">N/A</p>
+                <p class="user-last-login">Último acceso: Hace 2 días</p>
+              </div>
+              <div class="user-card-footer">
+                <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U005"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U005"><i>👁️</i></button>
+                <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+              </div>
+            </div>
+            
+            <div class="user-card">
+              <div class="user-card-header">
+                <div class="user-avatar">
+                  <img src="img/avatars/user6.jpg" alt="Laura Sánchez">
+                </div>
+                <div class="user-status">
+                  <span class="badge badge-danger">Bloqueado</span>
+                </div>
+              </div>
+              <div class="user-card-body">
+                <h4 class="user-name">Laura Sánchez</h4>
+                <p class="user-role"><span class="badge badge-info">Vendedor</span></p>
+                <p class="user-email">laura.sanchez@example.com</p>
+                <p class="user-store">Tienda Este</p>
+                <p class="user-last-login">Último acceso: Hace 30 días</p>
+              </div>
+              <div class="user-card-footer">
+                <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U006"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U006"><i>👁️</i></button>
+                <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+              </div>
+            </div>
+            
+            <div class="user-card">
+              <div class="user-card-header">
+                <div class="user-avatar">
+                  <img src="img/avatars/user7.jpg" alt="Pedro López">
+                </div>
+                <div class="user-status">
+                  <span class="badge badge-warning">Pendiente</span>
+                </div>
+              </div>
+              <div class="user-card-body">
+                <h4 class="user-name">Pedro López</h4>
+                <p class="user-role"><span class="badge badge-secondary">Cliente</span></p>
+                <p class="user-email">pedro.lopez@example.com</p>
+                <p class="user-store">N/A</p>
+                <p class="user-last-login">Último acceso: Nunca</p>
+              </div>
+              <div class="user-card-footer">
+                <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U007"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U007"><i>👁️</i></button>
+                <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bulk Actions -->
+      <div class="bulk-actions">
+        <h3>Acciones Masivas</h3>
+        <div class="bulk-action-buttons">
+          <button class="btn btn-danger" data-action="delete"><i>🗑️</i> Eliminar Seleccionados</button>
+          <button class="btn btn-warning" data-action="block"><i>🔒</i> Bloquear Usuarios</button>
+          <button class="btn btn-success" data-action="activate"><i>✓</i> Activar Usuarios</button>
+          <button class="btn btn-secondary" data-action="role"><i>👥</i> Cambiar Rol</button>
+          <button class="btn btn-secondary" data-action="email"><i>✉️</i> Enviar Email</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Modal Nuevo Usuario -->
+  <div id="nuevoUsuario" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Nuevo Usuario</h3>
+        <button class="close-button" data-close="nuevoUsuario">×</button>
+      </div>
+      
+      <!-- Tab Navigation -->
+      <div class="tab-container modal-tabs">
+        <div class="tabs">
+          <div class="tab active">Información Personal</div>
+          <div class="tab">Información de Acceso</div>
+          <div class="tab">Permisos</div>
+          <div class="tab">Configuración</div>
+        </div>
+      </div>
+      
+      <!-- Tab Content -->
+      <div class="tab-content active" id="tab-personal">
+        <div class="user-form-container">
+          <div class="user-avatar-upload">
+            <div class="avatar-preview">
+              <img id="avatar-preview-img" src="img/avatars/default.jpg" alt="Avatar">
+            </div>
+            <div class="avatar-controls">
+              <label class="btn btn-sm btn-secondary">
+                <input type="file" id="avatar-upload" accept="image/*" hidden>
+                Cambiar Avatar
+              </label>
+              <button type="button" class="btn btn-sm btn-danger" id="remove-avatar">Eliminar</button>
+            </div>
+          </div>
+          
+          <div class="user-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nombre <span class="required">*</span></label>
+                <input type="text" class="form-control" name="first_name" placeholder="Nombre" required>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Apellido <span class="required">*</span></label>
+                <input type="text" class="form-control" name="last_name" placeholder="Apellido" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Email <span class="required">*</span></label>
+                <input type="email" class="form-control" name="email" placeholder="ejemplo@correo.com" required>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" name="phone" placeholder="+123456789">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" name="birth_date">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Género</label>
+                <select class="form-control" name="gender">
+                  <option value="">Seleccionar</option>
+                  <option value="male">Masculino</option>
+                  <option value="female">Femenino</option>
+                  <option value="other">Otro</option>
+                  <option value="prefer_not_to_say">Prefiero no decirlo</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Dirección</label>
+              <input type="text" class="form-control" name="address" placeholder="Calle, número, colonia">
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Ciudad</label>
+                <input type="text" class="form-control" name="city" placeholder="Ciudad">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Código Postal</label>
+                <input type="text" class="form-control" name="postal_code" placeholder="Código postal">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Estado/Provincia</label>
+                <input type="text" class="form-control" name="state" placeholder="Estado o provincia">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">País</label>
+                <select class="form-control" name="country">
+                  <option value="">Seleccionar</option>
+                  <option value="mexico">México</option>
+                  <option value="united_states">Estados Unidos</option>
+                  <option value="canada">Canadá</option>
+                  <option value="colombia">Colombia</option>
+                  <option value="spain">España</option>
+                  <!-- Agregar más países según sea necesario -->
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="tab-acceso">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nombre de Usuario <span class="required">*</span></label>
+            <input type="text" class="form-control" name="username" placeholder="Usuario" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Estado de la Cuenta</label>
+            <select class="form-control" name="account_status">
+              <option value="active">Activo</option>
+              <option value="pending">Pendiente</option>
+              <option value="inactive">Inactivo</option>
+              <option value="blocked">Bloqueado</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Contraseña <span class="required">*</span></label>
+            <div class="input-with-icon">
+              <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
+              <button type="button" class="btn-icon toggle-password"><i>👁️</i></button>
+            </div>
+            <div class="password-strength-meter">
+              <div class="strength-bar">
+                <div class="strength-fill" style="width: 0%;"></div>
+              </div>
+              <div class="strength-text">Fuerza de la contraseña: No establecida</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Confirmar Contraseña <span class="required">*</span></label>
+            <div class="input-with-icon">
+              <input type="password" class="form-control" name="password_confirmation" placeholder="Confirmar contraseña" required>
+              <button type="button" class="btn-icon toggle-password"><i>👁️</i></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="require_password_change" name="require_password_change">
+            <label class="form-check-label" for="require_password_change">Requerir cambio de contraseña en el primer inicio de sesión</label>
+          </div>
+        </div>
+        
+        <hr class="form-divider">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Rol <span class="required">*</span></label>
+            <select class="form-control" name="role" required>
+              <option value="">Seleccionar rol</option>
+              <option value="administrator">Administrador</option>
+              <option value="manager">Gerente</option>
+              <option value="salesperson">Vendedor</option>
+              <option value="technician">Técnico</option>
+              <option value="customer">Cliente</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Tienda Asignada</label>
+            <select class="form-control" name="assigned_store">
+              <option value="">Seleccionar tienda</option>
+              <option value="all">Todas las tiendas</option>
+              <option value="central">Tienda Central</option>
+              <option value="north">Tienda Norte</option>
+              <option value="south">Tienda Sur</option>
+              <option value="east">Tienda Este</option>
+              <option value="west">Tienda Oeste</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="send_welcome_email" name="send_welcome_email" checked>
+            <label class="form-check-label" for="send_welcome_email">Enviar email de bienvenida con instrucciones de acceso</label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="tab-permisos">
+        <div class="form-group">
+          <label class="form-label">Nivel de Acceso</label>
+          <select class="form-control" name="access_level" id="access_level">
+            <option value="custom">Personalizado</option>
+            <option value="full">Acceso Total</option>
+            <option value="read_only">Solo Lectura</option>
+            <option value="restricted">Restringido</option>
+          </select>
+        </div>
+        
+        <div class="permissions-container">
+          <div class="permission-group">
+            <div class="permission-group-header">
+              <div class="permission-group-name">Dashboard</div>
+              <div class="permission-group-toggle">
+                <input type="checkbox" class="toggle-all-permissions" data-group="dashboard">
+                <label></label>
+              </div>
+            </div>
+            <div class="permission-items">
+              <div class="permission-item">
+                <div class="permission-name">Ver estadísticas</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="dashboard_view_stats">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Ver gráficos</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="dashboard_view_charts">
+                  <label></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="permission-group">
+            <div class="permission-group-header">
+              <div class="permission-group-name">Inventario</div>
+              <div class="permission-group-toggle">
+                <input type="checkbox" class="toggle-all-permissions" data-group="inventory">
+                <label></label>
+              </div>
+            </div>
+            <div class="permission-items">
+              <div class="permission-item">
+                <div class="permission-name">Ver productos</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="inventory_view">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Crear productos</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="inventory_create">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Editar productos</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="inventory_edit">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Eliminar productos</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="inventory_delete">
+                  <label></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="permission-group">
+            <div class="permission-group-header">
+              <div class="permission-group-name">Ventas</div>
+              <div class="permission-group-toggle">
+                <input type="checkbox" class="toggle-all-permissions" data-group="sales">
+                <label></label>
+              </div>
+            </div>
+            <div class="permission-items">
+              <div class="permission-item">
+                <div class="permission-name">Ver ventas</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="sales_view">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Crear ventas</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="sales_create">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Anular ventas</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="sales_void">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Aplicar descuentos</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="sales_discount">
+                  <label></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="permission-group">
+            <div class="permission-group-header">
+              <div class="permission-group-name">Usuarios</div>
+              <div class="permission-group-toggle">
+                <input type="checkbox" class="toggle-all-permissions" data-group="users">
+                <label></label>
+              </div>
+            </div>
+            <div class="permission-items">
+              <div class="permission-item">
+                <div class="permission-name">Ver usuarios</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="users_view">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Crear usuarios</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="users_create">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Editar usuarios</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="users_edit">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Eliminar usuarios</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="users_delete">
+                  <label></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="permission-group">
+            <div class="permission-group-header">
+              <div class="permission-group-name">Reportes</div>
+              <div class="permission-group-toggle">
+                <input type="checkbox" class="toggle-all-permissions" data-group="reports">
+                <label></label>
+              </div>
+            </div>
+            <div class="permission-items">
+              <div class="permission-item">
+                <div class="permission-name">Ver reportes</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="reports_view">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Exportar reportes</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="reports_export">
+                  <label></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="tab-configuracion">
+        <div class="form-group">
+          <label class="form-label">Idioma</label>
+          <select class="form-control" name="language">
+            <option value="es">Español</option>
+            <option value="en">Inglés</option>
+            <option value="fr">Francés</option>
+            <option value="pt">Portugués</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Zona Horaria</label>
+          <select class="form-control" name="timezone">
+            <option value="America/Mexico_City">Ciudad de México (GMT-6)</option>
+            <option value="America/New_York">Nueva York (GMT-5)</option>
+            <option value="America/Los_Angeles">Los Ángeles (GMT-8)</option>
+            <option value="Europe/Madrid">Madrid (GMT+1)</option>
+            <option value="Europe/London">Londres (GMT+0)</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="enable_2fa" name="enable_2fa">
+            <label class="form-check-label" for="enable_2fa">Habilitar autenticación de dos factores</label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="notifications_email" name="notifications_email" checked>
+            <label class="form-check-label" for="notifications_email">Recibir notificaciones por email</label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="notifications_system" name="notifications_system" checked>
+            <label class="form-check-label" for="notifications_system">Recibir notificaciones del sistema</label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Notas Adicionales</label>
+          <textarea class="form-control" name="notes" rows="3" placeholder="Notas o comentarios adicionales sobre este usuario"></textarea>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-close="nuevoUsuario">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Ver Detalles Usuario -->
+  <div id="verDetallesUsuario" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Detalles del Usuario</h3>
+        <button class="close-button" data-close="verDetallesUsuario">×</button>
+      </div>
+      
+      <div class="user-detail-container">
+        <div class="user-detail-header">
+          <div class="user-detail-avatar">
+            <img src="img/avatars/user1.jpg" alt="Juan Pérez">
+          </div>
+          <div class="user-detail-info">
+            <h2 id="user-detail-name">Juan Pérez</h2>
+            <div class="user-detail-meta">
+              <span class="badge badge-primary">Administrador</span>
+              <span class="badge badge-success">Activo</span>
+            </div>
+            <p class="user-detail-email">juan.perez@example.com</p>
+          </div>
+        </div>
+        
+        <div class="user-detail-content">
+          <div class="tabs detail-tabs">
+            <div class="tab active">Información</div>
+            <div class="tab">Actividad</div>
+            <div class="tab">Permisos</div>
+            <div class="tab">Ventas</div>
+          </div>
+          
+          <div class="tab-content active" id="tab-info-detalle">
+            <div class="detail-columns">
+              <div class="detail-column">
+                <div class="detail-section">
+                  <h4>Información Personal</h4>
+                  <div class="detail-row">
+                    <span class="detail-label">Nombre Completo:</span>
+                    <span class="detail-value">Juan Pérez Rodríguez</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Email:</span>
+                    <span class="detail-value">juan.perez@example.com</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Teléfono:</span>
+                    <span class="detail-value">+52 1234 5678</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Fecha de Nacimiento:</span>
+                    <span class="detail-value">15/04/1985</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Género:</span>
+                    <span class="detail-value">Masculino</span>
+                  </div>
+                </div>
+                
+                <div class="detail-section">
+                  <h4>Dirección</h4>
+                  <div class="detail-row">
+                    <span class="detail-label">Dirección:</span>
+                    <span class="detail-value">Av. Principal #123, Col. Centro</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Ciudad:</span>
+                    <span class="detail-value">Ciudad Capital</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Código Postal:</span>
+                    <span class="detail-value">12345</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Estado:</span>
+                    <span class="detail-value">Estado Central</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">País:</span>
+                    <span class="detail-value">México</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="detail-column">
+                <div class="detail-section">
+                  <h4>Información de la Cuenta</h4>
+                  <div class="detail-row">
+                    <span class="detail-label">ID:</span>
+                    <span class="detail-value">#U001</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Nombre de Usuario:</span>
+                    <span class="detail-value">jperez</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Rol:</span>
+                    <span class="detail-value">Administrador</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Tienda Asignada:</span>
+                    <span class="detail-value">Todas</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Estado:</span>
+                    <span class="detail-value">Activo</span>
+                  </div>
+                </div>
+                
+                <div class="detail-section">
+                  <h4>Seguridad y Acceso</h4>
+                  <div class="detail-row">
+                    <span class="detail-label">Fecha de Registro:</span>
+                    <span class="detail-value">10/01/2023</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Último Acceso:</span>
+                    <span class="detail-value">Hace 5 horas</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Último Cambio de Contraseña:</span>
+                    <span class="detail-value">15/02/2025</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Autenticación de Dos Factores:</span>
+                    <span class="detail-value">Habilitada</span>
+                  </div>
+                </div>
+                
+                <div class="detail-section">
+                  <h4>Preferencias</h4>
+                  <div class="detail-row">
+                    <span class="detail-label">Idioma:</span>
+                    <span class="detail-value">Español</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Zona Horaria:</span>
+                    <span class="detail-value">Ciudad de México (GMT-6)</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Notificaciones:</span>
+                    <span class="detail-value">Email, Sistema</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tab-content" id="tab-actividad-detalle">
+            <div class="activity-timeline">
+              <div class="timeline-item">
+                <div class="timeline-icon login">🔑</div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <p class="user-role"><span class="badge badge-secondary">Cliente</span></p>
+                <p class="user-email">roberto.diaz@example.com</p>
+                <p class="user-store">N/A</p>
+                <p class="user-last-login">Último acceso: Hace 2 días</p>
+              </div>
+              <div class="user-card-footer">
+                <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U005"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U005"><i>👁️</i></button>
+                <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+              </div>
+            </div>
+            
+            <div class="user-card">
+              <div class="user-card-header">
+                <div class="user-avatar">
+                  <img src="img/avatars/user6.jpg" alt="Laura Sánchez">
+                </div>
+                <div class="user-status">
+                  <span class="badge badge-danger">Bloqueado</span>
+                </div>
+              </div>
+              <div class="user-card-body">
+                <h4 class="user-name">Laura Sánchez</h4>
+                <p class="user-role"><span class="badge badge-info">Vendedor</span></p>
+                <p class="user-email">laura.sanchez@example.com</p>
+                <p class="user-store">Tienda Este</p>
+                <p class="user-last-login">Último acceso: Hace 30 días</p>
+              </div>
+              <div class="user-card-footer">
+                <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U006"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U006"><i>👁️</i></button>
+                <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+              </div>
+            </div>
+            
+            <div class="user-card">
+              <div class="user-card-header">
+                <div class="user-avatar">
+                  <img src="img/avatars/user7.jpg" alt="Pedro López">
+                </div>
+                <div class="user-status">
+                  <span class="badge badge-warning">Pendiente</span>
+                </div>
+              </div>
+              <div class="user-card-body">
+                <h4 class="user-name">Pedro López</h4>
+                <p class="user-role"><span class="badge badge-secondary">Cliente</span></p>
+                <p class="user-email">pedro.lopez@example.com</p>
+                <p class="user-store">N/A</p>
+                <p class="user-last-login">Último acceso: Nunca</p>
+              </div>
+              <div class="user-card-footer">
+                <button class="btn-icon" title="Editar" data-modal="editarUsuario" data-id="U007"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesUsuario" data-id="U007"><i>👁️</i></button>
+                <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bulk Actions -->
+      <div class="bulk-actions">
+        <h3>Acciones Masivas</h3>
+        <div class="bulk-action-buttons">
+          <button class="btn btn-danger" data-action="delete"><i>🗑️</i> Eliminar Seleccionados</button>
+          <button class="btn btn-warning" data-action="block"><i>🔒</i> Bloquear Usuarios</button>
+          <button class="btn btn-success" data-action="activate"><i>✓</i> Activar Usuarios</button>
+          <button class="btn btn-secondary" data-action="role"><i>👥</i> Cambiar Rol</button>
+          <button class="btn btn-secondary" data-action="email"><i>✉️</i> Enviar Email</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Modal Nuevo Usuario -->
+  <div id="nuevoUsuario" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Nuevo Usuario</h3>
+        <button class="close-button" data-close="nuevoUsuario">×</button>
+      </div>
+      
+      <!-- Tab Navigation -->
+      <div class="tab-container modal-tabs">
+        <div class="tabs">
+          <div class="tab active">Información Personal</div>
+          <div class="tab">Información de Acceso</div>
+          <div class="tab">Permisos</div>
+          <div class="tab">Configuración</div>
+        </div>
+      </div>
+      
+      <!-- Tab Content -->
+      <div class="tab-content active" id="tab-personal">
+        <div class="user-form-container">
+          <div class="user-avatar-upload">
+            <div class="avatar-preview">
+              <img id="avatar-preview-img" src="img/avatars/default.jpg" alt="Avatar">
+            </div>
+            <div class="avatar-controls">
+              <label class="btn btn-sm btn-secondary">
+                <input type="file" id="avatar-upload" accept="image/*" hidden>
+                Cambiar Avatar
+              </label>
+              <button type="button" class="btn btn-sm btn-danger" id="remove-avatar">Eliminar</button>
+            </div>
+          </div>
+          
+          <div class="user-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nombre <span class="required">*</span></label>
+                <input type="text" class="form-control" name="first_name" placeholder="Nombre" required>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Apellido <span class="required">*</span></label>
+                <input type="text" class="form-control" name="last_name" placeholder="Apellido" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Email <span class="required">*</span></label>
+                <input type="email" class="form-control" name="email" placeholder="ejemplo@correo.com" required>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" name="phone" placeholder="+123456789">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" name="birth_date">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Género</label>
+                <select class="form-control" name="gender">
+                  <option value="">Seleccionar</option>
+                  <option value="male">Masculino</option>
+                  <option value="female">Femenino</option>
+                  <option value="other">Otro</option>
+                  <option value="prefer_not_to_say">Prefiero no decirlo</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Dirección</label>
+              <input type="text" class="form-control" name="address" placeholder="Calle, número, colonia">
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Ciudad</label>
+                <input type="text" class="form-control" name="city" placeholder="Ciudad">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Código Postal</label>
+                <input type="text" class="form-control" name="postal_code" placeholder="Código postal">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Estado/Provincia</label>
+                <input type="text" class="form-control" name="state" placeholder="Estado o provincia">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">País</label>
+                <select class="form-control" name="country">
+                  <option value="">Seleccionar</option>
+                  <option value="mexico">México</option>
+                  <option value="united_states">Estados Unidos</option>
+                  <option value="canada">Canadá</option>
+                  <option value="colombia">Colombia</option>
+                  <option value="spain">España</option>
+                  <!-- Agregar más países según sea necesario -->
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="tab-acceso">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nombre de Usuario <span class="required">*</span></label>
+            <input type="text" class="form-control" name="username" placeholder="Usuario" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Estado de la Cuenta</label>
+            <select class="form-control" name="account_status">
+              <option value="active">Activo</option>
+              <option value="pending">Pendiente</option>
+              <option value="inactive">Inactivo</option>
+              <option value="blocked">Bloqueado</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Contraseña <span class="required">*</span></label>
+            <div class="input-with-icon">
+              <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
+              <button type="button" class="btn-icon toggle-password"><i>👁️</i></button>
+            </div>
+            <div class="password-strength-meter">
+              <div class="strength-bar">
+                <div class="strength-fill" style="width: 0%;"></div>
+              </div>
+              <div class="strength-text">Fuerza de la contraseña: No establecida</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Confirmar Contraseña <span class="required">*</span></label>
+            <div class="input-with-icon">
+              <input type="password" class="form-control" name="password_confirmation" placeholder="Confirmar contraseña" required>
+              <button type="button" class="btn-icon toggle-password"><i>👁️</i></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="require_password_change" name="require_password_change">
+            <label class="form-check-label" for="require_password_change">Requerir cambio de contraseña en el primer inicio de sesión</label>
+          </div>
+        </div>
+        
+        <hr class="form-divider">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Rol <span class="required">*</span></label>
+            <select class="form-control" name="role" required>
+              <option value="">Seleccionar rol</option>
+              <option value="administrator">Administrador</option>
+              <option value="manager">Gerente</option>
+              <option value="salesperson">Vendedor</option>
+              <option value="technician">Técnico</option>
+              <option value="customer">Cliente</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Tienda Asignada</label>
+            <select class="form-control" name="assigned_store">
+              <option value="">Seleccionar tienda</option>
+              <option value="all">Todas las tiendas</option>
+              <option value="central">Tienda Central</option>
+              <option value="north">Tienda Norte</option>
+              <option value="south">Tienda Sur</option>
+              <option value="east">Tienda Este</option>
+              <option value="west">Tienda Oeste</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="send_welcome_email" name="send_welcome_email" checked>
+            <label class="form-check-label" for="send_welcome_email">Enviar email de bienvenida con instrucciones de acceso</label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="tab-permisos">
+        <div class="form-group">
+          <label class="form-label">Nivel de Acceso</label>
+          <select class="form-control" name="access_level" id="access_level">
+            <option value="custom">Personalizado</option>
+            <option value="full">Acceso Total</option>
+            <option value="read_only">Solo Lectura</option>
+            <option value="restricted">Restringido</option>
+          </select>
+        </div>
+        
+        <div class="permissions-container">
+          <div class="permission-group">
+            <div class="permission-group-header">
+              <div class="permission-group-name">Dashboard</div>
+              <div class="permission-group-toggle">
+                <input type="checkbox" class="toggle-all-permissions" data-group="dashboard">
+                <label></label>
+              </div>
+            </div>
+            <div class="permission-items">
+              <div class="permission-item">
+                <div class="permission-name">Ver estadísticas</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="dashboard_view_stats">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Ver gráficos</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="dashboard_view_charts">
+                  <label></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="permission-group">
+            <div class="permission-group-header">
+              <div class="permission-group-name">Inventario</div>
+              <div class="permission-group-toggle">
+                <input type="checkbox" class="toggle-all-permissions" data-group="inventory">
+                <label></label>
+              </div>
+            </div>
+            <div class="permission-items">
+              <div class="permission-item">
+                <div class="permission-name">Ver productos</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="inventory_view">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Crear productos</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="inventory_create">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Editar productos</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="inventory_edit">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Eliminar productos</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="inventory_delete">
+                  <label></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="permission-group">
+            <div class="permission-group-header">
+              <div class="permission-group-name">Ventas</div>
+              <div class="permission-group-toggle">
+                <input type="checkbox" class="toggle-all-permissions" data-group="sales">
+                <label></label>
+              </div>
+            </div>
+            <div class="permission-items">
+              <div class="permission-item">
+                <div class="permission-name">Ver ventas</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="sales_view">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Crear ventas</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="sales_create">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Anular ventas</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="sales_void">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Aplicar descuentos</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="sales_discount">
+                  <label></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="permission-group">
+            <div class="permission-group-header">
+              <div class="permission-group-name">Usuarios</div>
+              <div class="permission-group-toggle">
+                <input type="checkbox" class="toggle-all-permissions" data-group="users">
+                <label></label>
+              </div>
+            </div>
+            <div class="permission-items">
+              <div class="permission-item">
+                <div class="permission-name">Ver usuarios</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="users_view">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Crear usuarios</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="users_create">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Editar usuarios</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="users_edit">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Eliminar usuarios</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="users_delete">
+                  <label></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="permission-group">
+            <div class="permission-group-header">
+              <div class="permission-group-name">Reportes</div>
+              <div class="permission-group-toggle">
+                <input type="checkbox" class="toggle-all-permissions" data-group="reports">
+                <label></label>
+              </div>
+            </div>
+            <div class="permission-items">
+              <div class="permission-item">
+                <div class="permission-name">Ver reportes</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="reports_view">
+                  <label></label>
+                </div>
+              </div>
+              <div class="permission-item">
+                <div class="permission-name">Exportar reportes</div>
+                <div class="permission-toggle">
+                  <input type="checkbox" name="permissions[]" value="reports_export">
+                  <label></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="tab-configuracion">
+        <div class="form-group">
+          <label class="form-label">Idioma</label>
+          <select class="form-control" name="language">
+            <option value="es">Español</option>
+            <option value="en">Inglés</option>
+            <option value="fr">Francés</option>
+            <option value="pt">Portugués</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Zona Horaria</label>
+          <select class="form-control" name="timezone">
+            <option value="America/Mexico_City">Ciudad de México (GMT-6)</option>
+            <option value="America/New_York">Nueva York (GMT-5)</option>
+            <option value="America/Los_Angeles">Los Ángeles (GMT-8)</option>
+            <option value="Europe/Madrid">Madrid (GMT+1)</option>
+            <option value="Europe/London">Londres (GMT+0)</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="enable_2fa" name="enable_2fa">
+            <label class="form-check-label" for="enable_2fa">Habilitar autenticación de dos factores</label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="notifications_email" name="notifications_email" checked>
+            <label class="form-check-label" for="notifications_email">Recibir notificaciones por email</label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="notifications_system" name="notifications_system" checked>
+            <label class="form-check-label" for="notifications_system">Recibir notificaciones del sistema</label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Notas Adicionales</label>
+          <textarea class="form-control" name="notes" rows="3" placeholder="Notas o comentarios adicionales sobre este usuario"></textarea>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-close="nuevoUsuario">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Ver Detalles Usuario -->
+  <div id="verDetallesUsuario" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Detalles del Usuario</h3>
+        <button class="close-button" data-close="verDetallesUsuario">×</button>
+      </div>
+      
+      <div class="user-detail-container">
+        <div class="user-detail-header">
+          <div class="user-detail-avatar">
+            <img src="img/avatars/user1.jpg" alt="Juan Pérez">
+          </div>
+          <div class="user-detail-info">
+            <h2 id="user-detail-name">Juan Pérez</h2>
+            <div class="user-detail-meta">
+              <span class="badge badge-primary">Administrador</span>
+              <span class="badge badge-success">Activo</span>
+            </div>
+            <p class="user-detail-email">juan.perez@example.com</p>
+          </div>
+        </div>
+        
+        <div class="user-detail-content">
+          <div class="tabs detail-tabs">
+            <div class="tab active">Información</div>
+            <div class="tab">Actividad</div>
+            <div class="tab">Permisos</div>
+            <div class="tab">Ventas</div>
+          </div>
+          
+          <div class="tab-content active" id="tab-info-detalle">
+            <div class="detail-columns">
+              <div class="detail-column">
+                <div class="detail-section">
+                  <h4>Información Personal</h4>
+                  <div class="detail-row">
+                    <span class="detail-label">Nombre Completo:</span>
+                    <span class="detail-value">Juan Pérez Rodríguez</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Email:</span>
+                    <span class="detail-value">juan.perez@example.com</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Teléfono:</span>
+                    <span class="detail-value">+52 1234 5678</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Fecha de Nacimiento:</span>
+                    <span class="detail-value">15/04/1985</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Género:</span>
+                    <span class="detail-value">Masculino</span>
+                  </div>
+                </div>
+                
+                <div class="detail-section">
+                  <h4>Dirección</h4>
+                  <div class="detail-row">
+                    <span class="detail-label">Dirección:</span>
+                    <span class="detail-value">Av. Principal #123, Col. Centro</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Ciudad:</span>
+                    <span class="detail-value">Ciudad Capital</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Código Postal:</span>
+                    <span class="detail-value">12345</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Estado:</span>
+                    <span class="detail-value">Estado Central</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">País:</span>
+                    <span class="detail-value">México</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="detail-column">
+                <div class="detail-section">
+                  <h4>Información de la Cuenta</h4>
+                  <div class="detail-row">
+                    <span class="detail-label">ID:</span>
+                    <span class="detail-value">#U001</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Nombre de Usuario:</span>
+                    <span class="detail-value">jperez</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Rol:</span>
+                    <span class="detail-value">Administrador</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Tienda Asignada:</span>
+                    <span class="detail-value">Todas</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Estado:</span>
+                    <span class="detail-value">Activo</span>
+                  </div>
+                </div>
+                
+                <div class="detail-section">
+                  <h4>Seguridad y Acceso</h4>
+                  <div class="detail-row">
+                    <span class="detail-label">Fecha de Registro:</span>
+                    <span class="detail-value">10/01/2023</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Último Acceso:</span>
+                    <span class="detail-value">Hace 5 horas</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Último Cambio de Contraseña:</span>
+                    <span class="detail-value">15/02/2025</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Autenticación de Dos Factores:</span>
+                    <span class="detail-value">Habilitada</span>
+                  </div>
+                </div>
+                
+                <div class="detail-section">
+                  <h4>Preferencias</h4>
+                  <div class="detail-row">
+                    <span class="detail-label">Idioma:</span>
+                    <span class="detail-value">Español</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Zona Horaria:</span>
+                    <span class="detail-value">Ciudad de México (GMT-6)</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Notificaciones:</span>
+                    <span class="detail-value">Email, Sistema</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tab-content" id="tab-actividad-detalle">
+            <div class="activity-timeline">
+              <div class="timeline-item">
+                <div class="timeline-icon login">🔑</div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-title">Inicio de sesión</span>
+                    <span class="timeline-date">15 mar 2025, 14:35</span>
+                  </div>
+                  <div class="timeline-details">
+                    <span class="detail-label">IP:</span>
+                    <span class="detail-value">192.168.1.45</span>
+                  </div>
+                  <div class="timeline-details">
+                    <span class="detail-label">Navegador:</span>
+                    <span class="detail-value">Chrome 125.0.0</span>
+                  </div>
+                  <div class="timeline-details">
+                    <span class="detail-label">Dispositivo:</span>
+                    <span class="detail-value">Windows 11</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-icon edit">✏️</div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-title">Actualizó perfil de usuario</span>
+                    <span class="timeline-date">14 mar 2025, 11:20</span>
+                  </div>
+                  <div class="timeline-details">
+                    <span class="detail-label">Cambios:</span>
+                    <span class="detail-value">Teléfono, Dirección</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-icon lock">🔒</div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-title">Cambió contraseña</span>
+                    <span class="timeline-date">15 feb 2025, 09:45</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-icon login">🔑</div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-title">Inicio de sesión</span>
+                    <span class="timeline-date">15 feb 2025, 09:30</span>
+                  </div>
+                  <div class="timeline-details">
+                    <span class="detail-label">IP:</span>
+                    <span class="detail-value">192.168.1.45</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-icon warning">⚠️</div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-title">Intento de inicio de sesión fallido</span>
+                    <span class="timeline-date">14 feb 2025, 22:15</span>
+                  </div>
+                  <div class="timeline-details">
+                    <span class="detail-label">IP:</span>
+                    <span class="detail-value">45.67.89.123</span>
+                  </div>
+                  <div class="timeline-details">
+                    <span class="detail-label">Motivo:</span>
+                    <span class="detail-value">Contraseña incorrecta</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-icon edit">✏️</div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-title">Agregó nueva dirección</span>
+                    <span class="timeline-date">10 feb 2025, 16:45</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tab-content" id="tab-permisos-detalle">
+            <div class="permissions-summary">
+              <div class="permission-group-summary">
+                <div class="permission-group-name">Dashboard</div>
+                <div class="permission-group-status">
+                  <span class="badge badge-success">Acceso total</span>
+                </div>
+              </div>
+              
+              <div class="permission-group-summary">
+                <div class="permission-group-name">Inventario</div>
+                <div class="permission-group-status">
+                  <span class="badge badge-success">Acceso total</span>
+                </div>
+              </div>
+              
+              <div class="permission-group-summary">
+                <div class="permission-group-name">Ventas</div>
+                <div class="permission-group-status">
+                  <span class="badge badge-success">Acceso total</span>
+                </div>
+              </div>
+              
+              <div class="permission-group-summary">
+                <div class="permission-group-name">Usuarios</div>
+                <div class="permission-group-status">
+                  <span class="badge badge-success">Acceso total</span>
+                </div>
+              </div>
+              
+              <div class="permission-group-summary">
+                <div class="permission-group-name">Reportes</div>
+                <div class="permission-group-status">
+                  <span class="badge badge-success">Acceso total</span>
+                </div>
+              </div>
+              
+              <div class="permission-group-summary">
+                <div class="permission-group-name">Configuración</div>
+                <div class="permission-group-status">
+                  <span class="badge badge-success">Acceso total</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="role-info">
+              <h4>Información del Rol</h4>
+              <p>El rol de <strong>Administrador</strong> tiene acceso total a todas las funciones del sistema. Los administradores pueden gestionar usuarios, productos, ventas, configuraciones y reportes sin restricciones.</p>
+            </div>
+          </div>
+          
+          <div class="tab-content" id="tab-ventas-detalle">
+            <div class="sales-summary">
+              <div class="summary-card">
+                <div class="summary-title">Total de Ventas</div>
+                <div class="summary-value">$45,325.75</div>
+              </div>
+              
+              <div class="summary-card">
+                <div class="summary-title">Ventas este Mes</div>
+                <div class="summary-value">$5,890.50</div>
+              </div>
+              
+              <div class="summary-card">
+                <div class="summary-title">Total Transacciones</div>
+                <div class="summary-value">87</div>
+              </div>
+              
+              <div class="summary-card">
+                <div class="summary-title">Ticket Promedio</div>
+                <div class="summary-value">$521.00</div>
+              </div>
+            </div>
+            
+            <div class="sales-chart">
+              <img src="img/user-sales-chart.jpg" alt="Gráfico de ventas del usuario">
+            </div>
+            
+            <div class="recent-sales">
+              <h4>Ventas Recientes</h4>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Fecha</th>
+                      <th>Cliente</th>
+                      <th>Total</th>
+                      <th>Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#V12345</td>
+                      <td>15 mar 2025</td>
+                      <td>Roberto Torres</td>
+                      <td>$1,245.00</td>
+                      <td><span class="badge badge-success">Completado</span></td>
+                    </tr>
+                    <tr>
+                      <td>#V12344</td>
+                      <td>14 mar 2025</td>
+                      <td>Laura Sánchez</td>
+                      <td>$879.50</td>
+                      <td><span class="badge badge-success">Completado</span></td>
+                    </tr>
+                    <tr>
+                      <td>#V12343</td>
+                      <td>14 mar 2025</td>
+                      <td>Pedro Ramírez</td>
+                      <td>$2,135.75</td>
+                      <td><span class="badge badge-warning">Pendiente</span></td>
+                    </tr>
+                    <tr>
+                      <td>#V12342</td>
+                      <td>13 mar 2025</td>
+                      <td>Ana Gutiérrez</td>
+                      <td>$567.25</td>
+                      <td><span class="badge badge-success">Completado</span></td>
+                    </tr>
+                    <tr>
+                      <td>#V12341</td>
+                      <td>13 mar 2025</td>
+                      <td>Carlos Mendoza</td>
+                      <td>$1,890.00</td>
+                      <td><span class="badge badge-success">Completado</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-close="verDetallesUsuario">Cerrar</button>
+        <button type="button" class="btn btn-primary" data-modal="editarUsuario">Editar Usuario</button>
+        <button type="button" class="btn btn-secondary">Enviar Mensaje</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/main.js"></script>
+  <script src="js/usuarios.js"></script>
+</body>
+</html>

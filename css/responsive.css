@@ -1,0 +1,88 @@
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    
+    .sidebar {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .main-content {
+      width: 100%;
+    }
+    
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .search-bar {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .table-container {
+      margin: 0 -1.5rem;
+      width: calc(100% + 3rem);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .modal {
+      width: 95%;
+      padding: 1rem;
+    }
+    
+    .card {
+      padding: 1rem;
+    }
+    
+    .btn {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.875rem;
+    }
+    
+    .logo h1 {
+      font-size: 1.1rem;
+    }
+    
+    .tab {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+    }
+  }
+  
+  /* For smaller mobile devices */
+  @media (max-width: 380px) {
+    .nav-item {
+      font-size: 0.875rem;
+    }
+    
+    .header-title h2 {
+      font-size: 1.25rem;
+    }
+    
+    .stat-value {
+      font-size: 1.25rem;
+    }
+  }

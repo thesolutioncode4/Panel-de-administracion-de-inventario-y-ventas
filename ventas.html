@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ventas - Hugo Tecnología</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/tables.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/ventas.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">HT</div>
+        <h1>Hugo Tecnología</h1>
+      </div>
+      
+      <div class="nav-item">
+        <i>📊</i> Dashboard
+      </div>
+      <div class="nav-item">
+        <i>📦</i> Inventario
+      </div>
+      <div class="nav-item">
+        <i>🏪</i> Negocios
+      </div>
+      <div class="nav-item active">
+        <i>🛒</i> Ventas
+      </div>
+      <div class="nav-item">
+        <i>👥</i> Usuarios
+      </div>
+      <div class="nav-item">
+        <i>📝</i> Reportes
+      </div>
+      <div class="nav-item">
+        <i>⚙️</i> Configuración
+      </div>
+      
+      <div class="user-info">
+        <div class="user-avatar">
+          <i>👤</i>
+        </div>
+        <div class="user-details">
+          <h4>Admin User</h4>
+          <p>Administrador</p>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div class="header-title">
+          <h2>Gestión de Ventas</h2>
+          <p>Administre ventas, facturas y seguimiento de pedidos</p>
+        </div>
+        
+        <div class="search-bar">
+          <i>🔍</i>
+          <input type="text" placeholder="Buscar por cliente, factura, producto...">
+        </div>
+      </div>
+      
+      <!-- Sales Dashboard -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Ventas Totales (Mes)</h3>
+          <div class="stat-value">$183,450.00</div>
+          <div class="stat-change positive">
+            <i>↑</i> 12.5% desde el mes pasado
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Transacciones (Mes)</h3>
+          <div class="stat-value">1,243</div>
+          <div class="stat-change positive">
+            <i>↑</i> 8.7% desde el mes pasado
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Ticket Promedio</h3>
+          <div class="stat-value">$147.59</div>
+          <div class="stat-change positive">
+            <i>↑</i> 3.2% desde el mes pasado
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Pedidos Pendientes</h3>
+          <div class="stat-value">47</div>
+          <div class="stat-change negative">
+            <i>↑</i> 5 más desde la semana pasada
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sales Chart -->
+      <div class="card sales-chart-card">
+        <div class="card-header">
+          <h3 class="card-title">Tendencia de Ventas</h3>
+          <div class="chart-controls">
+            <div class="date-range">
+              <button class="btn btn-sm btn-secondary active">Día</button>
+              <button class="btn btn-sm btn-secondary">Semana</button>
+              <button class="btn btn-sm btn-secondary">Mes</button>
+              <button class="btn btn-sm btn-secondary">Año</button>
+            </div>
+            <div class="dropdown-filter">
+              <select class="form-control form-control-sm">
+                <option>Todos los Negocios</option>
+                <option>Tienda Central</option>
+                <option>Tienda Norte</option>
+                <option>Tienda Sur</option>
+                <option>Tienda Online</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-body">
+          <div class="sales-chart">
+            <img src="img/sales-chart.jpg" alt="Gráfico de tendencia de ventas">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="action-bar">
+        <div class="action-buttons">
+          <button class="btn btn-primary" data-modal="nuevaVenta">
+            <i>➕</i> Nueva Venta
+          </button>
+          <button class="btn btn-secondary">
+            <i>📥</i> Importar Ventas
+          </button>
+          <button class="btn btn-secondary">
+            <i>📤</i> Exportar Datos
+          </button>
+          <button class="btn btn-secondary">
+            <i>🖨️</i> Imprimir Reporte
+          </button>
+        </div>
+        
+        <div class="filter-controls">
+          <input type="date" class="form-control" name="fecha_desde" placeholder="Fecha desde">
+          <input type="date" class="form-control" name="fecha_hasta" placeholder="Fecha hasta">
+          
+          <select class="form-control">
+            <option value="">Todos los Estados</option>
+            <option value="completado">Completado</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="cancelado">Cancelado</option>
+            <option value="reembolsado">Reembolsado</option>
+          </select>
+          
+          <button class="btn btn-secondary">Filtrar</button>
+          <button class="btn btn-link">Limpiar</button>
+        </div>
+      </div>
+      
+      <!-- Recent Sales -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Ventas Recientes</h3>
+          <div class="view-toggle">
+            <button class="btn-icon active" id="list-view" title="Vista de lista">📋</button>
+            <button class="btn-icon" id="kanban-view" title="Vista de kanban">📊</button>
+          </div>
+        </div>
+        
+        <div class="list-view active">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th data-sort="id">ID</th>
+                  <th data-sort="date">Fecha</th>
+                  <th data-sort="customer">Cliente</th>
+                  <th data-sort="store">Tienda</th>
+                  <th data-sort="products">Productos</th>
+                  <th data-sort="total">Total</th>
+                  <th data-sort="payment">Pago</th>
+                  <th data-sort="status">Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#V12345</td>
+                  <td>15 mar 2025</td>
+                  <td>Juan Martínez</td>
+                  <td>Tienda Central</td>
+                  <td>3 items</td>
+                  <td>$1,245.00</td>
+                  <td>Tarjeta de Crédito</td>
+                  <td><span class="badge badge-success">Completado</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesVenta" data-id="V12345"><i>👁️</i></button>
+                      <button class="btn-icon" title="Facturar"><i>🧾</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#V12344</td>
+                  <td>14 mar 2025</td>
+                  <td>Laura Sánchez</td>
+                  <td>Tienda Norte</td>
+                  <td>2 items</td>
+                  <td>$879.50</td>
+                  <td>Efectivo</td>
+                  <td><span class="badge badge-success">Completado</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesVenta" data-id="V12344"><i>👁️</i></button>
+                      <button class="btn-icon" title="Facturar"><i>🧾</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#V12343</td>
+                  <td>14 mar 2025</td>
+                  <td>Pedro Ramírez</td>
+                  <td>Tienda Online</td>
+                  <td>5 items</td>
+                  <td>$2,135.75</td>
+                  <td>Transferencia</td>
+                  <td><span class="badge badge-warning">Pendiente</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesVenta" data-id="V12343"><i>👁️</i></button>
+                      <button class="btn-icon" title="Facturar"><i>🧾</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#V12342</td>
+                  <td>13 mar 2025</td>
+                  <td>Ana Gutiérrez</td>
+                  <td>Tienda Sur</td>
+                  <td>1 item</td>
+                  <td>$567.25</td>
+                  <td>Tarjeta de Débito</td>
+                  <td><span class="badge badge-success">Completado</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesVenta" data-id="V12342"><i>👁️</i></button>
+                      <button class="btn-icon" title="Facturar"><i>🧾</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#V12341</td>
+                  <td>13 mar 2025</td>
+                  <td>Roberto Torres</td>
+                  <td>Tienda Central</td>
+                  <td>4 items</td>
+                  <td>$1,890.00</td>
+                  <td>Tarjeta de Crédito</td>
+                  <td><span class="badge badge-success">Completado</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesVenta" data-id="V12341"><i>👁️</i></button>
+                      <button class="btn-icon" title="Facturar"><i>🧾</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#V12340</td>
+                  <td>12 mar 2025</td>
+                  <td>Carlos Mendoza</td>
+                  <td>Tienda Online</td>
+                  <td>2 items</td>
+                  <td>$1,256.50</td>
+                  <td>PayPal</td>
+                  <td><span class="badge badge-danger">Cancelado</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesVenta" data-id="V12340"><i>👁️</i></button>
+                      <button class="btn-icon" title="Facturar" disabled><i>🧾</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#V12339</td>
+                  <td>12 mar 2025</td>
+                  <td>María López</td>
+                  <td>Tienda Norte</td>
+                  <td>3 items</td>
+                  <td>$985.75</td>
+                  <td>Tarjeta de Crédito</td>
+                  <td><span class="badge badge-info">Reembolsado</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesVenta" data-id="V12339"><i>👁️</i></button>
+                      <button class="btn-icon" title="Facturar" disabled><i>🧾</i></button>
+                      <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="pagination-container">
+            <div class="pagination-info">
+              Mostrando 1-7 de 1,243 ventas
+            </div>
+            <div class="pagination">
+              <button class="page-nav" disabled><i>◀</i></button>
+              <div class="page-item active">1</div>
+              <div class="page-item">2</div>
+              <div class="page-item">3</div>
+              <div class="page-item">4</div>
+              <div class="page-item">5</div>
+              <div class="page-item">...</div>
+              <div class="page-item">125</div>
+              <button class="page-nav"><i>▶</i></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="kanban-view">
+          <div class="kanban-board">
+            <div class="kanban-column">
+              <div class="kanban-column-header">
+                <h4>Pedidos Pendientes</h4>
+                <span class="badge badge-warning">3</span>
+              </div>
+              <div class="kanban-cards">
+                <div class="kanban-card">
+                  <div class="card-header">
+                    <span>#V12343</span>
+                    <span>14 mar 2025</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="customer-info">Pedro Ramírez</div>
+                    <div class="store-info">Tienda Online</div>
+                    <div class="products-info">5 items</div>
+                    <div class="total-info">$2,135.75</div>
+                  </div>
+                  <div class="card-footer">
+                    <span class="badge badge-warning">Pendiente</span>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles"><i>👁️</i></button>
+                      <button class="btn-icon" title="Procesar"><i>✓</i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="kanban-card">
+                  <div class="card-header">
+                    <span>#V12338</span>
+                    <span>12 mar 2025</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="customer-info">Sofia Herrera</div>
+                    <div class="store-info">Tienda Online</div>
+                    <div class="products-info">2 items</div>
+                    <div class="total-info">$789.50</div>
+                  </div>
+                  <div class="card-footer">
+                    <span class="badge badge-warning">Pendiente</span>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles"><i>👁️</i></button>
+                      <button class="btn-icon" title="Procesar"><i>✓</i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="kanban-card">
+                  <div class="card-header">
+                    <span>#V12335</span>
+                    <span>11 mar 2025</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="customer-info">Javier Castro</div>
+                    <div class="store-info">Tienda Este</div>
+                    <div class="products-info">3 items</div>
+                    <div class="total-info">$1,245.00</div>
+                  </div>
+                  <div class="card-footer">
+                    <span class="badge badge-warning">Pendiente</span>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles"><i>👁️</i></button>
+                      <button class="btn-icon" title="Procesar"><i>✓</i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="kanban-column">
+              <div class="kanban-column-header">
+                <h4>En Proceso</h4>
+                <span class="badge badge-primary">2</span>
+              </div>
+              <div class="kanban-cards">
+                <div class="kanban-card">
+                  <div class="card-header">
+                    <span>#V12337</span>
+                    <span>12 mar 2025</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="customer-info">Luis García</div>
+                    <div class="store-info">Tienda Central</div>
+                    <div class="products-info">4 items</div>
+                    <div class="total-info">$1,567.80</div>
+                  </div>
+                  <div class="card-footer">
+                    <span class="badge badge-primary">En Proceso</span>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles"><i>👁️</i></button>
+                      <button class="btn-icon" title="Completar"><i>✓</i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="kanban-card">
+                  <div class="card-header">
+                    <span>#V12336</span>
+                    <span>11 mar 2025</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="customer-info">Carmen Rodríguez</div>
+                    <div class="store-info">Tienda Sur</div>
+                    <div class="products-info">2 items</div>
+                    <div class="total-info">$786.25</div>
+                  </div>
+                  <div class="card-footer">
+                    <span class="badge badge-primary">En Proceso</span>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles"><i>👁️</i></button>
+                      <button class="btn-icon" title="Completar"><i>✓</i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="kanban-column">
+              <div class="kanban-column-header">
+                <h4>Completados</h4>
+                <span class="badge badge-success">4</span>
+              </div>
+              <div class="kanban-cards">
+                <div class="kanban-card">
+                  <div class="card-header">
+                    <span>#V12345</span>
+                    <span>15 mar 2025</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="customer-info">Juan Martínez</div>
+                    <div class="store-info">Tienda Central</div>
+                    <div class="products-info">3 items</div>
+                    <div class="total-info">$1,245.00</div>
+                  </div>
+                  <div class="card-footer">
+                    <span class="badge badge-success">Completado</span>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles"><i>👁️</i></button>
+                      <button class="btn-icon" title="Facturar"><i>🧾</i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="kanban-card">
+                  <div class="card-header">
+                    <span>#V12344</span>
+                    <span>14 mar 2025</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="customer-info">Laura Sánchez</div>
+                    <div class="store-info">Tienda Norte</div>
+                    <div class="products-info">2 items</div>
+                    <div class="total-info">$879.50</div>
+                  </div>
+                  <div class="card-footer">
+                    <span class="badge badge-success">Completado</span>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles"><i>👁️</i></button>
+                      <button class="btn-icon" title="Facturar"><i>🧾</i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="kanban-card">
+                  <div class="card-header">
+                    <span>#V12342</span>
+                    <span>13 mar 2025</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="customer-info">Ana Gutiérrez</div>
+                    <div class="store-info">Tienda Sur</div>
+                    <div class="products-info">1 item</div>
+                    <div class="total-info">$567.25</div>
+                  </div>
+                  <div class="card-footer">
+                    <span class="badge badge-success">Completado</span>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles"><i>👁️</i></button>
+                      <button class="btn-icon" title="Facturar"><i>🧾</i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="kanban-card">
+                  <div class="card-header">
+                    <span>#V12341</span>
+                    <span>13 mar 2025</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="customer-info">Roberto Torres</div>
+                    <div class="store-info">Tienda Central</div>
+                    <div class="products-info">4 items</div>
+                    <div class="total-info">$1,890.00</div>
+                  </div>
+                  <div class="card-footer">
+                    <span class="badge badge-success">Completado</span>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles"><i>👁️</i></button>
+                      <button class="btn-icon" title="Facturar"><i>🧾</i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="kanban-column">
+              <div class="kanban-column-header">
+                <h4>Problemas</h4>
+                <span class="badge badge-danger">2</span>
+              </div>
+              <div class="kanban-cards">
+                <div class="kanban-card">
+                  <div class="card-header">
+                    <span>#V12340</span>
+                    <span>12 mar 2025</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="customer-info">Carlos Mendoza</div>
+                    <div class="store-info">Tienda Online</div>
+                    <div class="products-info">2 items</div>
+                    <div class="total-info">$1,256.50</div>
+                  </div>
+                  <div class="card-footer">
+                    <span class="badge badge-danger">Cancelado</span>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles"><i>👁️</i></button>
+                      <button class="btn-icon" title="Resolver"><i>🔧</i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="kanban-card">
+                  <div class="card-header">
+                    <span>#V12339</span>
+                    <span>12 mar 2025</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="customer-info">María López</div>
+                    <div class="store-info">Tienda Norte</div>
+                    <div class="products-info">3 items</div>
+                    <div class="total-info">$985.75</div>
+                  </div>
+                  <div class="card-footer">
+                    <span class="badge badge-info">Reembolsado</span>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Ver detalles"><i>👁️</i></button>
+                      <button class="btn-icon" title="Resolver"><i>🔧</i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sales Analysis -->
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Ventas por Categoría</h3>
+          </div>
+          <div class="card-body">
+            <div class="pie-chart">
+              <img src="img/category-chart.jpg" alt="Gráfico de ventas por categoría">
+            </div>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #4e73df;"></div>
+                <div class="legend-text">Computadoras (45%)</div>
+              </div>
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #1cc88a;"></div>
+                <div class="legend-text">Periféricos (28%)</div>
+              </div>
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #36b9cc;"></div>
+                <div class="legend-text">Almacenamiento (15%)</div>
+              </div>
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #f6c23e;"></div>
+                <div class="legend-text">Redes (8%)</div>
+              </div>
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #e74a3b;"></div>
+                <div class="legend-text">Accesorios (4%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Ventas por Método de Pago</h3>
+          </div>
+          <div class="card-body">
+            <div class="pie-chart">
+              <img src="img/payment-chart.jpg" alt="Gráfico de ventas por método de pago">
+            </div>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #4e73df;"></div>
+                <div class="legend-text">Tarjeta de Crédito (52%)</div>
+              </div>
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #1cc88a;"></div>
+                <div class="legend-text">Tarjeta de Débito (23%)</div>
+              </div>
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #36b9cc;"></div>
+                <div class="legend-text">Efectivo (15%)</div>
+              </div>
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #f6c23e;"></div>
+                <div class="legend-text">Transferencia (7%)</div>
+              </div>
+              <div class="legend-item">
+                <div class="color-box" style="background-color: #e74a3b;"></div>
+                <div class="legend-text">PayPal (3%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Ventas por Tienda</h3>
+          </div>
+          <div class="card-body">
+            <div class="bar-chart">
+              <img src="img/store-chart.jpg" alt="Gráfico de ventas por tienda">
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Mejores Clientes</h3>
+          </div>
+          <div class="card-body">
+            <div class="customers-list">
+              <div class="customer-item">
+                <div class="customer-rank">1</div>
+                <div class="customer-info">
+                  <div class="customer-name">Juan Martínez</div>
+                  <div class="customer-details">12 compras | $5,890.00</div>
+                </div>
+                <div class="customer-trend positive">↑ 15%</div>
+              </div>
+              <div class="customer-item">
+                <div class="customer-rank">2</div>
+                <div class="customer-info">
+                  <div class="customer-name">Empresa Soluciones Digitales</div>
+                  <div class="customer-details">8 compras | $4,780.00</div>
+                </div>
+                <div class="customer-trend positive">↑ 8%</div>
+              </div>
+              <div class="customer-item">
+                <div class="customer-rank">3</div>
+                <div class="customer-info">
+                  <div class="customer-name">Roberto Torres</div>
+                  <div class="customer-details">6 compras | $3,950.00</div>
+                </div>
+                <div class="customer-trend positive">↑ 3%</div>
+              </div>
+              <div class="customer-item">
+                <div class="customer-rank">4</div>
+                <div class="customer-info">
+                  <div class="customer-name">Ana Gutiérrez</div>
+                  <div class="customer-details">5 compras | $2,845.00</div>
+                </div>
+                <div class="customer-trend negative">↓ 2%</div>
+              </div>
+              <div class="customer-item">
+                <div class="customer-rank">5</div>
+                <div class="customer-info">
+                  <div class="customer-name">Carlos Mendoza</div>
+                  <div class="customer-details">4 compras | $2,320.00</div>
+                </div>
+                <div class="customer-trend positive">↑ 7%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Top Products -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Productos Más Vendidos</h3>
+          <button class="btn btn-sm btn-secondary">Ver Todos</button>
+        </div>
+        <div class="card-body">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Categoría</th>
+                  <th>Precio</th>
+                  <th>Unidades Vendidas</th>
+                  <th>Ingresos</th>
+                  <th>Tendencia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="product-cell">
+                      <div class="product-image">
+                        <img src="img/placeholder.jpg" alt="Laptop HP">
+                      </div>
+                      <div class="product-name">Laptop HP 15-dy2095wm</div>
+                    </div>
+                  </td>
+                  <td>Computadoras</td>
+                  <td>$599.99</td>
+                  <td>87</td>
+                  <td>$52,199.13</td>
+                  <td><span class="trend positive">↑ 12%</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="product-cell">
+                      <div class="product-image">
+                        <img src="img/placeholder.jpg" alt="Monitor Samsung">
+                      </div>
+                      <div class="product-name">Monitor Samsung 24"</div>
+                    </div>
+                  </td>
+                  <td>Periféricos</td>
+                  <td>$179.99</td>
+                  <td>125</td>
+                  <td>$22,498.75</td>
+                  <td><span class="trend positive">↑ 8%</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="product-cell">
+                      <div class="product-image">
+                        <img src="img/placeholder.jpg" alt="Disco SSD">
+                      </div>
+                      <div class="product-name">Disco SSD 500GB</div>
+                    </div>
+                  </td>
+                  <td>Almacenamiento</td>
+                  <td>$89.99</td>
+                  <td>198</td>
+                  <td>$17,818.02</td>
+                  <td><span class="trend positive">↑ 15%</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="product-cell">
+                      <div class="product-image">
+                        <img src="img/placeholder.jpg" alt="Teclado Mecánico">
+                      </div>
+                      <div class="product-name">Teclado Mecánico RGB</div>
+                    </div>
+                  </td>
+                  <td>Periféricos</td>
+                  <td>$69.99</td>
+                  <td>167</td>
+                  <td>$11,688.33</td>
+                  <td><span class="trend positive">↑ 5%</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="product-cell">
+                      <div class="product-image">
+                        <img src="img/placeholder.jpg" alt="Mouse Inalámbrico">
+                      </div>
+                      <div class="product-name">Mouse Inalámbrico</div>
+                    </div>
+                  </td>
+                  <td>Periféricos</td>
+                  <td>$29.99</td>
+                  <td>235</td>
+                  <td>$7,047.65</td>
+                  <td><span class="trend negative">↓ 3%</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Modal Nueva Venta -->
+  <div id="nuevaVenta" class="modal-overlay">
+    <div class="modal modal-lg">
+      <div class="modal-header">
+        <h3 class="modal-title">Nueva Venta</h3>
+        <button class="close-button" data-close="nuevaVenta">×</button>
+      </div>
+      
+      <div class="sale-form-container">
+        <div class="sale-details">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Tienda <span class="required">*</span></label>
+              <select class="form-control" name="store" required>
+                <option value="">Seleccione una tienda</option>
+                <option value="1">Tienda Central</option>
+                <option value="2">Tienda Norte</option>
+                <option value="3">Tienda Sur</option>
+                <option value="4">Tienda Este</option>
+                <option value="5">Tienda Online</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Fecha <span class="required">*</span></label>
+              <input type="date" class="form-control" name="sale_date" value="2025-03-15" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Cliente <span class="required">*</span></label>
+              <div class="input-with-button">
+                <select class="form-control" name="customer" required>
+                  <option value="">Seleccione un cliente</option>
+                  <option value="1">Juan Martínez</option>
+                  <option value="2">Laura Sánchez</option>
+                  <option value="3">Pedro Ramírez</option>
+                  <option value="4">Ana Gutiérrez</option>
+                  <option value="5">Roberto Torres</option>
+                  <!-- Agregar más clientes según sea necesario -->
+                </select>
+                <button type="button" class="btn btn-sm btn-secondary" data-modal="nuevoCliente">+ Nuevo</button>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Vendedor <span class="required">*</span></label>
+              <select class="form-control" name="salesperson" required>
+                <option value="">Seleccione un vendedor</option>
+                <option value="1">Carlos Rodríguez</option>
+                <option value="2">Elena Vázquez</option>
+                <option value="3">Jorge Castillo</option>
+                <option value="4">Sofía Mendoza</option>
+                <!-- Agregar más vendedores según sea necesario -->
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="products-section">
+          <div class="section-header">
+            <h4>Productos</h4>
+            <button type="button" class="btn btn-sm btn-secondary" id="add-product">+ Agregar Producto</button>
+          </div>
+          
+          <div class="products-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Precio</th>
+                  <th>Cantidad</th>
+                  <th>Descuento</th>
+                  <th>Total</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="product-row">
+                  <td>
+                    <select class="form-control" name="products[]">
+                      <option value="">Seleccione un producto</option>
+                      <option value="1" data-price="599.99">Laptop HP 15-dy2095wm</option>
+                      <option value="2" data-price="179.99">Monitor Samsung 24"</option>
+                      <option value="3" data-price="89.99">Disco SSD 500GB</option>
+                      <option value="4" data-price="69.99">Teclado Mecánico RGB</option>
+                      <option value="5" data-price="29.99">Mouse Inalámbrico</option>
+                      <!-- Agregar más productos según sea necesario -->
+                    </select>
+                  </td>
+                  <td>
+                    <input type="number" class="form-control product-price" name="prices[]" step="0.01" placeholder="0.00" readonly>
+                  </td>
+                  <td>
+                    <input type="number" class="form-control product-quantity" name="quantities[]" min="1" value="1">
+                  </td>
+                  <td>
+                    <input type="number" class="form-control product-discount" name="discounts[]" step="0.01" min="0" value="0">
+                  </td>
+                  <td>
+                    <input type="number" class="form-control product-total" name="totals[]" step="0.01" placeholder="0.00" readonly>
+                  </td>
+                  <td>
+                    <button type="button" class="btn-icon remove-product"><i>🗑️</i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="sale-summary">
+          <div class="summary-section">
+            <div class="summary-row">
+              <span class="summary-label">Subtotal:</span>
+              <span class="summary-value">$0.00</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Descuento:</span>
+              <span class="summary-value">$0.00</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Impuesto (16%):</span>
+              <span class="summary-value">$0.00</span>
+            </div>
+            <div class="summary-row total">
+              <span class="summary-label">Total:</span>
+              <span class="summary-value">$0.00</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="payment-section">
+          <div class="section-header">
+            <h4>Método de Pago</h4>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Método <span class="required">*</span></label>
+              <select class="form-control" name="payment_method" required>
+                <option value="">Seleccione un método</option>
+                <option value="efectivo">Efectivo</option>
+                <option value="tarjeta_credito">Tarjeta de Crédito</option>
+                <option value="tarjeta_debito">Tarjeta de Débito</option>
+                <option value="transferencia">Transferencia Bancaria</option>
+                <option value="paypal">PayPal</option>
+                <option value="cheque">Cheque</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Estado de Pago <span class="required">*</span></label>
+              <select class="form-control" name="payment_status" required>
+                <option value="pagado">Pagado</option>
+                <option value="pendiente">Pendiente</option>
+                <option value="parcial">Pago Parcial</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Notas de la Venta</label>
+            <textarea class="form-control" name="notes" rows="2" placeholder="Información adicional sobre la venta"></textarea>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-close="nuevaVenta">Cancelar</button>
+        <button type="button" class="btn btn-secondary" id="guardar-borrador">Guardar Borrador</button>
+        <button type="submit" class="btn btn-primary">Completar Venta</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Detalles de Venta -->
+  <div id="verDetallesVenta" class="modal-overlay">
+    <div class="modal modal-lg">
+      <div class="modal-header">
+        <h3 class="modal-title">Detalles de Venta</h3>
+        <button class="close-button" data-close="verDetallesVenta">×</button>
+      </div>
+      
+      <div class="sale-detail-container">
+        <div class="sale-header">
+          <div class="sale-id">
+            <h4>Venta #V12345</h4>
+            <span class="badge badge-success">Completado</span>
+          </div>
+          <div class="sale-date">
+            <strong>Fecha:</strong> 15 mar 2025
+          </div>
+        </div>
+        
+        <div class="sale-info-grid">
+          <div class="info-card">
+            <h5>Información del Cliente</h5>
+            <div class="info-content">
+              <p><strong>Nombre:</strong> Juan Martínez</p>
+              <p><strong>Email:</strong> juan.martinez@example.com</p>
+              <p><strong>Teléfono:</strong> +52 1234 5678</p>
+              <p><strong>Tipo:</strong> Cliente Regular</p>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <h5>Información de Entrega</h5>
+            <div class="info-content">
+              <p><strong>Método:</strong> Recogida en Tienda</p>
+              <p><strong>Tienda:</strong> Tienda Central</p>
+              <p><strong>Dirección:</strong> Av. Principal #123, Ciudad Capital</p>
+              <p><strong>Estado:</strong> Completado</p>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <h5>Información de Pago</h5>
+            <div class="info-content">
+              <p><strong>Método:</strong> Tarjeta de Crédito</p>
+              <p><strong>Tarjeta:</strong> XXXX-XXXX-XXXX-4589</p>
+              <p><strong>Estado:</strong> Procesado</p>
+              <p><strong>Fecha de Pago:</strong> 15 mar 2025</p>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <h5>Información de la Venta</h5>
+            <div class="info-content">
+              <p><strong>Vendedor:</strong> Carlos Rodríguez</p>
+              <p><strong>Total de Productos:</strong> 3 items</p>
+              <p><strong>Notas:</strong> Cliente solicitó instalación de software</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="products-detail">
+          <h5>Productos</h5>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Precio</th>
+                  <th>Cantidad</th>
+                  <th>Descuento</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="product-cell">
+                      <div class="product-image">
+                        <img src="img/placeholder.jpg" alt="Laptop HP">
+                      </div>
+                      <div class="product-name">Laptop HP 15-dy2095wm</div>
+                    </div>
+                  </td>
+                  <td>$599.99</td>
+                  <td>1</td>
+                  <td>$0.00</td>
+                  <td>$599.99</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="product-cell">
+                      <div class="product-image">
+                        <img src="img/placeholder.jpg" alt="Monitor Samsung">
+                      </div>
+                      <div class="product-name">Monitor Samsung 24"</div>
+                    </div>
+                  </td>
+                  <td>$179.99</td>
+                  <td>1</td>
+                  <td>$0.00</td>
+                  <td>$179.99</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="product-cell">
+                      <div class="product-image">
+                        <img src="img/placeholder.jpg" alt="Mouse Inalámbrico">
+                      </div>
+                      <div class="product-name">Mouse Inalámbrico</div>
+                    </div>
+                  </td>
+                  <td>$29.99</td>
+                  <td>1</td>
+                  <td>$0.00</td>
+                  <td>$29.99</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="sale-summary-detail">
+          <div class="summary-list">
+            <div class="summary-item">
+              <span class="item-label">Subtotal:</span>
+              <span class="item-value">$809.97</span>
+            </div>
+            <div class="summary-item">
+              <span class="item-label">Descuento:</span>
+              <span class="item-value">$0.00</span>
+            </div>
+            <div class="summary-item">
+              <span class="item-label">Impuesto (16%):</span>
+              <span class="item-value">$129.60</span>
+            </div>
+            <div class="summary-item">
+              <span class="item-label">Costo de Envío:</span>
+              <span class="item-value">$0.00</span>
+            </div>
+            <div class="summary-item total">
+              <span class="item-label">Total:</span>
+              <span class="item-value">$939.57</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sale-timeline">
+          <h5>Historial de la Venta</h5>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">15 mar 2025, 14:35</div>
+              <div class="timeline-content">
+                <div class="timeline-title">Venta completada</div>
+                <div class="timeline-description">Pago procesado correctamente</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">15 mar 2025, 14:30</div>
+              <div class="timeline-content">
+                <div class="timeline-title">Pago recibido</div>
+                <div class="timeline-description">Método: Tarjeta de Crédito</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">15 mar 2025, 14:15</div>
+              <div class="timeline-content">
+                <div class="timeline-title">Venta iniciada</div>
+                <div class="timeline-description">Cliente atendido por Carlos Rodríguez</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-close="verDetallesVenta">Cerrar</button>
+        <button type="button" class="btn btn-secondary">Imprimir</button>
+        <button type="button" class="btn btn-primary">Facturar</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/main.js"></script>
+  <script src="js/ventas.js"></script>
+</body>
+</html>

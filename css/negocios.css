@@ -1,0 +1,663 @@
+/* Estilos específicos para la página de negocios */
+
+/* Mapa */
+.map-card {
+    margin-bottom: 2rem;
+  }
+  
+  .map-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .form-control-sm {
+    height: calc(1.5em + 0.5rem + 2px);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    width: auto;
+  }
+  
+  .map-container {
+    height: 400px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    margin-top: 1rem;
+  }
+  
+  .map-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .map-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .map-marker {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .marker-icon {
+    font-size: 2rem;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+  }
+  
+  .marker-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    display: none;
+    z-index: 3;
+  }
+  
+  .marker-tooltip:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+  }
+  
+  .marker-tooltip strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+  }
+  
+  .marker-tooltip p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--text-light);
+  }
+  
+  .map-marker:hover .marker-tooltip {
+    display: block;
+  }
+  
+  /* Vista de lista y cuadrícula */
+  .list-view,
+  .grid-view {
+    display: none;
+  }
+  
+  .list-view.active,
+  .grid-view.active {
+    display: block;
+  }
+  
+  /* Tarjetas de negocios */
+  .business-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .business-card {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .business-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .business-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .business-icon {
+    font-size: 2rem;
+    padding: 0.5rem;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .business-body {
+    padding: 1.5rem;
+  }
+  
+  .business-body h4 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .business-type {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  .business-location,
+  .business-manager {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .business-location i,
+  .business-manager i {
+    margin-right: 0.5rem;
+    color: var(--text-light);
+  }
+  
+  .business-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .stat {
+    flex: 1;
+    min-width: 80px;
+    text-align: center;
+  }
+  
+  .stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+  }
+  
+  .stat-value {
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  
+  .business-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    border-top: 1px solid var(--border);
+    background-color: var(--light-bg);
+  }
+  
+  /* Formulario de negocio */
+  .business-hours {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .business-day {
+    display: flex;
+    align-items: center;
+  }
+  
+  .day-name {
+    width: 100px;
+    font-size: 0.875rem;
+  }
+  
+  .day-hours {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .hour-input {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .hour-input input {
+    width: 120px;
+  }
+  
+  .hour-input span {
+    color: var(--text-light);
+  }
+  
+  .day-closed {
+    margin-left: auto;
+  }
+  
+  .payment-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  /* Detalles del negocio */
+  .business-detail-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .business-detail-header {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: -1.5rem -1.5rem 0;
+  }
+  
+  .business-detail-banner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .business-detail-icon {
+    font-size: 2.5rem;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .business-detail-title {
+    flex: 1;
+  }
+  
+  .business-detail-title h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .detail-tabs {
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+  
+  .detail-section {
+    margin-bottom: 2rem;
+  }
+  
+  .detail-section h4 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .detail-row {
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+  
+  .detail-label {
+    font-weight: 500;
+    width: 200px;
+    color: var(--text-light);
+  }
+  
+  .location-map {
+    margin-top: 1rem;
+    height: 200px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .location-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .map-pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    font-size: 2rem;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+  }
+  
+  .business-hours-display {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .hour-row {
+    display: flex;
+    font-size: 0.875rem;
+  }
+  
+  .hour-row .day {
+    width: 100px;
+    font-weight: 500;
+  }
+  
+  .inventory-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .category-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .category-name {
+    width: 120px;
+    font-size: 0.875rem;
+  }
+  
+  .category-count {
+    width: 120px;
+    text-align: right;
+    font-size: 0.875rem;
+    color: var(--text-light);
+  }
+  
+  .category-bar-container {
+    flex: 1;
+    height: 1.5rem;
+    background-color: var(--light-bg);
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  
+  .category-bar-fill {
+    height: 100%;
+    background-color: var(--primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    min-width: 30px;
+  }
+  
+  .top-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .top-product {
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .product-img {
+    height: 120px;
+    overflow: hidden;
+  }
+  
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .product-info {
+    padding: 0.75rem;
+  }
+  
+  .product-info h5 {
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .product-info p {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin: 0;
+  }
+  
+  .sales-chart,
+  .performance-chart {
+    width: 100%;
+    height: 300px;
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sales-chart img,
+  .performance-chart img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .recent-transactions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .transaction {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .transaction-date {
+    width: 100px;
+  }
+  
+  .transaction-id {
+    width: 100px;
+    color: var(--text-light);
+  }
+  
+  .transaction-customer {
+    flex: 1;
+  }
+  
+  .transaction-amount {
+    font-weight: 600;
+  }
+  
+  .team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+  
+  .member-avatar {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    background-color: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+  
+  .member-info {
+    text-align: center;
+  }
+  
+  .member-info h5 {
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .member-info p {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin: 0;
+  }
+  
+  .performance-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .performance-item {
+    flex: 1;
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+  
+  .item-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+  
+  .item-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .business-detail-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .performance-summary {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .map-container {
+      height: 300px;
+    }
+    
+    .map-controls {
+      flex-wrap: wrap;
+    }
+    
+    .team-members {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    
+    .business-day {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    
+    .day-hours {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    
+    .business-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .detail-row {
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+    
+    .detail-label {
+      width: 100%;
+      margin-bottom: 0.25rem;
+    }
+    
+    .hour-row {
+      flex-direction: column;
+      margin-bottom: 0.5rem;
+    }
+    
+    .hour-row .day {
+      width: 100%;
+      margin-bottom: 0.25rem;
+    }
+    
+    .category-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    
+    .category-name,
+    .category-count {
+      width: 100%;
+      text-align: left;
+    }
+    
+    .transaction {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    
+    .transaction-date,
+    .transaction-id,
+    .transaction-customer,
+    .transaction-amount {
+      width: 100%;
+    }
+  }

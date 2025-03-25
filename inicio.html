@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Administrativo - Hugo Tecnología</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/tables.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">HT</div>
+        <h1>Hugo Tecnología</h1>
+      </div>
+      
+      <div class="nav-item active">
+        <i>📊</i> Dashboard
+      </div>
+      <div class="nav-item">
+        <i>📦</i> Inventario
+      </div>
+      <div class="nav-item">
+        <i>🏪</i> Negocios
+      </div>
+      <div class="nav-item">
+        <i>🛒</i> Ventas
+      </div>
+      <div class="nav-item">
+        <i>👥</i> Usuarios
+      </div>
+      <div class="nav-item">
+        <i>📝</i> Reportes
+      </div>
+      <div class="nav-item">
+        <i>⚙️</i> Configuración
+      </div>
+      
+      <div class="user-info">
+        <div class="user-avatar">
+          <i>👤</i>
+        </div>
+        <div class="user-details">
+          <h4>Admin User</h4>
+          <p>Administrador</p>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div class="header-title">
+          <h2>Dashboard</h2>
+          <p>Bienvenido al panel de administración de Hugo Tecnología</p>
+        </div>
+        
+        <div class="search-bar">
+          <i>🔍</i>
+          <input type="text" placeholder="Buscar productos, usuarios o negocios...">
+        </div>
+      </div>
+      
+      <!-- Statistics -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Total de Productos</h3>
+          <div class="stat-value">2,543</div>
+          <div class="stat-change positive">
+            <i>↑</i> 12.5% desde el mes pasado
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Ventas del Mes</h3>
+          <div class="stat-value">$45,675.00</div>
+          <div class="stat-change positive">
+            <i>↑</i> 8.3% desde el mes pasado
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Negocios Activos</h3>
+          <div class="stat-value">12</div>
+          <div class="stat-change positive">
+            <i>↑</i> 2 nuevos negocios
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Productos de Bajo Stock</h3>
+          <div class="stat-value">47</div>
+          <div class="stat-change negative">
+            <i>↑</i> 5 más desde la semana pasada
+          </div>
+        </div>
+      </div>
+      
+      <!-- Inventory Management -->
+      <div class="content-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Gestión de Inventario</h3>
+            <button class="btn btn-primary" data-modal="nuevoProducto">+ Nuevo Producto</button>
+          </div>
+          
+          <div class="tab-container">
+            <div class="tabs">
+              <div class="tab active">Todos los Productos</div>
+              <div class="tab">Bajo Stock</div>
+              <div class="tab">Por Negocio</div>
+            </div>
+          </div>
+          
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Producto</th>
+                  <th>Negocio</th>
+                  <th>Stock</th>
+                  <th>P. Compra</th>
+                  <th>P. Venta Detal</th>
+                  <th>P. Venta Mayor</th>
+                  <th>P. Téc. Local</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#PR001</td>
+                  <td>Laptop HP 15-dy2095wm</td>
+                  <td>Tienda Central</td>
+                  <td>24 unid.</td>
+                  <td>$450.00</td>
+                  <td>$599.99</td>
+                  <td>$549.99</td>
+                  <td>$520.00</td>
+                  <td><span class="badge badge-success">En stock</span></td>
+                  <td>
+                    <button class="btn btn-secondary">Editar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#PR002</td>
+                  <td>Monitor Samsung 24"</td>
+                  <td>Tienda Oeste</td>
+                  <td>12 unid.</td>
+                  <td>$120.00</td>
+                  <td>$179.99</td>
+                  <td>$165.00</td>
+                  <td>$155.00</td>
+                  <td><span class="badge badge-success">En stock</span></td>
+                  <td>
+                    <button class="btn btn-secondary">Editar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#PR003</td>
+                  <td>Teclado Mecánico RGB</td>
+                  <td>Tienda Central</td>
+                  <td>5 unid.</td>
+                  <td>$40.00</td>
+                  <td>$69.99</td>
+                  <td>$62.50</td>
+                  <td>$59.99</td>
+                  <td><span class="badge badge-warning">Bajo stock</span></td>
+                  <td>
+                    <button class="btn btn-secondary">Editar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#PR004</td>
+                  <td>Disco SSD 500GB</td>
+                  <td>Tienda Sur</td>
+                  <td>0 unid.</td>
+                  <td>$55.00</td>
+                  <td>$89.99</td>
+                  <td>$79.99</td>
+                  <td>$75.00</td>
+                  <td><span class="badge badge-danger">Sin stock</span></td>
+                  <td>
+                    <button class="btn btn-secondary">Editar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#PR005</td>
+                  <td>Mouse Inalámbrico</td>
+                  <td>Tienda Norte</td>
+                  <td>32 unid.</td>
+                  <td>$18.00</td>
+                  <td>$29.99</td>
+                  <td>$26.99</td>
+                  <td>$24.50</td>
+                  <td><span class="badge badge-success">En stock</span></td>
+                  <td>
+                    <button class="btn btn-secondary">Editar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="pagination">
+            <div class="page-item active">1</div>
+            <div class="page-item">2</div>
+            <div class="page-item">3</div>
+            <div class="page-item">4</div>
+            <div class="page-item">5</div>
+          </div>
+        </div>
+        
+        <!-- User Management -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Gestión de Usuarios</h3>
+            <button class="btn btn-primary" data-modal="nuevoUsuario">+ Nuevo Usuario</button>
+          </div>
+          
+          <div class="tab-container">
+            <div class="tabs">
+              <div class="tab active">Todos los Usuarios</div>
+              <div class="tab">Administrativos</div>
+              <div class="tab">Clientes</div>
+              <div class="tab">Técnicos Locales</div>
+              <div class="tab">Técnicos Externos</div>
+            </div>
+          </div>
+          
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Email</th>
+                  <th>Tipo</th>
+                  <th>Negocio</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#U001</td>
+                  <td>Juan Pérez</td>
+                  <td>juan.perez@example.com</td>
+                  <td>Administrativo</td>
+                  <td>Todos</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>
+                    <button class="btn btn-secondary">Editar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#U002</td>
+                  <td>María Gómez</td>
+                  <td>maria.gomez@example.com</td>
+                  <td>Cliente</td>
+                  <td>N/A</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>
+                    <button class="btn btn-secondary">Editar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#U003</td>
+                  <td>Carlos Rodríguez</td>
+                  <td>carlos.rodriguez@example.com</td>
+                  <td>Técnico Local</td>
+                  <td>Tienda Central</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>
+                    <button class="btn btn-secondary">Editar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#U004</td>
+                  <td>Ana Martínez</td>
+                  <td>ana.martinez@example.com</td>
+                  <td>Técnico Externo</td>
+                  <td>N/A</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>
+                    <button class="btn btn-secondary">Editar</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#U005</td>
+                  <td>Luis Sánchez</td>
+                  <td>luis.sanchez@example.com</td>
+                  <td>Administrativo</td>
+                  <td>Tienda Norte</td>
+                  <td><span class="badge badge-warning">Inactivo</span></td>
+                  <td>
+                    <button class="btn btn-secondary">Editar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="pagination">
+            <div class="page-item active">1</div>
+            <div class="page-item">2</div>
+            <div class="page-item">3</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Modal Nuevo Producto -->
+  <div id="nuevoProducto" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Nuevo Producto</h3>
+        <button class="close-button" data-close="nuevoProducto">×</button>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Nombre del Producto</label>
+        <input type="text" class="form-control" placeholder="Ingrese el nombre del producto">
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Categoría</label>
+          <select class="form-control">
+            <option>Computadoras</option>
+            <option>Periféricos</option>
+            <option>Almacenamiento</option>
+            <option>Redes</option>
+            <option>Accesorios</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Negocio</label>
+          <select class="form-control">
+            <option>Tienda Central</option>
+            <option>Tienda Norte</option>
+            <option>Tienda Sur</option>
+            <option>Tienda Oeste</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Descripción</label>
+        <textarea class="form-control" rows="3" placeholder="Descripción del producto"></textarea>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Stock Inicial</label>
+          <input type="number" class="form-control" placeholder="0">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Stock Mínimo</label>
+          <input type="number" class="form-control" placeholder="0">
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Precio de Compra ($)</label>
+          <input type="number" step="0.01" class="form-control" placeholder="0.00">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Precio de Venta Detal ($)</label>
+          <input type="number" step="0.01" class="form-control" placeholder="0.00">
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Precio de Venta al Mayor ($)</label>
+          <input type="number" step="0.01" class="form-control" placeholder="0.00">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Precio para Técnicos Locales ($)</label>
+          <input type="number" step="0.01" class="form-control" placeholder="0.00">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Código de Barras / SKU</label>
+        <input type="text" class="form-control" placeholder="Ingrese código">
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close="nuevoProducto">Cancelar</button>
+        <button class="btn btn-primary">Guardar Producto</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Nuevo Usuario -->
+  <div id="nuevoUsuario" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Nuevo Usuario</h3>
+        <button class="close-button" data-close="nuevoUsuario">×</button>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-control" placeholder="Nombre">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Apellido</label>
+          <input type="text" class="form-control" placeholder="Apellido">
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" placeholder="email@example.com">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Teléfono</label>
+          <input type="tel" class="form-control" placeholder="+123456789">
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Tipo de Usuario</label>
+          <select class="form-control">
+            <option>Administrativo</option>
+            <option>Cliente</option>
+            <option>Técnico Local</option>
+            <option>Técnico Externo</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Negocio</label>
+          <select class="form-control">
+            <option>Todos</option>
+            <option>Tienda Central</option>
+            <option>Tienda Norte</option>
+            <option>Tienda Sur</option>
+            <option>Tienda Oeste</option>
+            <option>N/A</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Dirección</label>
+        <input type="text" class="form-control" placeholder="Dirección">
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Contraseña</label>
+          <input type="password" class="form-control">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Confirmar Contraseña</label>
+          <input type="password" class="form-control">
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close="nuevoUsuario">Cancelar</button>
+        <button class="btn btn-primary">Guardar Usuario</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

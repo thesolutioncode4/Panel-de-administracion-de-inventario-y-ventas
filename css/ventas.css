@@ -1,0 +1,594 @@
+/* Estilos específicos para la página de ventas */
+
+/* Cards grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Sales chart */
+  .sales-chart-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .date-range {
+    display: flex;
+    gap: 0.25rem;
+  }
+  
+  .chart-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .dropdown-filter {
+    min-width: 200px;
+  }
+  
+  .sales-chart {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: var(--light-bg);
+  }
+  
+  .sales-chart img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Pie chart and legend */
+  .pie-chart {
+    height: 200px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pie-chart img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
+  .chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .color-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+  }
+  
+  /* Bar chart */
+  .bar-chart {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bar-chart img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
+  /* Top customers list */
+  .customers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .customer-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: var(--light-bg);
+  }
+  
+  .customer-rank {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-right: 1rem;
+  }
+  
+  .customer-info {
+    flex: 1;
+  }
+  
+  .customer-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .customer-details {
+    font-size: 0.75rem;
+    color: var(--text-light);
+  }
+  
+  .customer-trend {
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  
+  .customer-trend.positive {
+    color: var(--success);
+  }
+  
+  .customer-trend.negative {
+    color: var(--danger);
+  }
+  
+  /* Products table */
+  .product-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .product-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 0.25rem;
+    overflow: hidden;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .product-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .trend {
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  
+  .trend.positive {
+    color: var(--success);
+  }
+  
+  .trend.negative {
+    color: var(--danger);
+  }
+  
+  /* Kanban board view */
+  .kanban-view {
+    display: none;
+  }
+  
+  .kanban-view.active {
+    display: block;
+  }
+  
+  .kanban-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .kanban-column {
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    min-height: 400px;
+  }
+  
+  .kanban-column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .kanban-column-header h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .kanban-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .kanban-card {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .kanban-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+  
+  .kanban-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background-color: var(--light-bg);
+    font-size: 0.875rem;
+    color: var(--text-light);
+  }
+  
+  .kanban-card .card-body {
+    padding: 0.75rem;
+  }
+  
+  .kanban-card .customer-info {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .kanban-card .store-info,
+  .kanban-card .products-info {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+  }
+  
+  .kanban-card .total-info {
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  
+  .kanban-card .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .kanban-card .action-buttons {
+    display: flex;
+    gap: 0.25rem;
+  }
+  
+  /* Nueva venta modal */
+  .modal-lg {
+    max-width: 900px;
+  }
+  
+  .sale-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .sale-details,
+  .products-section,
+  .payment-section {
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+    padding: 1rem;
+    background-color: var(--white);
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .section-header h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .input-with-button {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .input-with-button .form-control {
+    flex: 1;
+  }
+  
+  .products-table {
+    margin-bottom: 1rem;
+  }
+  
+  .products-table table {
+    margin-bottom: 0;
+  }
+  
+  .product-row td {
+    vertical-align: middle;
+  }
+  
+  .remove-product {
+    color: var(--danger);
+  }
+  
+  .sale-summary {
+    align-self: flex-end;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .summary-section {
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+    padding: 1rem;
+    background-color: var(--white);
+  }
+  
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .summary-row.total {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  
+  /* Ver detalles de venta modal */
+  .sale-detail-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .sale-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sale-id {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .sale-id h4 {
+    margin: 0;
+  }
+  
+  .sale-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .info-card {
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .info-card h5 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-light);
+  }
+  
+  .info-content p {
+    margin: 0 0 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .info-content p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .products-detail {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+  }
+  
+  .products-detail h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .sale-summary-detail {
+    align-self: flex-end;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .summary-list {
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .summary-item.total {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  
+  .sale-timeline {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+  }
+  
+  .sale-timeline h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .timeline {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 6px;
+    width: 2px;
+    background-color: var(--border);
+  }
+  
+  .timeline-item {
+    position: relative;
+    padding-bottom: 1.5rem;
+  }
+  
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.5rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--primary);
+  }
+  
+  .timeline-date {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+  }
+  
+  .timeline-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.875rem;
+    color: var(--text-light);
+  }
+  
+  /* Badge colors */
+  .badge-info {
+    background-color: rgba(54, 185, 204, 0.1);
+    color: #36b9cc;
+  }
+  
+  .badge-primary {
+    background-color: rgba(78, 115, 223, 0.1);
+    color: #4e73df;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 992px) {
+    .chart-controls {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    
+    .sale-info-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .kanban-board {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .sale-info-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .sale-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .date-range {
+      flex-wrap: wrap;
+    }
+    
+    .sale-summary {
+      max-width: 100%;
+    }
+    
+    .sale-summary-detail {
+      max-width: 100%;
+    }
+    
+    .products-table table {
+      min-width: 600px;
+    }
+  }

@@ -1,0 +1,2382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuración - Hugo Tecnología</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/tables.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/configuracion.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">HT</div>
+        <h1>Hugo Tecnología</h1>
+      </div>
+      
+      <div class="nav-item">
+        <i>📊</i> Dashboard
+      </div>
+      <div class="nav-item">
+        <i>📦</i> Inventario
+      </div>
+      <div class="nav-item">
+        <i>🏪</i> Negocios
+      </div>
+      <div class="nav-item">
+        <i>🛒</i> Ventas
+      </div>
+      <div class="nav-item">
+        <i>👥</i> Usuarios
+      </div>
+      <div class="nav-item">
+        <i>📝</i> Reportes
+      </div>
+      <div class="nav-item active">
+        <a href="/configuracion.html">
+          <i>⚙️</i> Configuración
+        </a>
+      </div>
+      
+      <div class="user-info">
+        <div class="user-avatar">
+          <i>👤</i>
+        </div>
+        <div class="user-details">
+          <h4>Admin User</h4>
+          <p>Administrador</p>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div class="header-title">
+          <h2>Configuración del Sistema</h2>
+          <p>Administre las preferencias y configuraciones del sistema</p>
+        </div>
+      </div>
+      
+      <!-- Settings Tabs -->
+      <div class="settings-container">
+        <div class="settings-nav">
+          <div class="settings-nav-item active" data-tab="general">
+            <i>🔧</i> General
+          </div>
+          <div class="settings-nav-item" data-tab="company">
+            <i>🏢</i> Empresa
+          </div>
+          <div class="settings-nav-item" data-tab="users">
+            <i>👥</i> Usuarios y Permisos
+          </div>
+          <div class="settings-nav-item" data-tab="stores">
+            <i>🏪</i> Tiendas
+          </div>
+          <div class="settings-nav-item" data-tab="products">
+            <i>📦</i> Productos e Inventario
+          </div>
+          <div class="settings-nav-item" data-tab="sales">
+            <i>🛒</i> Ventas
+          </div>
+          <div class="settings-nav-item" data-tab="taxes">
+            <i>💰</i> Impuestos
+          </div>
+          <div class="settings-nav-item" data-tab="email">
+            <i>✉️</i> Email y Notificaciones
+          </div>
+          <div class="settings-nav-item" data-tab="integrations">
+            <i>🔌</i> Integraciones
+          </div>
+          <div class="settings-nav-item" data-tab="security">
+            <i>🔒</i> Seguridad
+          </div>
+          <div class="settings-nav-item" data-tab="system">
+            <i>💻</i> Sistema
+          </div>
+          <div class="settings-nav-item" data-tab="backup">
+            <i>📦</i> Respaldo y Restauración
+          </div>
+        </div>
+        
+        <div class="settings-content">
+          <!-- General Settings Tab -->
+          <div class="settings-tab active" id="general-tab">
+            <div class="settings-header">
+              <h3>Configuración General</h3>
+            </div>
+            
+            <form id="general-settings-form" class="settings-form">
+              <div class="settings-section">
+                <h4>Configuración Regional</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Idioma Predeterminado</label>
+                    <select class="form-control" name="default_language">
+                      <option value="es">Español</option>
+                      <option value="en">Inglés</option>
+                      <option value="fr">Francés</option>
+                      <option value="pt">Portugués</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Zona Horaria</label>
+                    <select class="form-control" name="timezone">
+                      <option value="America/Mexico_City">Ciudad de México (GMT-6)</option>
+                      <option value="America/New_York">Nueva York (GMT-5)</option>
+                      <option value="America/Los_Angeles">Los Ángeles (GMT-8)</option>
+                      <option value="America/Bogota">Bogotá (GMT-5)</option>
+                      <option value="America/Caracas">Caracas (GMT-4)</option>
+                      <option value="Europe/Madrid">Madrid (GMT+1)</option>
+                      <option value="Europe/London">Londres (GMT+0)</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Formato de Fecha</label>
+                    <select class="form-control" name="date_format">
+                      <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                      <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                      <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                      <option value="DD-MM-YYYY">DD-MM-YYYY</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Formato de Hora</label>
+                    <select class="form-control" name="time_format">
+                      <option value="24h">24 horas</option>
+                      <option value="12h">12 horas (AM/PM)</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Moneda Predeterminada</label>
+                    <select class="form-control" name="default_currency">
+                      <option value="MXN">Bolivares (VEZ)</option>
+                      <option value="USD">Dólar Estadounidense (USD)</option>
+                      <option value="EUR">Euro (EUR)</option>
+                      <option value="COP">Peso Colombiano (COP)</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Símbolo de Moneda</label>
+                    <select class="form-control" name="currency_symbol_position">
+                      <option value="before">Antes del monto ($100)</option>
+                      <option value="after">Después del monto (100$)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Preferencias de Visualización</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Tema del Sistema</label>
+                    <select class="form-control" name="theme">
+                      <option value="light">Claro</option>
+                      <option value="dark">Oscuro</option>
+                      <option value="auto">Automático (según sistema)</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Color Principal</label>
+                    <select class="form-control" name="primary_color">
+                      <option value="blue">Azul</option>
+                      <option value="green">Verde</option>
+                      <option value="purple">Púrpura</option>
+                      <option value="red">Rojo</option>
+                      <option value="orange">Naranja</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Ítems por Página</label>
+                    <select class="form-control" name="items_per_page">
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Vista Predeterminada</label>
+                    <select class="form-control" name="default_view">
+                      <option value="list">Lista</option>
+                      <option value="grid">Cuadrícula</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="animations_enabled" name="animations_enabled" checked>
+                    <label class="form-check-label" for="animations_enabled">Habilitar animaciones</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Configuración de Dashboard</h4>
+                
+                <div class="form-group">
+                  <label class="form-label">Período Predeterminado</label>
+                  <select class="form-control" name="dashboard_default_period">
+                    <option value="today">Hoy</option>
+                    <option value="yesterday">Ayer</option>
+                    <option value="week" selected>Última Semana</option>
+                    <option value="month">Último Mes</option>
+                    <option value="year">Último Año</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Widgets Visibles</label>
+                  <div class="checkbox-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="widget_sales" name="widgets[]" value="sales" checked>
+                      <label class="form-check-label" for="widget_sales">Ventas</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="widget_inventory" name="widgets[]" value="inventory" checked>
+                      <label class="form-check-label" for="widget_inventory">Inventario</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="widget_customers" name="widgets[]" value="customers" checked>
+                      <label class="form-check-label" for="widget_customers">Clientes</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="widget_orders" name="widgets[]" value="orders" checked>
+                      <label class="form-check-label" for="widget_orders">Órdenes</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="widget_revenue" name="widgets[]" value="revenue" checked>
+                      <label class="form-check-label" for="widget_revenue">Ingresos</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="widget_activity" name="widgets[]" value="activity" checked>
+                      <label class="form-check-label" for="widget_activity">Actividad Reciente</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <button type="reset" class="btn btn-secondary">Restaurar Valores</button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Company Settings Tab -->
+          <div class="settings-tab" id="company-tab">
+            <div class="settings-header">
+              <h3>Información de la Empresa</h3>
+            </div>
+            
+            <form id="company-settings-form" class="settings-form">
+              <div class="settings-section">
+                <h4>Datos Generales</h4>
+                
+                <div class="form-row">
+                  <div class="company-logo-container">
+                    <div class="company-logo">
+                      <img src="/img/1726268727837.png" alt="Logo de la empresa" id="company-logo-preview">
+                    </div>
+                    <div class="company-logo-actions">
+                      <label class="btn btn-secondary btn-sm">
+                        <input type="file" id="company-logo-upload" name="company_logo" accept="image/*" hidden>
+                        Cambiar Logo
+                      </label>
+                      <button type="button" class="btn btn-danger btn-sm" id="remove-company-logo">Eliminar</button>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Nombre Legal <span class="required">*</span></label>
+                    <input type="text" class="form-control" name="company_legal_name" value="Hugo Tecnología S.A. de C.V." required>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Nombre Comercial</label>
+                    <input type="text" class="form-control" name="company_name" value="Hugo Tecnología">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Identificación Fiscal <span class="required">*</span></label>
+                    <input type="text" class="form-control" name="tax_id" value="HTE980523AB4" required>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Industria</label>
+                    <select class="form-control" name="industry">
+                      <option value="technology" selected>Tecnología</option>
+                      <option value="retail">Venta al por menor</option>
+                      <option value="services">Servicios</option>
+                      <option value="manufacturing">Manufactura</option>
+                      <option value="other">Otro</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Año de Fundación</label>
+                    <input type="number" class="form-control" name="founded_year" value="1998" min="1900" max="2025">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Contacto Principal</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Email <span class="required">*</span></label>
+                    <input type="email" class="form-control" name="company_email" value="contacto@hugotecnologia.com" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Teléfono <span class="required">*</span></label>
+                    <input type="tel" class="form-control" name="company_phone" value="+52 55 1234 5678" required>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Sitio Web</label>
+                    <input type="url" class="form-control" name="company_website" value="https://www.hugotecnologia.com">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Fax</label>
+                    <input type="tel" class="form-control" name="company_fax" value="+52 55 8765 4321">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Dirección</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Calle y Número <span class="required">*</span></label>
+                    <input type="text" class="form-control" name="address_street" value="Av. Tecnológica #123" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Colonia</label>
+                    <input type="text" class="form-control" name="address_colony" value="Col. Centro">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Ciudad <span class="required">*</span></label>
+                    <input type="text" class="form-control" name="address_city" value="Rubio" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Estado <span class="required">*</span></label>
+                    <input type="text" class="form-control" name="address_state" value="Tachira" required>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Código Postal <span class="required">*</span></label>
+                    <input type="text" class="form-control" name="address_zip" value="06000" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">País <span class="required">*</span></label>
+                    <select class="form-control" name="address_country" required>
+                      <option value="VE" selected>Venezuela</option>
+                      <option value="MX">México</option>
+                      <option value="US">Estados Unidos</option>
+                      <option value="CA">Canadá</option>
+                      <option value="CO">Colombia</option>
+                      <option value="ES">España</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Redes Sociales</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Facebook</label>
+                    <div class="input-with-icon">
+                      <span class="input-icon">📱</span>
+                      <input type="text" class="form-control" name="social_facebook" value="hugotecnologia">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Twitter / X</label>
+                    <div class="input-with-icon">
+                      <span class="input-icon">📱</span>
+                      <input type="text" class="form-control" name="social_twitter" value="hugotecnologia">
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Instagram</label>
+                    <div class="input-with-icon">
+                      <span class="input-icon">📱</span>
+                      <input type="text" class="form-control" name="social_instagram" value="hugotecnologia">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">LinkedIn</label>
+                    <div class="input-with-icon">
+                      <span class="input-icon">📱</span>
+                      <input type="text" class="form-control" name="social_linkedin" value="hugo-tecnologia">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <button type="reset" class="btn btn-secondary">Restaurar Valores</button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Other tabs will be added here... -->
+          
+          <!-- Users & Permissions Tab -->
+          <div class="settings-tab" id="users-tab">
+            <div class="settings-header">
+              <h3>Configuración de Usuarios y Permisos</h3>
+            </div>
+            
+            <div class="settings-section">
+              <h4>Configuración de Cuenta</h4>
+              
+              <form id="user-settings-form" class="settings-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Política de Contraseñas</label>
+                    <select class="form-control" name="password_policy">
+                      <option value="basic">Básica (mínimo 8 caracteres)</option>
+                      <option value="medium" selected>Media (8 caracteres, 1 mayúscula, 1 número)</option>
+                      <option value="strong">Fuerte (8 caracteres, mayúsculas, números, símbolos)</option>
+                      <option value="custom">Personalizada</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Caducidad de Contraseña</label>
+                    <select class="form-control" name="password_expiry">
+                      <option value="never">Nunca</option>
+                      <option value="30">30 días</option>
+                      <option value="60">60 días</option>
+                      <option value="90" selected>90 días</option>
+                      <option value="180">180 días</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Intentos de Inicio de Sesión</label>
+                    <select class="form-control" name="login_attempts">
+                      <option value="3">3 intentos</option>
+                      <option value="5" selected>5 intentos</option>
+                      <option value="10">10 intentos</option>
+                      <option value="unlimited">Ilimitados</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Duración del Bloqueo</label>
+                    <select class="form-control" name="lockout_duration">
+                      <option value="15">15 minutos</option>
+                      <option value="30" selected>30 minutos</option>
+                      <option value="60">1 hora</option>
+                      <option value="120">2 horas</option>
+                      <option value="manual">Desbloqueo Manual</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="require_2fa" name="require_2fa">
+                    <label class="form-check-label" for="require_2fa">Requerir autenticación de dos factores para todos los usuarios</label>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="session_timeout" name="session_timeout" checked>
+                    <label class="form-check-label" for="session_timeout">Cerrar sesión después de un período de inactividad</label>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Tiempo de Inactividad</label>
+                    <select class="form-control" name="session_timeout_duration">
+                      <option value="15">15 minutos</option>
+                      <option value="30" selected>30 minutos</option>
+                      <option value="60">1 hora</option>
+                      <option value="120">2 horas</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                  <button type="reset" class="btn btn-secondary">Restaurar Valores</button>
+                </div>
+              </form>
+            </div>
+            
+            <div class="settings-section">
+              <h4>Roles y Permisos</h4>
+              
+              <div class="roles-container">
+                <div class="roles-header">
+                  <div class="roles-title">Roles Disponibles</div>
+                  <button class="btn btn-primary btn-sm" data-modal="newRoleModal">
+                    <i>✚</i> Nuevo Rol
+                  </button>
+                </div>
+                
+                <div class="roles-list">
+                  <div class="role-item">
+                    <div class="role-info">
+                      <h5>Administrador</h5>
+                      <p>Acceso completo al sistema</p>
+                    </div>
+                    <div class="role-actions">
+                      <button class="btn-icon" title="Editar rol" data-modal="editRoleModal" data-role="admin"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver permisos" data-modal="viewPermissionsModal" data-role="admin"><i>👁️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="role-item">
+                    <div class="role-info">
+                      <h5>Gerente</h5>
+                      <p>Acceso a reportes y gestión básica</p>
+                    </div>
+                    <div class="role-actions">
+                      <button class="btn-icon" title="Editar rol" data-modal="editRoleModal" data-role="manager"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver permisos" data-modal="viewPermissionsModal" data-role="manager"><i>👁️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="role-item">
+                    <div class="role-info">
+                      <h5>Vendedor</h5>
+                      <p>Acceso a ventas e inventario</p>
+                    </div>
+                    <div class="role-actions">
+                      <button class="btn-icon" title="Editar rol" data-modal="editRoleModal" data-role="salesperson"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver permisos" data-modal="viewPermissionsModal" data-role="salesperson"><i>👁️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="role-item">
+                    <div class="role-info">
+                      <h5>Técnico</h5>
+                      <p>Acceso a servicios técnicos</p>
+                    </div>
+                    <div class="role-actions">
+                      <button class="btn-icon" title="Editar rol" data-modal="editRoleModal" data-role="technician"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver permisos" data-modal="viewPermissionsModal" data-role="technician"><i>👁️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="role-item">
+                    <div class="role-info">
+                      <h5>Cliente</h5>
+                      <p>Acceso limitado a su información</p>
+                    </div>
+                    <div class="role-actions">
+                      <button class="btn-icon" title="Editar rol" data-modal="editRoleModal" data-role="customer"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver permisos" data-modal="viewPermissionsModal" data-role="customer"><i>👁️</i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Store Settings Tab -->
+          <div class="settings-tab" id="stores-tab">
+            <div class="settings-header">
+              <h3>Configuración de Tiendas</h3>
+              <button class="btn btn-primary" data-modal="newStoreModal">
+                <i>✚</i> Nueva Tienda
+              </button>
+            </div>
+            
+            <div class="settings-section">
+              <div class="stores-list">
+                <div class="store-card">
+                  <div class="store-header">
+                    <div class="store-name">Tienda Central</div>
+                    <div class="store-status active">Activa</div>
+                  </div>
+                  <div class="store-details">
+                    <div class="store-info">
+                      <div class="info-item">
+                        <span class="info-label">Dirección:</span>
+                        <span class="info-value">Av. Tecnológica #123, Col. Centro, CDMX</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Teléfono:</span>
+                        <span class="info-value">+52 55 1234 5678</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">central@hugotecnologia.com</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Gerente:</span>
+                        <span class="info-value">María Gómez</span>
+                      </div>
+                    </div>
+                    <div class="store-meta">
+                      <div class="meta-item">
+                        <span class="meta-value">15</span>
+                        <span class="meta-label">Empleados</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-value">1245</span>
+                        <span class="meta-label">Productos</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="store-actions">
+                    <button class="btn btn-sm btn-secondary" data-modal="editStoreModal" data-store="central">Editar</button>
+                    <button class="btn btn-sm btn-secondary" data-modal="viewStoreModal" data-store="central">Ver Detalles</button>
+                  </div>
+                </div>
+                
+                <div class="store-card">
+                  <div class="store-header">
+                    <div class="store-name">Tienda Norte</div>
+                    <div class="store-status active">Activa</div>
+                  </div>
+                  <div class="store-details">
+                    <div class="store-info">
+                      <div class="info-item">
+                        <span class="info-label">Dirección:</span>
+                        <span class="info-value">Av. Norte #456, Col. Industrial, CDMX</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Teléfono:</span>
+                        <span class="info-value">+52 55 2345 6789</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">norte@hugotecnologia.com</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Gerente:</span>
+                        <span class="info-value">Carlos Rodríguez</span>
+                      </div>
+                    </div>
+                    <div class="store-meta">
+                      <div class="meta-item">
+                        <span class="meta-value">10</span>
+                        <span class="meta-label">Empleados</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-value">985</span>
+                        <span class="meta-label">Productos</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="store-actions">
+                    <button class="btn btn-sm btn-secondary" data-modal="editStoreModal" data-store="norte">Editar</button>
+                    <button class="btn btn-sm btn-secondary" data-modal="viewStoreModal" data-store="norte">Ver Detalles</button>
+                  </div>
+                </div>
+                
+                <div class="store-card">
+                  <div class="store-header">
+                    <div class="store-name">Tienda Sur</div>
+                    <div class="store-status active">Activa</div>
+                  </div>
+                  <div class="store-details">
+                    <div class="store-info">
+                      <div class="info-item">
+                        <span class="info-label">Dirección:</span>
+                        <span class="info-value">Av. Sur #789, Col. Jardines, CDMX</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Teléfono:</span>
+                        <span class="info-value">+52 55 3456 7890</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">sur@hugotecnologia.com</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Gerente:</span>
+                        <span class="info-value">Ana Martínez</span>
+                      </div>
+                    </div>
+                    <div class="store-meta">
+                      <div class="meta-item">
+                        <span class="meta-value">8</span>
+                        <span class="meta-label">Empleados</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-value">820</span>
+                        <span class="meta-label">Productos</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="store-actions">
+                    <button class="btn btn-sm btn-secondary" data-modal="editStoreModal" data-store="sur">Editar</button>
+                    <button class="btn btn-sm btn-secondary" data-modal="viewStoreModal" data-store="sur">Ver Detalles</button>
+                  </div>
+                </div>
+                
+                <div class="store-card">
+                  <div class="store-header">
+                    <div class="store-name">Tienda Este</div>
+                    <div class="store-status active">Activa</div>
+                  </div>
+                  <div class="store-details">
+                    <div class="store-info">
+                      <div class="info-item">
+                        <span class="info-label">Dirección:</span>
+                        <span class="info-value">Av. Este #321, Col. Moderna, CDMX</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Teléfono:</span>
+                        <span class="info-value">+52 55 4567 8901</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">este@hugotecnologia.com</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Gerente:</span>
+                        <span class="info-value">Roberto Díaz</span>
+                      </div>
+                    </div>
+                    <div class="store-meta">
+                      <div class="meta-item">
+                        <span class="meta-value">6</span>
+                        <span class="meta-label">Empleados</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-value">650</span>
+                        <span class="meta-label">Productos</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="store-actions">
+                    <button class="btn btn-sm btn-secondary" data-modal="editStoreModal" data-store="este">Editar</button>
+                    <button class="btn btn-sm btn-secondary" data-modal="viewStoreModal" data-store="este">Ver Detalles</button>
+                  </div>
+                </div>
+                
+                <div class="store-card">
+                  <div class="store-header">
+                    <div class="store-name">Tienda Oeste</div>
+                    <div class="store-status inactive">Inactiva</div>
+                  </div>
+                  <div class="store-details">
+                    <div class="store-info">
+                      <div class="info-item">
+                        <span class="info-label">Dirección:</span>
+                        <span class="info-value">Av. Oeste #654, Col. Satélite, CDMX</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Teléfono:</span>
+                        <span class="info-value">+52 55 5678 9012</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">oeste@hugotecnologia.com</span>
+                      </div>
+                      <div class="info-item">
+                        <span class="info-label">Gerente:</span>
+                        <span class="info-value">[No asignado]</span>
+                      </div>
+                    </div>
+                    <div class="store-meta">
+                      <div class="meta-item">
+                        <span class="meta-value">0</span>
+                        <span class="meta-label">Empleados</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-value">0</span>
+                        <span class="meta-label">Productos</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="store-actions">
+                    <button class="btn btn-sm btn-secondary" data-modal="editStoreModal" data-store="oeste">Editar</button>
+                    <button class="btn btn-sm btn-secondary" data-modal="viewStoreModal" data-store="oeste">Ver Detalles</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Products & Inventory Tab -->
+          <div class="settings-tab" id="products-tab">
+            <div class="settings-header">
+              <h3>Configuración de Productos e Inventario</h3>
+            </div>
+            
+            <form id="product-settings-form" class="settings-form">
+              <div class="settings-section">
+                <h4>Opciones de Inventario</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Método de Valoración de Inventario</label>
+                    <select class="form-control" name="inventory_valuation_method">
+                      <option value="fifo" selected>FIFO (Primeras Entradas, Primeras Salidas)</option>
+                      <option value="lifo">LIFO (Últimas Entradas, Primeras Salidas)</option>
+                      <option value="average">Costo Promedio</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Alerta de Inventario Bajo</label>
+                    <select class="form-control" name="low_stock_threshold_type">
+                      <option value="fixed">Cantidad Fija</option>
+                      <option value="percentage" selected>Porcentaje</option>
+                      <option value="custom">Personalizado por Producto</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Umbral de Stock Bajo</label>
+                    <div class="input-with-suffix">
+                      <input type="number" class="form-control" name="low_stock_threshold" value="15" min="0" max="100">
+                      <span class="input-suffix">%</span>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Permitir Venta de Productos Agotados</label>
+                    <select class="form-control" name="allow_out_of_stock_sales">
+                      <option value="no">No</option>
+                      <option value="yes">Sí</option>
+                      <option value="backorder" selected>Permitir Pedidos Pendientes</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="manage_inventory" name="manage_inventory" checked>
+                    <label class="form-check-label" for="manage_inventory">Gestionar inventario para todos los productos</label>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="auto_update_inventory" name="auto_update_inventory" checked>
+                    <label class="form-check-label" for="auto_update_inventory">Actualizar inventario automáticamente con ventas</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Categorías de Productos</h4>
+                
+                <div class="categories-container">
+                  <div class="categories-list">
+                    <div class="category-item">
+                      <div class="category-name">Smartphones</div>
+                      <div class="category-actions">
+                        <button type="button" class="btn-icon" title="Editar categoría" data-modal="editCategoryModal" data-category="smartphones"><i>✏️</i></button>
+                      </div>
+                    </div>
+                    
+                    <div class="category-item">
+                      <div class="category-name">Laptops</div>
+                      <div class="category-actions">
+                        <button type="button" class="btn-icon" title="Editar categoría" data-modal="editCategoryModal" data-category="laptops"><i>✏️</i></button>
+                      </div>
+                    </div>
+                    
+                    <div class="category-item">
+                      <div class="category-name">Tablets</div>
+                      <div class="category-actions">
+                        <button type="button" class="btn-icon" title="Editar categoría" data-modal="editCategoryModal" data-category="tablets"><i>✏️</i></button>
+                      </div>
+                    </div>
+                    
+                    <div class="category-item">
+                      <div class="category-name">Televisores</div>
+                      <div class="category-actions">
+                        <button type="button" class="btn-icon" title="Editar categoría" data-modal="editCategoryModal" data-category="tvs"><i>✏️</i></button>
+                      </div>
+                    </div>
+                    
+                    <div class="category-item">
+                      <div class="category-name">Audio</div>
+                      <div class="category-actions">
+                        <button type="button" class="btn-icon" title="Editar categoría" data-modal="editCategoryModal" data-category="audio"><i>✏️</i></button>
+                      </div>
+                    </div>
+                    
+                    <div class="category-item">
+                      <div class="category-name">Accesorios</div>
+                      <div class="category-actions">
+                        <button type="button" class="btn-icon" title="Editar categoría" data-modal="editCategoryModal" data-category="accessories"><i>✏️</i></button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <button type="button" class="btn btn-secondary btn-sm" data-modal="newCategoryModal">
+                    <i>✚</i> Agregar Categoría
+                  </button>
+                </div>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Opciones de Visualización de Productos</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Ordenamiento Predeterminado</label>
+                    <select class="form-control" name="default_product_sort">
+                      <option value="name_asc">Nombre (A-Z)</option>
+                      <option value="name_desc">Nombre (Z-A)</option>
+                      <option value="price_asc">Precio (Menor a Mayor)</option>
+                      <option value="price_desc" selected>Precio (Mayor a Menor)</option>
+                      <option value="newest">Más Recientes Primero</option>
+                      <option value="stock">Stock Disponible</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Productos por Página</label>
+                    <select class="form-control" name="products_per_page">
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="50" selected>50</option>
+                      <option value="100">100</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Atributos Visibles en Lista</label>
+                    <div class="checkbox-group">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="show_sku" name="product_list_attributes[]" value="sku" checked>
+                        <label class="form-check-label" for="show_sku">SKU</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="show_price" name="product_list_attributes[]" value="price" checked>
+                        <label class="form-check-label" for="show_price">Precio</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="show_stock" name="product_list_attributes[]" value="stock" checked>
+                        <label class="form-check-label" for="show_stock">Stock</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="show_category" name="product_list_attributes[]" value="category" checked>
+                        <label class="form-check-label" for="show_category">Categoría</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="show_brand" name="product_list_attributes[]" value="brand" checked>
+                        <label class="form-check-label" for="show_brand">Marca</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <button type="reset" class="btn btn-secondary">Restaurar Valores</button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Sales Settings Tab -->
+          <div class="settings-tab" id="sales-tab">
+            <div class="settings-header">
+              <h3>Configuración de Ventas</h3>
+            </div>
+            
+            <form id="sales-settings-form" class="settings-form">
+              <div class="settings-section">
+                <h4>Opciones Generales</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Prefijo de Factura</label>
+                    <input type="text" class="form-control" name="invoice_prefix" value="HT-" maxlength="10">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Inicio de Numeración</label>
+                    <input type="number" class="form-control" name="invoice_starting_number" value="10001" min="1">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Política de Devoluciones</label>
+                    <select class="form-control" name="return_policy">
+                      <option value="7">7 días</option>
+                      <option value="14">14 días</option>
+                      <option value="30" selected>30 días</option>
+                      <option value="60">60 días</option>
+                      <option value="90">90 días</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Período de Garantía Predeterminado</label>
+                    <select class="form-control" name="default_warranty_period">
+                      <option value="none">Sin garantía</option>
+                      <option value="3m">3 meses</option>
+                      <option value="6m">6 meses</option>
+                      <option value="1y" selected>1 año</option>
+                      <option value="2y">2 años</option>
+                      <option value="3y">3 años</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Estado Inicial de Venta</label>
+                    <select class="form-control" name="default_order_status">
+                      <option value="pending" selected>Pendiente</option>
+                      <option value="processing">En Proceso</option>
+                      <option value="completed">Completado</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Descuento Máximo Permitido</label>
+                    <div class="input-with-suffix">
+                      <input type="number" class="form-control" name="maximum_discount" value="30" min="0" max="100">
+                      <span class="input-suffix">%</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="require_approval" name="require_approval_for_discounts" checked>
+                    <label class="form-check-label" for="require_approval">Requerir aprobación para descuentos mayores al 15%</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Métodos de Pago</h4>
+                
+                <div class="payment-methods-container">
+                  <div class="payment-method-item">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="payment_cash" name="payment_methods[]" value="cash" checked>
+                      <label class="form-check-label payment-method-label" for="payment_cash">
+                        <i class="payment-icon">💵</i>
+                        <span class="payment-name">Efectivo</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="payment-method-item">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="payment_credit_card" name="payment_methods[]" value="credit_card" checked>
+                      <label class="form-check-label payment-method-label" for="payment_credit_card">
+                        <i class="payment-icon">💳</i>
+                        <span class="payment-name">Tarjeta de Crédito</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="payment-method-item">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="payment_debit_card" name="payment_methods[]" value="debit_card" checked>
+                      <label class="form-check-label payment-method-label" for="payment_debit_card">
+                        <i class="payment-icon">💳</i>
+                        <span class="payment-name">Tarjeta de Débito</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="payment-method-item">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="payment_bank_transfer" name="payment_methods[]" value="bank_transfer" checked>
+                      <label class="form-check-label payment-method-label" for="payment_bank_transfer">
+                        <i class="payment-icon">🏦</i>
+                        <span class="payment-name">Transferencia Bancaria</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="payment-method-item">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="payment_check" name="payment_methods[]" value="check">
+                      <label class="form-check-label payment-method-label" for="payment_check">
+                        <i class="payment-icon">📝</i>
+                        <span class="payment-name">Cheque</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="payment-method-item">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="payment_paypal" name="payment_methods[]" value="paypal" checked>
+                      <label class="form-check-label payment-method-label" for="payment_paypal">
+                        <i class="payment-icon">🅿️</i>
+                        <span class="payment-name">PayPal</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                
+                <button type="button" class="btn btn-secondary btn-sm" data-modal="paymentSettingsModal">
+                  Configurar Pasarelas de Pago
+                </button>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Opciones de Facturación</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Formato de Factura</label>
+                    <select class="form-control" name="invoice_format">
+                      <option value="standard" selected>Estándar</option>
+                      <option value="detailed">Detallado</option>
+                      <option value="simplified">Simplificado</option>
+                      <option value="custom">Personalizado</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Envío Automático de Facturas</label>
+                    <select class="form-control" name="auto_invoice">
+                      <option value="yes" selected>Sí, enviar al completar venta</option>
+                      <option value="no">No, enviar manualmente</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="electronic_invoice" name="electronic_invoice" checked>
+                    <label class="form-check-label" for="electronic_invoice">Habilitar facturación electrónica (CFDI)</label>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="allow_invoice_download" name="allow_invoice_download" checked>
+                    <label class="form-check-label" for="allow_invoice_download">Permitir a los clientes descargar sus facturas</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <button type="reset" class="btn btn-secondary">Restaurar Valores</button>
+              </div>
+            </form>
+          </div>
+          <!-- Taxes Settings Tab -->
+          <div class="settings-tab" id="taxes-tab">
+            <div class="settings-header">
+              <h3>Configuración de Impuestos</h3>
+            </div>
+            
+            <form id="taxes-settings-form" class="settings-form">
+              <div class="settings-section">
+                <h4>Configuración General de Impuestos</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Impuesto Predeterminado</label>
+                    <div class="input-with-suffix">
+                      <input type="number" class="form-control" name="default_tax_rate" value="16" min="0" max="100" step="0.01">
+                      <span class="input-suffix">%</span>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Cálculo de Impuestos</label>
+                    <select class="form-control" name="tax_calculation">
+                      <option value="subtotal" selected>Sobre el subtotal</option>
+                      <option value="per_item">Por ítem</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Mostrar Precios</label>
+                    <select class="form-control" name="price_display">
+                      <option value="incl_tax">Incluyendo impuestos</option>
+                      <option value="excl_tax" selected>Excluyendo impuestos</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Redondeo de Impuestos</label>
+                    <select class="form-control" name="tax_rounding">
+                      <option value="item">Por ítem</option>
+                      <option value="line">Por línea</option>
+                      <option value="total" selected>Al total</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="enable_tax_exemption" name="enable_tax_exemption" checked>
+                    <label class="form-check-label" for="enable_tax_exemption">Permitir exención de impuestos para clientes</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Tasas de Impuestos</h4>
+                
+                <div class="taxes-list">
+                  <div class="tax-item">
+                    <div class="tax-info">
+                      <div class="tax-name">IVA General</div>
+                      <div class="tax-rate">16%</div>
+                    </div>
+                    <div class="tax-actions">
+                      <button type="button" class="btn-icon" title="Editar tasa" data-modal="editTaxModal" data-tax="iva"><i>✏️</i></button>
+                      <button type="button" class="btn-icon" title="Eliminar tasa"><i>🗑️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="tax-item">
+                    <div class="tax-info">
+                      <div class="tax-name">IVA Fronterizo</div>
+                      <div class="tax-rate">8%</div>
+                    </div>
+                    <div class="tax-actions">
+                      <button type="button" class="btn-icon" title="Editar tasa" data-modal="editTaxModal" data-tax="iva_fronterizo"><i>✏️</i></button>
+                      <button type="button" class="btn-icon" title="Eliminar tasa"><i>🗑️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="tax-item">
+                    <div class="tax-info">
+                      <div class="tax-name">IEPS</div>
+                      <div class="tax-rate">3%</div>
+                    </div>
+                    <div class="tax-actions">
+                      <button type="button" class="btn-icon" title="Editar tasa" data-modal="editTaxModal" data-tax="ieps"><i>✏️</i></button>
+                      <button type="button" class="btn-icon" title="Eliminar tasa"><i>🗑️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="tax-item">
+                    <div class="tax-info">
+                      <div class="tax-name">Tasa Cero</div>
+                      <div class="tax-rate">0%</div>
+                    </div>
+                    <div class="tax-actions">
+                      <button type="button" class="btn-icon" title="Editar tasa" data-modal="editTaxModal" data-tax="tasa_cero"><i>✏️</i></button>
+                      <button type="button" class="btn-icon" title="Eliminar tasa"><i>🗑️</i></button>
+                    </div>
+                  </div>
+                </div>
+                
+                <button type="button" class="btn btn-secondary btn-sm" data-modal="newTaxModal">
+                  <i>✚</i> Agregar Tasa de Impuesto
+                </button>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Clases de Impuestos</h4>
+                
+                <div class="tax-classes-list">
+                  <div class="tax-class-item">
+                    <div class="tax-class-info">
+                      <div class="tax-class-name">Productos Estándar</div>
+                      <div class="tax-class-description">IVA General (16%)</div>
+                    </div>
+                    <div class="tax-class-actions">
+                      <button type="button" class="btn-icon" title="Editar clase" data-modal="editTaxClassModal" data-tax-class="standard"><i>✏️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="tax-class-item">
+                    <div class="tax-class-info">
+                      <div class="tax-class-name">Alimentos y Medicinas</div>
+                      <div class="tax-class-description">Tasa Cero (0%)</div>
+                    </div>
+                    <div class="tax-class-actions">
+                      <button type="button" class="btn-icon" title="Editar clase" data-modal="editTaxClassModal" data-tax-class="food_medicine"><i>✏️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="tax-class-item">
+                    <div class="tax-class-info">
+                      <div class="tax-class-name">Productos Fronterizos</div>
+                      <div class="tax-class-description">IVA Fronterizo (8%)</div>
+                    </div>
+                    <div class="tax-class-actions">
+                      <button type="button" class="btn-icon" title="Editar clase" data-modal="editTaxClassModal" data-tax-class="border"><i>✏️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="tax-class-item">
+                    <div class="tax-class-info">
+                      <div class="tax-class-name">Tecnología Específica</div>
+                      <div class="tax-class-description">IVA General (16%) + IEPS (3%)</div>
+                    </div>
+                    <div class="tax-class-actions">
+                      <button type="button" class="btn-icon" title="Editar clase" data-modal="editTaxClassModal" data-tax-class="tech_special"><i>✏️</i></button>
+                    </div>
+                  </div>
+                </div>
+                
+                <button type="button" class="btn btn-secondary btn-sm" data-modal="newTaxClassModal">
+                  <i>✚</i> Agregar Clase de Impuesto
+                </button>
+              </div>
+              
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <button type="reset" class="btn btn-secondary">Restaurar Valores</button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Email & Notifications Tab -->
+          <div class="settings-tab" id="email-tab">
+            <div class="settings-header">
+              <h3>Configuración de Email y Notificaciones</h3>
+            </div>
+            
+            <form id="email-settings-form" class="settings-form">
+              <div class="settings-section">
+                <h4>Configuración de Correo Electrónico</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Método de Envío</label>
+                    <select class="form-control" name="email_method">
+                      <option value="smtp" selected>SMTP</option>
+                      <option value="phpmail">PHP Mail</option>
+                      <option value="sendmail">Sendmail</option>
+                      <option value="api">API de Email (Sendgrid, Mailgun, etc.)</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Email de Remitente</label>
+                    <input type="email" class="form-control" name="sender_email" value="notificaciones@hugotecnologia.com">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Nombre de Remitente</label>
+                    <input type="text" class="form-control" name="sender_name" value="Hugo Tecnología">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Email de Respuesta</label>
+                    <input type="email" class="form-control" name="reply_email" value="contacto@hugotecnologia.com">
+                  </div>
+                </div>
+                
+                <div class="smtp-settings">
+                  <h5>Configuración SMTP</h5>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Servidor SMTP</label>
+                      <input type="text" class="form-control" name="smtp_host" value="smtp.hugotecnologia.com">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="form-label">Puerto SMTP</label>
+                      <input type="number" class="form-control" name="smtp_port" value="587" min="1" max="65535">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Usuario SMTP</label>
+                      <input type="text" class="form-control" name="smtp_user" value="notificaciones@hugotecnologia.com">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="form-label">Contraseña SMTP</label>
+                      <div class="input-with-icon">
+                        <input type="password" class="form-control" name="smtp_password" value="●●●●●●●●●●●●">
+                        <button type="button" class="btn-icon toggle-password"><i>👁️</i></button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Seguridad</label>
+                      <select class="form-control" name="smtp_security">
+                        <option value="none">Ninguna</option>
+                        <option value="ssl">SSL</option>
+                        <option value="tls" selected>TLS</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="smtp_auth" name="smtp_auth" checked>
+                        <label class="form-check-label" for="smtp_auth">Usar autenticación SMTP</label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-actions-inline">
+                    <button type="button" class="btn btn-secondary" id="test-email">Enviar Email de Prueba</button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Plantillas de Email</h4>
+                
+                <div class="email-templates-list">
+                  <div class="email-template-item">
+                    <div class="template-info">
+                      <div class="template-name">Bienvenida de Usuario</div>
+                      <div class="template-description">Email de bienvenida enviado a nuevos usuarios registrados</div>
+                    </div>
+                    <div class="template-actions">
+                      <button type="button" class="btn-icon" title="Editar plantilla" data-modal="editEmailTemplateModal" data-template="welcome"><i>✏️</i></button>
+                      <button type="button" class="btn-icon" title="Vista previa" data-modal="previewEmailTemplateModal" data-template="welcome"><i>👁️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="email-template-item">
+                    <div class="template-info">
+                      <div class="template-name">Confirmación de Orden</div>
+                      <div class="template-description">Email enviado cuando se realiza una nueva venta</div>
+                    </div>
+                    <div class="template-actions">
+                      <button type="button" class="btn-icon" title="Editar plantilla" data-modal="editEmailTemplateModal" data-template="order_confirmation"><i>✏️</i></button>
+                      <button type="button" class="btn-icon" title="Vista previa" data-modal="previewEmailTemplateModal" data-template="order_confirmation"><i>👁️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="email-template-item">
+                    <div class="template-info">
+                      <div class="template-name">Factura</div>
+                      <div class="template-description">Email enviado con la factura adjunta</div>
+                    </div>
+                    <div class="template-actions">
+                      <button type="button" class="btn-icon" title="Editar plantilla" data-modal="editEmailTemplateModal" data-template="invoice"><i>✏️</i></button>
+                      <button type="button" class="btn-icon" title="Vista previa" data-modal="previewEmailTemplateModal" data-template="invoice"><i>👁️</i></button>
+                    </div>
+                  </div>
+                  
+                  <div class="email-template-item">
+                    <div class="template-info">
+                      <div class="template-name">Restablecimiento de Contraseña</div>
+                      <div class="template-description">Email enviado para restablecer la contraseña</div>
+                    </div>
+                    <div class="template-actions">
+                      <button type="button" class="btn-icon" title="Editar plantilla" data-modal="editEmailTemplateModal" data-template="password_reset"><i>✏️</i></button>
+                      <button type="button" class="btn-icon" title="Vista previa" data-modal="previewEmailTemplateModal" data-template="password_reset"><i>👁️</i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Notificaciones del Sistema</h4>
+                
+                <div class="notification-settings">
+                  <h5>Notificaciones de Ventas</h5>
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="notify_new_order" name="notifications[]" value="new_order" checked>
+                      <label class="form-check-label" for="notify_new_order">Nueva venta realizada</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="notify_order_status" name="notifications[]" value="order_status" checked>
+                      <label class="form-check-label" for="notify_order_status">Cambio de estado de venta</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="notify_order_cancel" name="notifications[]" value="order_cancel" checked>
+                      <label class="form-check-label" for="notify_order_cancel">Cancelación de venta</label>
+                    </div>
+                  </div>
+                  
+                  <h5>Notificaciones de Inventario</h5>
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="notify_low_stock" name="notifications[]" value="low_stock" checked>
+                      <label class="form-check-label" for="notify_low_stock">Inventario bajo</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="notify_out_of_stock" name="notifications[]" value="out_of_stock" checked>
+                      <label class="form-check-label" for="notify_out_of_stock">Producto agotado</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="notify_inventory_update" name="notifications[]" value="inventory_update">
+                      <label class="form-check-label" for="notify_inventory_update">Actualización de inventario</label>
+                    </div>
+                  </div>
+                  
+                  <h5>Notificaciones de Usuario</h5>
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="notify_new_user" name="notifications[]" value="new_user" checked>
+                      <label class="form-check-label" for="notify_new_user">Nuevo usuario registrado</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="notify_password_reset" name="notifications[]" value="password_reset" checked>
+                      <label class="form-check-label" for="notify_password_reset">Solicitud de restablecimiento de contraseña</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="notify_login_attempts" name="notifications[]" value="login_attempts" checked>
+                      <label class="form-check-label" for="notify_login_attempts">Múltiples intentos fallidos de inicio de sesión</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <button type="reset" class="btn btn-secondary">Restaurar Valores</button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Integrations Tab -->
+          <div class="settings-tab" id="integrations-tab">
+            <div class="settings-header">
+              <h3>Integraciones</h3>
+            </div>
+            
+            <div class="settings-section">
+              <h4>Integraciones Activas</h4>
+              
+              <div class="integrations-list">
+                <div class="integration-card connected">
+                  <div class="integration-icon">
+                    <img src="img/integrations/contpaqi.png" alt="CONTPAQi">
+                  </div>
+                  <div class="integration-info">
+                    <h5>CONTPAQi</h5>
+                    <p>Sistema de contabilidad y facturación electrónica</p>
+                    <div class="integration-status">
+                      <span class="status-badge connected">Conectado</span>
+                      <span class="status-details">Última sincronización: Hoy, 10:35</span>
+                    </div>
+                  </div>
+                  <div class="integration-actions">
+                    <button class="btn btn-sm btn-secondary" data-modal="configureIntegrationModal" data-integration="contpaqi">Configurar</button>
+                    <button class="btn btn-sm btn-secondary">Sincronizar</button>
+                    <button class="btn btn-sm btn-danger">Desconectar</button>
+                  </div>
+                </div>
+                
+                <div class="integration-card connected">
+                  <div class="integration-icon">
+                    <img src="img/integrations/sat.png" alt="SAT">
+                  </div>
+                  <div class="integration-info">
+                    <h5>SAT (CFDI)</h5>
+                    <p>Servicio de Administración Tributaria - Facturación Electrónica</p>
+                    <div class="integration-status">
+                      <span class="status-badge connected">Conectado</span>
+                      <span class="status-details">Última sincronización: Ayer, 18:22</span>
+                    </div>
+                  </div>
+                  <div class="integration-actions">
+                    <button class="btn btn-sm btn-secondary" data-modal="configureIntegrationModal" data-integration="sat">Configurar</button>
+                    <button class="btn btn-sm btn-secondary">Sincronizar</button>
+                    <button class="btn btn-sm btn-danger">Desconectar</button>
+                  </div>
+                </div>
+                
+                <div class="integration-card">
+                  <div class="integration-icon">
+                    <img src="img/integrations/mailchimp.png" alt="Mailchimp">
+                  </div>
+                  <div class="integration-info">
+                    <h5>Mailchimp</h5>
+                    <p>Plataforma de email marketing</p>
+                    <div class="integration-status">
+                      <span class="status-badge disconnected">Desconectado</span>
+                    </div>
+                  </div>
+                  <div class="integration-actions">
+                    <button class="btn btn-sm btn-primary" data-modal="connectIntegrationModal" data-integration="mailchimp">Conectar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-section">
+              <h4>Integraciones Disponibles</h4>
+              
+              <div class="integrations-grid">
+                <div class="integration-item">
+                  <div class="integration-icon">
+                    <img src="img/integrations/mercadolibre.png" alt="MercadoLibre">
+                  </div>
+                  <div class="integration-name">MercadoLibre</div>
+                  <button class="btn btn-sm btn-primary" data-modal="connectIntegrationModal" data-integration="mercadolibre">Conectar</button>
+                </div>
+                
+                <div class="integration-item">
+                  <div class="integration-icon">
+                    <img src="img/integrations/whatsapp.png" alt="WhatsApp Business">
+                  </div>
+                  <div class="integration-name">WhatsApp Business</div>
+                  <button class="btn btn-sm btn-primary" data-modal="connectIntegrationModal" data-integration="whatsapp">Conectar</button>
+                </div>
+                
+                <div class="integration-item">
+                  <div class="integration-icon">
+                    <img src="img/integrations/facebook.png" alt="Facebook Shop">
+                  </div>
+                  <div class="integration-name">Facebook Shop</div>
+                  <button class="btn btn-sm btn-primary" data-modal="connectIntegrationModal" data-integration="facebook">Conectar</button>
+                </div>
+                
+                <div class="integration-item">
+                  <div class="integration-icon">
+                    <img src="img/integrations/shopify.png" alt="Shopify">
+                  </div>
+                  <div class="integration-name">Shopify</div>
+                  <button class="btn btn-sm btn-primary" data-modal="connectIntegrationModal" data-integration="shopify">Conectar</button>
+                </div>
+                
+                <div class="integration-item">
+                  <div class="integration-icon">
+                    <img src="img/integrations/woocommerce.png" alt="WooCommerce">
+                  </div>
+                  <div class="integration-name">WooCommerce</div>
+                  <button class="btn btn-sm btn-primary" data-modal="connectIntegrationModal" data-integration="woocommerce">Conectar</button>
+                </div>
+                
+                <div class="integration-item">
+                  <div class="integration-icon">
+                    <img src="img/integrations/zapier.png" alt="Zapier">
+                  </div>
+                  <div class="integration-name">Zapier</div>
+                  <button class="btn btn-sm btn-primary" data-modal="connectIntegrationModal" data-integration="zapier">Conectar</button>
+                </div>
+                
+                <div class="integration-item">
+                  <div class="integration-icon">
+                    <img src="img/integrations/excel.png" alt="Excel/CSV">
+                  </div>
+                  <div class="integration-name">Excel/CSV</div>
+                  <button class="btn btn-sm btn-primary" data-modal="connectIntegrationModal" data-integration="excel">Configurar</button>
+                </div>
+                
+                <div class="integration-item">
+                  <div class="integration-icon">
+                    <img src="img/integrations/api.png" alt="API">
+                  </div>
+                  <div class="integration-name">API</div>
+                  <button class="btn btn-sm btn-primary" data-modal="connectIntegrationModal" data-integration="api">Documentación</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Security Tab -->
+          <div class="settings-tab" id="security-tab">
+            <div class="settings-header">
+              <h3>Configuración de Seguridad</h3>
+            </div>
+            
+            <form id="security-settings-form" class="settings-form">
+              <div class="settings-section">
+                <h4>Autenticación</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Método de Autenticación Principal</label>
+                    <select class="form-control" name="auth_method">
+                      <option value="user_pass" selected>Usuario y Contraseña</option>
+                      <option value="email_pass">Email y Contraseña</option>
+                      <option value="oauth">Proveedor de Identidad Externo</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Duración de Sesión</label>
+                    <select class="form-control" name="session_duration">
+                      <option value="1h">1 hora</option>
+                      <option value="4h">4 horas</option>
+                      <option value="8h" selected>8 horas</option>
+                      <option value="24h">24 horas</option>
+                      <option value="7d">7 días</option>
+                      <option value="30d">30 días</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="enforce_2fa" name="enforce_2fa" checked>
+                    <label class="form-check-label" for="enforce_2fa">Exigir autenticación de dos factores para administradores</label>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="enable_captcha" name="enable_captcha" checked>
+                    <label class="form-check-label" for="enable_captcha">Habilitar CAPTCHA en formularios de inicio de sesión</label>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="log_login_attempts" name="log_login_attempts" checked>
+                    <label class="form-check-label" for="log_login_attempts">Registrar intentos de inicio de sesión</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="ip_restriction" name="ip_restriction">
+                      <label class="form-check-label" for="ip_restriction">Restringir acceso por IP</label>
+                    </div>
+                  </div>
+                  
+                  <div class="ip-restriction-settings" style="display: none;">
+                    <div class="form-group">
+                      <label class="form-label">IPs Permitidas</label>
+                      <textarea class="form-control" name="allowed_ips" rows="3" placeholder="Introducir IPs separadas por comas, por ejemplo: 192.168.1.1, 10.0.0.1"></textarea>
+                      <small class="form-hint">Dejar en blanco para permitir todas las IPs</small>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="settings-section">
+                  <h4>Seguridad de Datos</h4>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Encriptación de Base de Datos</label>
+                      <select class="form-control" name="db_encryption">
+                        <option value="none">Ninguna</option>
+                        <option value="sensitive" selected>Solo datos sensibles</option>
+                        <option value="all">Todos los datos</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="form-label">Cifrado de Comunicaciones</label>
+                      <select class="form-control" name="comm_encryption">
+                        <option value="none">Ninguno</option>
+                        <option value="ssl">SSL</option>
+                        <option value="tls" selected>TLS</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="enforce_https" name="enforce_https" checked>
+                      <label class="form-check-label" for="enforce_https">Forzar HTTPS en todas las páginas</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="pci_compliance" name="pci_compliance" checked>
+                      <label class="form-check-label" for="pci_compliance">Habilitar configuración de cumplimiento PCI</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="mask_cc" name="mask_cc" checked>
+                      <label class="form-check-label" for="mask_cc">Enmascarar números de tarjetas de crédito</label>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="settings-section">
+                  <h4>Registros y Auditoría</h4>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Nivel de Registro</label>
+                      <select class="form-control" name="log_level">
+                        <option value="none">Desactivado</option>
+                        <option value="errors">Solo errores</option>
+                        <option value="warnings">Errores y advertencias</option>
+                        <option value="info" selected>Información general</option>
+                        <option value="debug">Depuración completa</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="form-label">Retención de Registros</label>
+                      <select class="form-control" name="log_retention">
+                        <option value="7">7 días</option>
+                        <option value="30" selected>30 días</option>
+                        <option value="90">90 días</option>
+                        <option value="180">180 días</option>
+                        <option value="365">1 año</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="log_admin_actions" name="log_admin_actions" checked>
+                      <label class="form-check-label" for="log_admin_actions">Registrar acciones de administrador</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="log_data_changes" name="log_data_changes" checked>
+                      <label class="form-check-label" for="log_data_changes">Registrar cambios en datos sensibles</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="log_api_access" name="log_api_access" checked>
+                      <label class="form-check-label" for="log_api_access">Registrar acceso a API</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-actions-inline">
+                    <button type="button" class="btn btn-secondary" id="view-audit-logs">Ver Registros de Auditoría</button>
+                  </div>
+                </div>
+                
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                  <button type="reset" class="btn btn-secondary">Restaurar Valores</button>
+                </div>
+              </form>
+            </div>
+            
+            <!-- System Tab -->
+            <div class="settings-tab" id="system-tab">
+              <div class="settings-header">
+                <h3>Configuración del Sistema</h3>
+              </div>
+              
+              <form id="system-settings-form" class="settings-form">
+                <div class="settings-section">
+                  <h4>Información del Sistema</h4>
+                  
+                  <div class="system-info-grid">
+                    <div class="info-item">
+                      <div class="info-label">Versión del Sistema</div>
+                      <div class="info-value">v3.5.2</div>
+                    </div>
+                    
+                    <div class="info-item">
+                      <div class="info-label">Fecha de Instalación</div>
+                      <div class="info-value">10/01/2023</div>
+                    </div>
+                    
+                    <div class="info-item">
+                      <div class="info-label">Última Actualización</div>
+                      <div class="info-value">15/03/2025</div>
+                    </div>
+                    
+                    <div class="info-item">
+                      <div class="info-label">Base de Datos</div>
+                      <div class="info-value">MySQL 8.0.28</div>
+                    </div>
+                    
+                    <div class="info-item">
+                      <div class="info-label">Servidor Web</div>
+                      <div class="info-value">Apache 2.4.52</div>
+                    </div>
+                    
+                    <div class="info-item">
+                      <div class="info-label">PHP</div>
+                      <div class="info-value">8.1.5</div>
+                    </div>
+                    
+                    <div class="info-item">
+                      <div class="info-label">Espacio en Disco</div>
+                      <div class="info-value">
+                        <div class="progress-bar">
+                          <div class="progress-fill" style="width: 45%;"></div>
+                        </div>
+                        <span class="progress-text">45% usado (112 GB de 250 GB)</span>
+                      </div>
+                    </div>
+                    
+                    <div class="info-item">
+                      <div class="info-label">Memoria</div>
+                      <div class="info-value">
+                        <div class="progress-bar">
+                          <div class="progress-fill" style="width: 62%;"></div>
+                        </div>
+                        <span class="progress-text">62% usado (4.96 GB de 8 GB)</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-actions-inline">
+                    <button type="button" class="btn btn-secondary" id="check-updates">Buscar Actualizaciones</button>
+                    <button type="button" class="btn btn-secondary" id="system-report">Generar Informe</button>
+                  </div>
+                </div>
+                
+                <div class="settings-section">
+                  <h4>Mantenimiento</h4>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Modo de Mantenimiento</label>
+                      <select class="form-control" name="maintenance_mode">
+                        <option value="off" selected>Desactivado</option>
+                        <option value="on">Activado</option>
+                        <option value="scheduled">Programado</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group scheduled-maintenance" style="display: none;">
+                      <label class="form-label">Fecha de Mantenimiento</label>
+                      <input type="datetime-local" class="form-control" name="maintenance_date">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group maintenance-message" style="display: none;">
+                    <label class="form-label">Mensaje de Mantenimiento</label>
+                    <textarea class="form-control" name="maintenance_message" rows="3">Estamos realizando mantenimiento programado. El sistema estará de vuelta pronto. Gracias por su comprensión.</textarea>
+                  </div>
+                  
+                  <div class="maintenance-actions">
+                    <button type="button" class="btn btn-secondary">Limpiar Caché</button>
+                    <button type="button" class="btn btn-secondary">Optimizar Tablas</button>
+                    <button type="button" class="btn btn-danger">Vaciar Registros</button>
+                  </div>
+                </div>
+                
+                <div class="settings-section">
+                  <h4>Rendimiento</h4>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Caché del Sistema</label>
+                      <select class="form-control" name="system_cache">
+                        <option value="off">Desactivado</option>
+                        <option value="basic">Básico</option>
+                        <option value="advanced" selected>Avanzado</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="form-label">Compresión de Recursos</label>
+                      <select class="form-control" name="resource_compression">
+                        <option value="off">Desactivada</option>
+                        <option value="css_js">Solo CSS y JS</option>
+                        <option value="all" selected>Todos los recursos</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Carga Diferida de Imágenes</label>
+                      <select class="form-control" name="image_lazy_loading">
+                        <option value="off">Desactivado</option>
+                        <option value="on" selected>Activado</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="form-label">Minificación de HTML</label>
+                      <select class="form-control" name="html_minification">
+                        <option value="off">Desactivado</option>
+                        <option value="on" selected>Activado</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="use_cdn" name="use_cdn" checked>
+                      <label class="form-check-label" for="use_cdn">Utilizar CDN para recursos estáticos</label>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="settings-section">
+                  <h4>Cron Jobs</h4>
+                  
+                  <div class="cron-jobs-list">
+                    <div class="cron-job-item">
+                      <div class="cron-job-info">
+                        <div class="cron-job-name">Actualización de Inventario</div>
+                        <div class="cron-job-schedule">Cada hora</div>
+                        <div class="cron-job-status active">Activo</div>
+                      </div>
+                      <div class="cron-job-actions">
+                        <button type="button" class="btn-icon" title="Editar tarea"><i>✏️</i></button>
+                        <button type="button" class="btn-icon" title="Ejecutar ahora"><i>▶️</i></button>
+                      </div>
+                    </div>
+                    
+                    <div class="cron-job-item">
+                      <div class="cron-job-info">
+                        <div class="cron-job-name">Respaldo de Base de Datos</div>
+                        <div class="cron-job-schedule">Diariamente a las 02:00</div>
+                        <div class="cron-job-status active">Activo</div>
+                      </div>
+                      <div class="cron-job-actions">
+                        <button type="button" class="btn-icon" title="Editar tarea"><i>✏️</i></button>
+                        <button type="button" class="btn-icon" title="Ejecutar ahora"><i>▶️</i></button>
+                      </div>
+                    </div>
+                    
+                    <div class="cron-job-item">
+                      <div class="cron-job-info">
+                        <div class="cron-job-name">Limpieza de Registros</div>
+                        <div class="cron-job-schedule">Semanalmente, Domingo a las 03:00</div>
+                        <div class="cron-job-status active">Activo</div>
+                      </div>
+                      <div class="cron-job-actions">
+                        <button type="button" class="btn-icon" title="Editar tarea"><i>✏️</i></button>
+                        <button type="button" class="btn-icon" title="Ejecutar ahora"><i>▶️</i></button>
+                      </div>
+                    </div>
+                    
+                    <div class="cron-job-item">
+                      <div class="cron-job-info">
+                        <div class="cron-job-name">Sincronización con Integraciones</div>
+                        <div class="cron-job-schedule">Cada 3 horas</div>
+                        <div class="cron-job-status active">Activo</div>
+                      </div>
+                      <div class="cron-job-actions">
+                        <button type="button" class="btn-icon" title="Editar tarea"><i>✏️</i></button>
+                        <button type="button" class="btn-icon" title="Ejecutar ahora"><i>▶️</i></button>
+                      </div>
+                    </div>
+                    
+                    <div class="cron-job-item">
+                      <div class="cron-job-info">
+                        <div class="cron-job-name">Envío de Reportes Programados</div>
+                        <div class="cron-job-schedule">Diariamente a las 07:00</div>
+                        <div class="cron-job-status active">Activo</div>
+                      </div>
+                      <div class="cron-job-actions">
+                        <button type="button" class="btn-icon" title="Editar tarea"><i>✏️</i></button>
+                        <button type="button" class="btn-icon" title="Ejecutar ahora"><i>▶️</i></button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <button type="button" class="btn btn-secondary btn-sm" data-modal="newCronJobModal">
+                    <i>✚</i> Agregar Tarea Programada
+                  </button>
+                </div>
+                
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                  <button type="reset" class="btn btn-secondary">Restaurar Valores</button>
+                </div>
+              </form>
+            </div>
+            
+            <!-- Backup & Restore Tab -->
+            <div class="settings-tab" id="backup-tab">
+              <div class="settings-header">
+                <h3>Respaldo y Restauración</h3>
+              </div>
+              
+              <form id="backup-settings-form" class="settings-form">
+                <div class="settings-section">
+                  <h4>Configuración de Respaldo Automático</h4>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Frecuencia de Respaldo</label>
+                      <select class="form-control" name="backup_frequency">
+                        <option value="hourly">Cada hora</option>
+                        <option value="daily" selected>Diario</option>
+                        <option value="weekly">Semanal</option>
+                        <option value="monthly">Mensual</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="form-label">Retención de Respaldos</label>
+                      <select class="form-control" name="backup_retention">
+                        <option value="3">3 copias</option>
+                        <option value="7" selected>7 copias</option>
+                        <option value="14">14 copias</option>
+                        <option value="30">30 copias</option>
+                        <option value="90">90 copias</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Contenido del Respaldo</label>
+                      <div class="checkbox-group">
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="backup_database" name="backup_content[]" value="database" checked>
+                          <label class="form-check-label" for="backup_database">Base de Datos</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="backup_files" name="backup_content[]" value="files" checked>
+                          <label class="form-check-label" for="backup_files">Archivos</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="backup_images" name="backup_content[]" value="images" checked>
+                          <label class="form-check-label" for="backup_images">Imágenes</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="backup_config" name="backup_content[]" value="config" checked>
+                          <label class="form-check-label" for="backup_config">Configuración</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="backup_logs" name="backup_content[]" value="logs">
+                          <label class="form-check-label" for="backup_logs">Registros</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="compress_backup" name="compress_backup" checked>
+                      <label class="form-check-label" for="compress_backup">Comprimir respaldos</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="encrypt_backup" name="encrypt_backup" checked>
+                      <label class="form-check-label" for="encrypt_backup">Encriptar respaldos</label>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="settings-section">
+                  <h4>Ubicación de Respaldos</h4>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Almacenamiento Primario</label>
+                      <select class="form-control" name="backup_storage">
+                        <option value="local" selected>Almacenamiento Local</option>
+                        <option value="ftp">Servidor FTP</option>
+                        <option value="cloud">Almacenamiento en la Nube</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="local-storage-settings">
+                    <div class="form-group">
+                      <label class="form-label">Ruta Local</label>
+                      <input type="text" class="form-control" name="local_path" value="/var/backups/hugotecnologia/">
+                    </div>
+                  </div>
+                  
+                  <div class="cloud-storage-settings" style="display: none;">
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label">Proveedor en la Nube</label>
+                        <select class="form-control" name="cloud_provider">
+                          <option value="s3">Amazon S3</option>
+                          <option value="gdrive">Google Drive</option>
+                          <option value="dropbox">Dropbox</option>
+                          <option value="onedrive">OneDrive</option>
+                        </select>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="form-label">Carpeta en la Nube</label>
+                        <input type="text" class="form-control" name="cloud_folder" value="hugotecnologia/backups">
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <button type="button" class="btn btn-secondary btn-sm" data-modal="cloudCredentialsModal">
+                        Configurar Credenciales
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="use_secondary_backup" name="use_secondary_backup">
+                      <label class="form-check-label" for="use_secondary_backup">Usar ubicación secundaria de respaldo</label>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="settings-section">
+                  <h4>Respaldos Disponibles</h4>
+                  
+                  <div class="backup-list">
+                    <div class="backup-item">
+                      <div class="backup-info">
+                        <div class="backup-name">backup_20250317_0200.zip</div>
+                        <div class="backup-details">
+                          <span class="backup-date">17/03/2025 02:00</span>
+                          <span class="backup-size">456.8 MB</span>
+                          <span class="backup-type">Completo</span>
+                        </div>
+                      </div>
+                      <div class="backup-actions">
+                        <button type="button" class="btn btn-sm btn-secondary">Restaurar</button>
+                        <button type="button" class="btn btn-sm btn-secondary">Descargar</button>
+                        <button type="button" class="btn-icon" title="Eliminar respaldo"><i>🗑️</i></button>
+                      </div>
+                    </div>
+                    
+                    <div class="backup-item">
+                      <div class="backup-info">
+                        <div class="backup-name">backup_20250316_0200.zip</div>
+                        <div class="backup-details">
+                          <span class="backup-date">16/03/2025 02:00</span>
+                          <span class="backup-size">453.2 MB</span>
+                          <span class="backup-type">Completo</span>
+                        </div>
+                      </div>
+                      <div class="backup-actions">
+                        <button type="button" class="btn btn-sm btn-secondary">Restaurar</button>
+                        <button type="button" class="btn btn-sm btn-secondary">Descargar</button>
+                        <button type="button" class="btn-icon" title="Eliminar respaldo"><i>🗑️</i></button>
+                      </div>
+                    </div>
+                    
+                    <div class="backup-item">
+                      <div class="backup-info">
+                        <div class="backup-name">backup_20250315_0200.zip</div>
+                        <div class="backup-details">
+                          <span class="backup-date">15/03/2025 02:00</span>
+                          <span class="backup-size">448.6 MB</span>
+                          <span class="backup-type">Completo</span>
+                        </div>
+                      </div>
+                      <div class="backup-actions">
+                        <button type="button" class="btn btn-sm btn-secondary">Restaurar</button>
+                        <button type="button" class="btn btn-sm btn-secondary">Descargar</button>
+                        <button type="button" class="btn-icon" title="Eliminar respaldo"><i>🗑️</i></button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-actions-inline">
+                    <button type="button" class="btn btn-primary">Crear Respaldo Manual</button>
+                  </div>
+                </div>
+                
+                <div class="settings-section">
+                  <h4>Restauración</h4>
+                  
+                  <div class="form-group">
+                    <label class="form-label">Subir Archivo de Respaldo</label>
+                    <div class="file-upload-container">
+                      <input type="file" id="backup_file" name="backup_file" class="file-upload-input" accept=".zip,.sql,.gz">
+                      <label for="backup_file" class="file-upload-label">
+                        <span class="file-upload-icon">📂</span>
+                        <span class="file-upload-text">Seleccionar o arrastrar archivo</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="confirm_restore" name="confirm_restore">
+                      <label class="form-check-label" for="confirm_restore">Confirmo que entiendo que esta acción sobrescribirá los datos actuales</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-actions-inline">
+                    <button type="button" class="btn btn-danger" disabled>Restaurar Sistema</button>
+                  </div>
+                </div>
+                
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Guardar Configuración</button>
+                  <button type="reset" class="btn btn-secondary">Restaurar Valores</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    
+    <!-- Modales -->
+    <!-- Aquí irían los modales necesarios para cada sección de configuración -->
+    
+    <script src="js/main.js"></script>
+    <script src="js/configuracion.js"></script>
+  </body>
+  </html>

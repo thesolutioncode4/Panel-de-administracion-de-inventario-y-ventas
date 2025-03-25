@@ -1,0 +1,653 @@
+
+</html>>
+                  <div class="member-info">
+                    <h5>Juan Pérez</h5>
+                    <p>Gerente</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <div class="member-avatar">👤</div<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Negocios - Hugo Tecnología</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/tables.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/negocios.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">HT</div>
+        <h1>Hugo Tecnología</h1>
+      </div>
+      
+      <div class="nav-item">
+        <i>📊</i> Dashboard
+      </div>
+      <div class="nav-item">
+        <i>📦</i> Inventario
+      </div>
+      <div class="nav-item active">
+        <i>🏪</i> Negocios
+      </div>
+      <div class="nav-item">
+        <i>🛒</i> Ventas
+      </div>
+      <div class="nav-item">
+        <i>👥</i> Usuarios
+      </div>
+      <div class="nav-item">
+        <i>📝</i> Reportes
+      </div>
+      <div class="nav-item">
+        <i>⚙️</i> Configuración
+      </div>
+      
+      <div class="user-info">
+        <div class="user-avatar">
+          <i>👤</i>
+        </div>
+        <div class="user-details">
+          <h4>Admin User</h4>
+          <p>Administrador</p>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div class="header-title">
+          <h2>Gestión de Negocios</h2>
+          <p>Administre tiendas, sucursales y puntos de venta</p>
+        </div>
+        
+        <div class="search-bar">
+          <i>🔍</i>
+          <input type="text" placeholder="Buscar negocios por nombre, ubicación...">
+        </div>
+      </div>
+      
+      <!-- Statistics -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Total de Negocios</h3>
+          <div class="stat-value">12</div>
+          <div class="stat-change positive">
+            <i>↑</i> 2 nuevos este mes
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Ventas Totales</h3>
+          <div class="stat-value">$198,450.00</div>
+          <div class="stat-change positive">
+            <i>↑</i> 8.3% desde el mes pasado
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Negocio Más Rentable</h3>
+          <div class="stat-value">Tienda Central</div>
+          <div class="stat-change positive">
+            <i>↑</i> $87,250.00 este mes
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Tasa de Crecimiento</h3>
+          <div class="stat-value">12.5%</div>
+          <div class="stat-change positive">
+            <i>↑</i> 3.2% desde el trimestre pasado
+          </div>
+        </div>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="action-bar">
+        <div class="action-buttons">
+          <button class="btn btn-primary" data-modal="nuevoNegocio">
+            <i>➕</i> Nuevo Negocio
+          </button>
+          <button class="btn btn-secondary">
+            <i>📊</i> Reporte de Rendimiento
+          </button>
+          <button class="btn btn-secondary">
+            <i>🔄</i> Sincronizar Datos
+          </button>
+        </div>
+        
+        <div class="filter-controls">
+          <select class="form-control">
+            <option value="">Todos los Tipos</option>
+            <option value="tienda">Tienda Física</option>
+            <option value="distribuidor">Distribuidor</option>
+            <option value="franquicia">Franquicia</option>
+            <option value="online">Tienda Online</option>
+          </select>
+          
+          <select class="form-control">
+            <option value="">Todas las Regiones</option>
+            <option value="norte">Región Norte</option>
+            <option value="sur">Región Sur</option>
+            <option value="este">Región Este</option>
+            <option value="oeste">Región Oeste</option>
+            <option value="central">Región Central</option>
+          </select>
+          
+          <select class="form-control">
+            <option value="">Todos los Estados</option>
+            <option value="activo">Activo</option>
+            <option value="inactivo">Inactivo</option>
+            <option value="pendiente">Pendiente</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- Location Map -->
+      <div class="card map-card">
+        <div class="card-header">
+          <h3 class="card-title">Distribución Geográfica</h3>
+          <div class="map-controls">
+            <button class="btn btn-secondary btn-sm">
+              <i>🔍</i> Acercar
+            </button>
+            <button class="btn btn-secondary btn-sm">
+              <i>🔍</i> Alejar
+            </button>
+            <select class="form-control form-control-sm">
+              <option>Vista de Carretera</option>
+              <option>Vista de Satélite</option>
+              <option>Vista Híbrida</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="map-container">
+          <!-- Map placeholder - would be replaced with actual map integration -->
+          <div class="map-placeholder">
+            <img src="img/map-placeholder.jpg" alt="Mapa de negocios">
+            <div class="map-marker" style="top: 30%; left: 40%;" data-business="Tienda Central">
+              <div class="marker-icon">🏪</div>
+              <div class="marker-tooltip">
+                <strong>Tienda Central</strong>
+                <p>Av. Principal #123</p>
+              </div>
+            </div>
+            <div class="map-marker" style="top: 45%; left: 55%;" data-business="Tienda Norte">
+              <div class="marker-icon">🏪</div>
+              <div class="marker-tooltip">
+                <strong>Tienda Norte</strong>
+                <p>Calle 45 #67</p>
+              </div>
+            </div>
+            <div class="map-marker" style="top: 65%; left: 35%;" data-business="Tienda Sur">
+              <div class="marker-icon">🏪</div>
+              <div class="marker-tooltip">
+                <strong>Tienda Sur</strong>
+                <p>Av. Sur #89</p>
+              </div>
+            </div>
+            <div class="map-marker" style="top: 40%; left: 70%;" data-business="Tienda Este">
+              <div class="marker-icon">🏪</div>
+              <div class="marker-tooltip">
+                <strong>Tienda Este</strong>
+                <p>Calle Este #101</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Business List -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Listado de Negocios</h3>
+          <div class="view-toggle">
+            <button class="btn-icon active" id="list-view" title="Vista de lista">📋</button>
+            <button class="btn-icon" id="grid-view" title="Vista de cuadrícula">📦</button>
+          </div>
+        </div>
+        
+        <div class="list-view active">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th data-sort="id">ID</th>
+                  <th data-sort="name">Nombre</th>
+                  <th data-sort="type">Tipo</th>
+                  <th data-sort="location">Ubicación</th>
+                  <th data-sort="manager">Gerente</th>
+                  <th data-sort="employees">Empleados</th>
+                  <th data-sort="inventory">Inventario</th>
+                  <th data-sort="sales">Ventas Mensuales</th>
+                  <th data-sort="status">Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#N001</td>
+                  <td>Tienda Central</td>
+                  <td>Tienda Física</td>
+                  <td>Av. Principal #123, Ciudad Capital</td>
+                  <td>Juan Pérez</td>
+                  <td>15</td>
+                  <td>854 productos</td>
+                  <td>$87,250.00</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N001"><i>👁️</i></button>
+                      <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#N002</td>
+                  <td>Tienda Norte</td>
+                  <td>Tienda Física</td>
+                  <td>Calle 45 #67, Zona Norte</td>
+                  <td>María Gómez</td>
+                  <td>8</td>
+                  <td>543 productos</td>
+                  <td>$45,780.00</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N002"><i>👁️</i></button>
+                      <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#N003</td>
+                  <td>Tienda Sur</td>
+                  <td>Tienda Física</td>
+                  <td>Av. Sur #89, Zona Sur</td>
+                  <td>Carlos Rodríguez</td>
+                  <td>10</td>
+                  <td>612 productos</td>
+                  <td>$39,450.00</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N003"><i>👁️</i></button>
+                      <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#N004</td>
+                  <td>Tienda Este</td>
+                  <td>Franquicia</td>
+                  <td>Calle Este #101, Zona Este</td>
+                  <td>Ana Martínez</td>
+                  <td>6</td>
+                  <td>325 productos</td>
+                  <td>$25,970.00</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N004"><i>👁️</i></button>
+                      <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#N005</td>
+                  <td>Tienda Online</td>
+                  <td>Tienda Online</td>
+                  <td>www.hugotecnologia.com</td>
+                  <td>Luis Sánchez</td>
+                  <td>4</td>
+                  <td>1250 productos</td>
+                  <td>$65,430.00</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N005"><i>👁️</i></button>
+                      <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#N006</td>
+                  <td>Distribuidor Empresarial</td>
+                  <td>Distribuidor</td>
+                  <td>Av. Industrial #45, Zona Empresarial</td>
+                  <td>Roberto Díaz</td>
+                  <td>12</td>
+                  <td>780 productos</td>
+                  <td>$95,620.00</td>
+                  <td><span class="badge badge-success">Activo</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N006"><i>👁️</i></button>
+                      <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#N007</td>
+                  <td>Tienda Oeste</td>
+                  <td>Tienda Física</td>
+                  <td>Calle Oeste #56, Zona Oeste</td>
+                  <td>Patricia López</td>
+                  <td>7</td>
+                  <td>420 productos</td>
+                  <td>$28,750.00</td>
+                  <td><span class="badge badge-warning">Pendiente</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                      <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N007"><i>👁️</i></button>
+                      <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="grid-view">
+          <div class="business-grid">
+            <div class="business-card">
+              <div class="business-header">
+                <div class="business-icon">🏪</div>
+                <div class="business-status">
+                  <span class="badge badge-success">Activo</span>
+                </div>
+              </div>
+              <div class="business-body">
+                <h4>Tienda Central</h4>
+                <p class="business-type">Tienda Física</p>
+                <p class="business-location"><i>📍</i> Av. Principal #123, Ciudad Capital</p>
+                <p class="business-manager"><i>👤</i> Juan Pérez</p>
+                <div class="business-stats">
+                  <div class="stat">
+                    <span class="stat-label">Empleados</span>
+                    <span class="stat-value">15</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-label">Productos</span>
+                    <span class="stat-value">854</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-label">Ventas</span>
+                    <span class="stat-value">$87,250</span>
+                  </div>
+                </div>
+              </div>
+              <div class="business-footer">
+                <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N001"><i>👁️</i></button>
+                <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+              </div>
+            </div>
+            
+            <div class="business-card">
+              <div class="business-header">
+                <div class="business-icon">🏪</div>
+                <div class="business-status">
+                  <span class="badge badge-success">Activo</span>
+                </div>
+              </div>
+              <div class="business-body">
+                <h4>Tienda Norte</h4>
+                <p class="business-type">Tienda Física</p>
+                <p class="business-location"><i>📍</i> Calle 45 #67, Zona Norte</p>
+                <p class="business-manager"><i>👤</i> María Gómez</p>
+                <div class="business-stats">
+                  <div class="stat">
+                    <span class="stat-label">Empleados</span>
+                    <span class="stat-value">8</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-label">Productos</span>
+                    <span class="stat-value">543</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-label">Ventas</span>
+                    <span class="stat-value">$45,780</span>
+                  </div>
+                </div>
+              </div>
+              <div class="business-footer">
+                <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N002"><i>👁️</i></button>
+                <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+              </div>
+            </div>
+            
+            <div class="business-card">
+              <div class="business-header">
+                <div class="business-icon">🏪</div>
+                <div class="business-status">
+                  <span class="badge badge-success">Activo</span>
+                </div>
+              </div>
+              <div class="business-body">
+                <h4>Tienda Sur</h4>
+                <p class="business-type">Tienda Física</p>
+                <p class="business-location"><i>📍</i> Av. Sur #89, Zona Sur</p>
+                <p class="business-manager"><i>👤</i> Carlos Rodríguez</p>
+                <div class="business-stats">
+                  <div class="stat">
+                    <span class="stat-label">Empleados</span>
+                    <span class="stat-value">10</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-label">Productos</span>
+                    <span class="stat-value">612</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-label">Ventas</span>
+                    <span class="stat-value">$39,450</span>
+                  </div>
+                </div>
+              </div>
+              <div class="business-footer">
+                <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N003"><i>👁️</i></button>
+                <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+              </div>
+            </div>
+            
+            <div class="business-card">
+              <div class="business-header">
+                <div class="business-icon">🏬</div>
+                <div class="business-status">
+                  <span class="badge badge-success">Activo</span>
+                </div>
+              </div>
+              <div class="business-body">
+                <h4>Tienda Este</h4>
+                <p class="business-type">Franquicia</p>
+                <p class="business-location"><i>📍</i> Calle Este #101, Zona Este</p>
+                <p class="business-manager"><i>👤</i> Ana Martínez</p>
+                <div class="business-stats">
+                  <div class="stat">
+                    <span class="stat-label">Empleados</span>
+                    <span class="stat-value">6</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-label">Productos</span>
+                    <span class="stat-value">325</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-label">Ventas</span>
+                    <span class="stat-value">$25,970</span>
+                  </div>
+                </div>
+              </div>
+              <div class="business-footer">
+                <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N004"><i>👁️</i></button>
+                <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+              </div>
+            </div>
+            
+            <div class="business-card">
+              <div class="business-header">
+                <div class="business-icon">🌐</div>
+                <div class="business-status">
+                  <span class="badge badge-success">Activo</span>
+                </div>
+              </div>
+              <div class="business-body">
+                <h4>Tienda Online</h4>
+                <p class="business-type">Tienda Online</p>
+                <p class="business-location"><i>🔗</i> www.hugotecnologia.com</p>
+                <p class="business-manager"><i>👤</i> Luis Sánchez</p>
+                <div class="business-stats">
+                  <div class="stat">
+                    <span class="stat-label">Empleados</span>
+                    <span class="stat-value">4</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-label">Productos</span>
+                    <span class="stat-value">1250</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-label">Ventas</span>
+                    <span class="stat-value">$65,430</span>
+                  </div>
+                </div>
+              </div>
+              <div class="business-footer">
+                <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N005"><i>👁️</i></button>
+                <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+              </div>
+            </div>
+            
+            <div class="business-card">
+              <div class="business-header">
+                <div class="business-icon">🏭</div>
+                <div class="business-status">
+                  <span class="badge badge-success">Activo</span>
+                </div>
+              </div>
+              <div class="business-body">
+                <h4>Distribuidor Empresarial</h4>
+                <p class="business-type">Distribuidor</p>
+                <p class="business-location"><i>📍</i> Av. Industrial #45, Zona Empresarial</p>
+                <p class="business-manager"><i>👤</i> Roberto Díaz</p>
+                <div class="business-stats">
+                  <div class="stat">
+                    <span class="stat-label">Empleados</span>
+                    <span class="stat-value">12</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-label">Productos</span>
+                    <span class="stat-value">780</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-label">Ventas</span>
+                    <span class="stat-value">$95,620</span>
+                  </div>
+                </div>
+              </div>
+              <div class="business-footer">
+                <button class="btn-icon" title="Editar"><i>✏️</i></button>
+                <button class="btn-icon" title="Ver detalles" data-modal="verDetallesNegocio" data-id="N006"><i>👁️</i></button>
+                <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="pagination-container">
+          <div class="pagination-info">
+            Mostrando 1-7 de 12 negocios
+          </div>
+          <div class="pagination">
+            <button class="page-nav" disabled><i>◀</i></button>
+            <div class="page-item active">1</div>
+            <div class="page-item">2</div>
+            <button class="page-nav"><i>▶</i></button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Performance Overview -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Rendimiento Comparativo</h3>
+          <div class="chart-controls">
+            <select class="form-control form-control-sm">
+              <option>Últimos 30 días</option>
+              <option>Últimos 90 días</option>
+              <option>Último año</option>
+              <option>Todo el tiempo</option>
+            </select>
+            <select class="form-control form-control-sm">
+              <option>Ventas</option>
+              <option>Clientes</option>
+              <option>Ganancias</option>
+              <option>Inventario</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="chart-container">
+          <!-- Chart placeholder - would be replaced with actual chart integration -->
+          <div class="chart-placeholder">
+            <img src="img/chart-placeholder.jpg" alt="Gráfico de rendimiento">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Modal Nuevo Negocio -->
+  <div id="nuevoNegocio" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Nuevo Negocio</h3>
+        <button class="close-button" data-close="nuevoNegocio">×</button>
+      </div>
+      
+      <!-- Tab Navigation -->
+      <div class="tab-container modal-tabs">
+        <div class="tabs">
+          <div class="tab active">Información Básica</div>
+          <div class="tab">Ubicación</div>
+          <div class="tab">Personal</div>
+          <div class="tab">Configuración</div>
+        </div>
+      </div>
+      
+      <!-- Tab Content -->
+      <div class="tab-content active" id="tab-basico-negocio">
+        <div class="form-group">
+          <label class="form-label">Nombre del Negocio <span class="required">*</span></label>
+          <input type="text" class="form-control" name="business_name" placeholder="Ingrese el nombre del negocio" required>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Tipo de Negocio <span class="required">*</span></label>
+            <select class="form-control" name="business_type" required>
+              <option value="">Seleccione un tipo</option>
+              <option value="tienda">Tienda Física</option

@@ -1,0 +1,41 @@
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  th {
+    padding: 0.75rem 1rem;
+    background-color: var(--light-bg);
+    font-weight: 600;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  
+  tr:hover {
+    background-color: rgba(0, 0, 0, 0.01);
+  }
+  
+  /* Add animation for new rows */
+  @keyframes highlightRow {
+    from { background-color: rgba(26, 86, 219, 0.1); }
+    to { background-color: transparent; }
+  }
+  
+  .row-new {
+    animation: highlightRow 2s ease;
+  }

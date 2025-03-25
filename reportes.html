@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportes - Hugo Tecnología</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/tables.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/reportes.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">HT</div>
+        <h1>Hugo Tecnología</h1>
+      </div>
+      
+      <div class="nav-item">
+        <i>📊</i> Dashboard
+      </div>
+      <div class="nav-item">
+        <i>📦</i> Inventario
+      </div>
+      <div class="nav-item">
+        <i>🏪</i> Negocios
+      </div>
+      <div class="nav-item">
+        <i>🛒</i> Ventas
+      </div>
+      <div class="nav-item">
+        <i>👥</i> Usuarios
+      </div>
+      <div class="nav-item active">
+        <i>📝</i> Reportes
+      </div>
+      <div class="nav-item">
+        <i>⚙️</i> Configuración
+      </div>
+      
+      <div class="user-info">
+        <div class="user-avatar">
+          <i>👤</i>
+        </div>
+        <div class="user-details">
+          <h4>Admin User</h4>
+          <p>Administrador</p>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div class="header-title">
+          <h2>Reportes</h2>
+          <p>Visualización y análisis de datos del negocio</p>
+        </div>
+        
+        <div class="header-actions">
+          <button class="btn btn-primary" data-modal="customReportModal">
+            <i>✚</i> Nuevo Reporte
+          </button>
+          <button class="btn btn-secondary">
+            <i>📤</i> Exportar Todo
+          </button>
+          <button class="btn btn-secondary">
+            <i>⏱️</i> Programar
+          </button>
+        </div>
+      </div>
+      
+      <!-- Date Filters -->
+      <div class="report-filters">
+        <div class="date-filter">
+          <label class="filter-label">Período:</label>
+          <div class="date-presets">
+            <a href="#" class="date-preset" data-range="today">Hoy</a>
+            <a href="#" class="date-preset" data-range="yesterday">Ayer</a>
+            <a href="#" class="date-preset" data-range="week">Última Semana</a>
+            <a href="#" class="date-preset active" data-range="month">Último Mes</a>
+            <a href="#" class="date-preset" data-range="quarter">Trimestre</a>
+            <a href="#" class="date-preset" data-range="year">Año</a>
+          </div>
+          <input type="text" class="date-range-picker" name="report_date_range">
+        </div>
+        
+        <div class="additional-filters">
+          <div class="filter-group">
+            <label class="filter-label">Tienda:</label>
+            <select class="form-control report-filter-control" name="store">
+              <option value="">Todas las Tiendas</option>
+              <option value="central">Tienda Central</option>
+              <option value="north">Tienda Norte</option>
+              <option value="south">Tienda Sur</option>
+              <option value="east">Tienda Este</option>
+              <option value="west">Tienda Oeste</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label class="filter-label">Categoría:</label>
+            <select class="form-control report-filter-control" name="category">
+              <option value="">Todas las Categorías</option>
+              <option value="smartphones">Smartphones</option>
+              <option value="laptops">Laptops</option>
+              <option value="tvs">Televisores</option>
+              <option value="audio">Audio</option>
+              <option value="accessories">Accesorios</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label class="filter-label">Comparar:</label>
+            <select class="form-control report-filter-control" name="compare">
+              <option value="none">Sin Comparación</option>
+              <option value="previous_period">Período Anterior</option>
+              <option value="previous_year">Año Anterior</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sales Summary -->
+      <div class="stats-grid">
+        <div class="stat-card" id="total-sales">
+          <h3>Ventas Totales</h3>
+          <div class="stat-value">$487,325.75</div>
+          <div class="stat-change positive">
+            <i>↑</i> +8.2% vs período anterior
+          </div>
+        </div>
+        
+        <div class="stat-card" id="total-transactions">
+          <h3>Transacciones</h3>
+          <div class="stat-value">935</div>
+          <div class="stat-change positive">
+            <i>↑</i> +5.2% vs período anterior
+          </div>
+        </div>
+        
+        <div class="stat-card" id="average-ticket">
+          <h3>Ticket Promedio</h3>
+          <div class="stat-value">$521.20</div>
+          <div class="stat-change positive">
+            <i>↑</i> +2.7% vs período anterior
+          </div>
+        </div>
+        
+        <div class="stat-card" id="conversion-rate">
+          <h3>Tasa de Conversión</h3>
+          <div class="stat-value">22.5%</div>
+          <div class="stat-change positive">
+            <i>↑</i> +1.3% vs período anterior
+          </div>
+        </div>
+      </div>
+      
+      <!-- Main Reports -->
+      <div class="reports-container">
+        <!-- Sales Report -->
+        <div class="report-card" data-report-id="sales">
+          <div class="report-header">
+            <h3 class="report-title">Ventas por Período</h3>
+            <div class="report-actions">
+              <button class="btn-icon schedule-report-btn" title="Programar reporte"><i>⏱️</i></button>
+              <button class="btn-icon export-btn" data-format="pdf" title="Exportar a PDF"><i>📄</i></button>
+              <button class="btn-icon export-btn" data-format="excel" title="Exportar a Excel"><i>📊</i></button>
+              <button class="btn-icon export-btn" data-format="csv" title="Exportar a CSV"><i>📁</i></button>
+            </div>
+          </div>
+          <div class="report-body">
+            <div class="chart-container" id="sales-chart">
+              <!-- El gráfico se renderizará aquí -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- Top Products Report -->
+        <div class="report-card" data-report-id="products">
+          <div class="report-header">
+            <h3 class="report-title">Productos Más Vendidos</h3>
+            <div class="report-actions">
+              <button class="btn-icon schedule-report-btn" title="Programar reporte"><i>⏱️</i></button>
+              <button class="btn-icon export-btn" data-format="pdf" title="Exportar a PDF"><i>📄</i></button>
+              <button class="btn-icon export-btn" data-format="excel" title="Exportar a Excel"><i>📊</i></button>
+              <button class="btn-icon export-btn" data-format="csv" title="Exportar a CSV"><i>📁</i></button>
+            </div>
+          </div>
+          <div class="report-body">
+            <div id="top-products-chart">
+              <!-- La tabla/gráfico se renderizará aquí -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- Category Report -->
+        <div class="report-card" data-report-id="categories">
+          <div class="report-header">
+            <h3 class="report-title">Ventas por Categoría</h3>
+            <div class="report-actions">
+              <button class="btn-icon schedule-report-btn" title="Programar reporte"><i>⏱️</i></button>
+              <button class="btn-icon export-btn" data-format="pdf" title="Exportar a PDF"><i>📄</i></button>
+              <button class="btn-icon export-btn" data-format="excel" title="Exportar a Excel"><i>📊</i></button>
+              <button class="btn-icon export-btn" data-format="csv" title="Exportar a CSV"><i>📁</i></button>
+            </div>
+          </div>
+          <div class="report-body">
+            <div id="category-sales-chart">
+              <!-- El gráfico se renderizará aquí -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- Store Report -->
+        <div class="report-card" data-report-id="stores">
+          <div class="report-header">
+            <h3 class="report-title">Ventas por Tienda</h3>
+            <div class="report-actions">
+              <button class="btn-icon schedule-report-btn" title="Programar reporte"><i>⏱️</i></button>
+              <button class="btn-icon export-btn" data-format="pdf" title="Exportar a PDF"><i>📄</i></button>
+              <button class="btn-icon export-btn" data-format="excel" title="Exportar a Excel"><i>📊</i></button>
+              <button class="btn-icon export-btn" data-format="csv" title="Exportar a CSV"><i>📁</i></button>
+            </div>
+          </div>
+          <div class="report-body">
+            <div id="store-sales-chart">
+              <!-- El gráfico se renderizará aquí -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Detailed Sales Report -->
+      <div class="report-section" data-report-id="sales_detail">
+        <div class="report-header">
+          <h3 class="report-title">Detalle de Ventas por Producto</h3>
+          <div class="report-actions">
+            <button class="btn-icon schedule-report-btn" title="Programar reporte"><i>⏱️</i></button>
+            <button class="btn-icon export-btn" data-format="pdf" title="Exportar a PDF"><i>📄</i></button>
+            <button class="btn-icon export-btn" data-format="excel" title="Exportar a Excel"><i>📊</i></button>
+            <button class="btn-icon export-btn" data-format="csv" title="Exportar a CSV"><i>📁</i></button>
+          </div>
+        </div>
+        
+        <div class="table-filters">
+          <div class="table-search">
+            <input type="text" class="form-control" placeholder="Buscar producto...">
+          </div>
+          
+          <div class="table-actions">
+            <select class="form-control">
+              <option value="10">10 por página</option>
+              <option value="25">25 por página</option>
+              <option value="50">50 por página</option>
+              <option value="100">100 por página</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="table-container">
+          <table class="report-table" id="product-sales-table">
+            <thead>
+              <tr>
+                <th data-sort="id">ID</th>
+                <th data-sort="product">Producto</th>
+                <th data-sort="category">Categoría</th>
+                <th data-sort="price" class="text-right">Precio</th>
+                <th data-sort="quantity" class="text-right">Unidades</th>
+                <th data-sort="revenue" class="text-right">Ingresos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Datos de ejemplo -->
+              <tr>
+                <td>P1001</td>
+                <td>Smartphone X Pro</td>
+                <td>Smartphones</td>
+                <td class="text-right">$799.99</td>
+                <td class="text-right">120</td>
+                <td class="text-right">$95,998.80</td>
+              </tr>
+              <tr>
+                <td>P1002</td>
+                <td>Laptop Ultra</td>
+                <td>Laptops</td>
+                <td class="text-right">$1,499.99</td>
+                <td class="text-right">85</td>
+                <td class="text-right">$127,499.15</td>
+              </tr>
+              <tr>
+                <td>P1003</td>
+                <td>Smart TV 55"</td>
+                <td>Televisores</td>
+                <td class="text-right">$1,199.99</td>
+                <td class="text-right">67</td>
+                <td class="text-right">$80,399.33</td>
+              </tr>
+              <tr>
+                <td>P1004</td>
+                <td>Auriculares Bluetooth</td>
+                <td>Audio</td>
+                <td class="text-right">$59.99</td>
+                <td class="text-right">210</td>
+                <td class="text-right">$12,597.90</td>
+              </tr>
+              <tr>
+                <td>P1005</td>
+                <td>Tableta Pro</td>
+                <td>Tablets</td>
+                <td class="text-right">$599.99</td>
+                <td class="text-right">95</td>
+                <td class="text-right">$56,999.05</td>
+              </tr>
+              <tr>
+                <td>P1006</td>
+                <td>Reloj Inteligente</td>
+                <td>Accesorios</td>
+                <td class="text-right">$299.99</td>
+                <td class="text-right">115</td>
+                <td class="text-right">$34,498.85</td>
+              </tr>
+              <tr>
+                <td>P1007</td>
+                <td>Cámara Digital</td>
+                <td>Fotografía</td>
+                <td class="text-right">$499.99</td>
+                <td class="text-right">45</td>
+                <td class="text-right">$22,499.55</td>
+              </tr>
+              <tr>
+                <td>P1008</td>
+                <td>Consola de Videojuegos</td>
+                <td>Gaming</td>
+                <td class="text-right">$399.99</td>
+                <td class="text-right">78</td>
+                <td class="text-right">$31,199.22</td>
+              </tr>
+              <tr>
+                <td>P1009</td>
+                <td>Altavoz Bluetooth</td>
+                <td>Audio</td>
+                <td class="text-right">$129.99</td>
+                <td class="text-right">155</td>
+                <td class="text-right">$20,148.45</td>
+              </tr>
+              <tr>
+                <td>P1010</td>
+                <td>Impresora Láser</td>
+                <td>Oficina</td>
+                <td class="text-right">$349.99</td>
+                <td class="text-right">35</td>
+                <td class="text-right">$12,249.65</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="pagination-container">
+          <div class="pagination-info">
+            Mostrando 1-10 de 157 productos
+          </div>
+          <div class="pagination">
+            <button class="page-nav" disabled><i>◀</i></button>
+            <div class="page-item active">1</div>
+            <div class="page-item">2</div>
+            <div class="page-item">3</div>
+            <div class="page-item">4</div>
+            <div class="page-item">5</div>
+            <div class="page-item">...</div>
+            <div class="page-item">16</div>
+            <button class="page-nav"><i>▶</i></button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Saved Reports -->
+      <div class="saved-reports-section">
+        <div class="section-header">
+          <h3>Reportes Guardados</h3>
+          <button class="btn btn-sm btn-secondary">Ver Todos</button>
+        </div>
+        
+        <div class="saved-reports-list">
+          <div class="saved-report-card">
+            <div class="report-icon"><i>📊</i></div>
+            <div class="report-info">
+              <h4>Ventas Mensuales</h4>
+              <p>Comparativa de ventas por mes</p>
+              <div class="report-meta">
+                <span class="report-date">Creado: 10/03/2025</span>
+                <span class="report-user">Por: Admin User</span>
+              </div>
+            </div>
+            <div class="report-actions">
+              <button class="btn-icon" title="Ver reporte"><i>👁️</i></button>
+              <button class="btn-icon" title="Exportar reporte"><i>📤</i></button>
+              <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+            </div>
+          </div>
+          
+          <div class="saved-report-card">
+            <div class="report-icon"><i>📊</i></div>
+            <div class="report-info">
+              <h4>Análisis de Inventario</h4>
+              <p>Stock, rotación y valoración</p>
+              <div class="report-meta">
+                <span class="report-date">Creado: 05/03/2025</span>
+                <span class="report-user">Por: Admin User</span>
+              </div>
+            </div>
+            <div class="report-actions">
+              <button class="btn-icon" title="Ver reporte"><i>👁️</i></button>
+              <button class="btn-icon" title="Exportar reporte"><i>📤</i></button>
+              <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+            </div>
+          </div>
+          
+          <div class="saved-report-card">
+            <div class="report-icon"><i>📊</i></div>
+            <div class="report-info">
+              <h4>Rendimiento Vendedores</h4>
+              <p>Análisis de desempeño comercial</p>
+              <div class="report-meta">
+                <span class="report-date">Creado: 28/02/2025</span>
+                <span class="report-user">Por: Juan Pérez</span>
+              </div>
+            </div>
+            <div class="report-actions">
+              <button class="btn-icon" title="Ver reporte"><i>👁️</i></button>
+              <button class="btn-icon" title="Exportar reporte"><i>📤</i></button>
+              <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+            </div>
+          </div>
+          
+          <div class="saved-report-card">
+            <div class="report-icon"><i>📊</i></div>
+            <div class="report-info">
+              <h4>Clientes Frecuentes</h4>
+              <p>Análisis de compras recurrentes</p>
+              <div class="report-meta">
+                <span class="report-date">Creado: 20/02/2025</span>
+                <span class="report-user">Por: María Gómez</span>
+              </div>
+            </div>
+            <div class="report-actions">
+              <button class="btn-icon" title="Ver reporte"><i>👁️</i></button>
+              <button class="btn-icon" title="Exportar reporte"><i>📤</i></button>
+              <button class="btn-icon" title="Opciones"><i>⋮</i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scheduled Reports -->
+      <div class="scheduled-reports-section">
+        <div class="section-header">
+          <h3>Reportes Programados</h3>
+          <button class="btn btn-sm btn-secondary">Ver Todos</button>
+        </div>
+        
+        <div class="table-container">
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Frecuencia</th>
+                <th>Próximo Envío</th>
+                <th>Destinatarios</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Reporte de Ventas Diario</td>
+                <td>Diario (8:00 AM)</td>
+                <td>18/03/2025</td>
+                <td>3 destinatarios</td>
+                <td><span class="badge badge-success">Activo</span></td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-icon" title="Editar programación"><i>✏️</i></button>
+                    <button class="btn-icon" title="Ver destinatarios"><i>👥</i></button>
+                    <button class="btn-icon" title="Cancelar programación"><i>🛑</i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Reporte de Inventario</td>
+                <td>Semanal (Lunes, 9:00 AM)</td>
+                <td>24/03/2025</td>
+                <td>2 destinatarios</td>
+                <td><span class="badge badge-success">Activo</span></td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-icon" title="Editar programación"><i>✏️</i></button>
+                    <button class="btn-icon" title="Ver destinatarios"><i>👥</i></button>
+                    <button class="btn-icon" title="Cancelar programación"><i>🛑</i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Reporte de Rendimiento</td>
+                <td>Mensual (1er día, 8:00 AM)</td>
+                <td>01/04/2025</td>
+                <td>5 destinatarios</td>
+                <td><span class="badge badge-success">Activo</span></td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-icon" title="Editar programación"><i>✏️</i></button>
+                    <button class="btn-icon" title="Ver destinatarios"><i>👥</i></button>
+                    <button class="btn-icon" title="Cancelar programación"><i>🛑</i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Análisis de Clientes</td>
+                <td>Trimestral (1er día, 10:00 AM)</td>
+                <td>01/06/2025</td>
+                <td>4 destinatarios</td>
+                <td><span class="badge badge-warning">Pausado</span></td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-icon" title="Editar programación"><i>✏️</i></button>
+                    <button class="btn-icon" title="Ver destinatarios"><i>👥</i></button>
+                    <button class="btn-icon" title="Reanudar programación"><i>▶️</i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <!-- Analytics and Insights -->
+      <div class="report-section">
+        <div class="report-header">
+          <h3 class="report-title">Análisis e Indicadores Clave</h3>
+          <div class="report-actions">
+            <button class="btn-icon" title="Más información"><i>ℹ️</i></button>
+          </div>
+        </div>
+        
+        <div class="insights-grid">
+          <div class="insight-card">
+            <div class="insight-header">
+              <h4>Tendencia de Ventas</h4>
+              <span class="insight-status positive">En crecimiento</span>
+            </div>
+            <div class="insight-body">
+              <p>Las ventas muestran un patrón de crecimiento sostenido con un incremento del 8.2% respecto al período anterior. Este crecimiento es particularmente notable en las categorías de Smartphones y Laptops.</p>
+            </div>
+            <div class="insight-footer">
+              <div class="trend-indicator up">
+                <span class="trend-value">+8.2%</span>
+                <span class="trend-arrow">↗</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="insight-card">
+            <div class="insight-header">
+              <h4>Productos Destacados</h4>
+              <span class="insight-status neutral">Análisis</span>
+            </div>
+            <div class="insight-body">
+              <p>El "Laptop Ultra" tiene el mayor ingreso total a pesar de no ser el producto más vendido. Esto indica un alto valor por unidad y oportunidades para estrategias de upselling.</p>
+            </div>
+            <div class="insight-footer">
+              <span class="highlight-text">Mayor ingreso: Laptop Ultra ($127,499.15)</span>
+            </div>
+          </div>
+          
+          <div class="insight-card">
+            <div class="insight-header">
+              <h4>Distribución Geográfica</h4>
+              <span class="insight-status warning">Atención</span>
+            </div>
+            <div class="insight-body">
+              <p>La Tienda Este muestra un desempeño por debajo del promedio. Se recomienda revisar el inventario y estrategias de marketing específicas para esta ubicación.</p>
+            </div>
+            <div class="insight-footer">
+              <div class="trend-indicator down">
+                <span class="trend-value">-5.3%</span>
+                <span class="trend-arrow">↘</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="insight-card">
+            <div class="insight-header">
+              <h4>Oportunidades</h4>
+              <span class="insight-status positive">Acción recomendada</span>
+            </div>
+            <div class="insight-body">
+              <p>La categoría de Audio muestra un alto potencial de crecimiento con buenas unidades vendidas pero bajo precio promedio. Se recomienda incluir productos premium en esta categoría.</p>
+            </div>
+            <div class="insight-footer">
+              <span class="highlight-text">Potencial de crecimiento: +15%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Report Templates -->
+      <div class="report-templates-section">
+        <div class="section-header">
+          <h3>Plantillas de Reportes</h3>
+          <button class="btn btn-sm btn-primary">
+            <i>✚</i> Nueva Plantilla
+          </button>
+        </div>
+        
+        <div class="templates-grid">
+          <div class="template-card">
+            <div class="template-icon">
+              <i>📊</i>
+            </div>
+            <div class="template-info">
+              <h4>Rendimiento de Ventas</h4>
+              <p>Ventas, productos y categorías</p>
+              <div class="template-meta">
+                <span class="template-type">Ventas</span>
+                <span class="template-format">PDF, Excel</span>
+              </div>
+            </div>
+            <div class="template-actions">
+              <button class="btn btn-sm btn-primary">Usar</button>
+            </div>
+          </div>
+          
+          <div class="template-card">
+            <div class="template-icon">
+              <i>📦</i>
+            </div>
+            <div class="template-info">
+              <h4>Análisis de Inventario</h4>
+              <p>Stock, rotación y valoración</p>
+              <div class="template-meta">
+                <span class="template-type">Inventario</span>
+                <span class="template-format">PDF, Excel</span>
+              </div>
+            </div>
+            <div class="template-actions">
+              <button class="btn btn-sm btn-primary">Usar</button>
+            </div>
+          </div>
+          
+          <div class="template-card">
+            <div class="template-icon">
+              <i>👥</i>
+            </div>
+            <div class="template-info">
+              <h4>Rendimiento de Empleados</h4>
+              <p>Desempeño de vendedores y técnicos</p>
+              <div class="template-meta">
+                <span class="template-type">Personal</span>
+                <span class="template-format">PDF, Excel</span>
+              </div>
+            </div>
+            <div class="template-actions">
+              <button class="btn btn-sm btn-primary">Usar</button>
+            </div>
+          </div>
+          
+          <div class="template-card">
+            <div class="template-icon">
+              <i>💰</i>
+            </div>
+            <div class="template-info">
+              <h4>Finanzas</h4>
+              <p>Ingresos, gastos y beneficios</p>
+              <div class="template-meta">
+                <span class="template-type">Financiero</span>
+                <span class="template-format">PDF, Excel</span>
+              </div>
+            </div>
+            <div class="template-actions">
+              <button class="btn btn-sm btn-primary">Usar</button>
+            </div>
+          </div>
+          
+          <div class="template-card">
+            <div class="template-icon">
+              <i>🎯</i>
+            </div>
+            <div class="template-info">
+              <h4>KPI Comercial</h4>
+              <p>Indicadores clave de rendimiento</p>
+              <div class="template-meta">
+                <span class="template-type">Estrategia</span>
+                <span class="template-format">PDF, Excel, CSV</span>
+              </div>
+            </div>
+            <div class="template-actions">
+              <button class="btn btn-sm btn-primary">Usar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Export History -->
+      <div class="export-history-section">
+        <div class="section-header">
+          <h3>Historial de Exportaciones</h3>
+          <div class="section-actions">
+            <button class="btn btn-sm btn-secondary">
+              <i>🗑️</i> Limpiar Historial
+            </button>
+          </div>
+        </div>
+        
+        <div class="table-container">
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Formato</th>
+                <th>Fecha</th>
+                <th>Creado por</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ventas_Marzo2025.xlsx</td>
+                <td>Ventas</td>
+                <td>Excel</td>
+                <td>15/03/2025, 10:35</td>
+                <td>Admin User</td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-icon" title="Descargar"><i>⬇️</i></button>
+                    <button class="btn-icon" title="Compartir"><i>🔗</i></button>
+                    <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Inventario_Q1_2025.pdf</td>
+                <td>Inventario</td>
+                <td>PDF</td>
+                <td>10/03/2025, 15:22</td>
+                <td>María Gómez</td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-icon" title="Descargar"><i>⬇️</i></button>
+                    <button class="btn-icon" title="Compartir"><i>🔗</i></button>
+                    <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Productos_Destacados_Febrero.csv</td>
+                <td>Productos</td>
+                <td>CSV</td>
+                <td>02/03/2025, 09:15</td>
+                <td>Juan Pérez</td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-icon" title="Descargar"><i>⬇️</i></button>
+                    <button class="btn-icon" title="Compartir"><i>🔗</i></button>
+                    <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Rendimiento_Vendedores_Q1.pdf</td>
+                <td>Personal</td>
+                <td>PDF</td>
+                <td>01/03/2025, 11:45</td>
+                <td>Admin User</td>
+                <td>
+                  <div class="action-buttons">
+                    <button class="btn-icon" title="Descargar"><i>⬇️</i></button>
+                    <button class="btn-icon" title="Compartir"><i>🔗</i></button>
+                    <button class="btn-icon" title="Eliminar"><i>🗑️</i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </main>
+  </div>
+  
+  <!-- Modal Nuevo Reporte Personalizado -->
+  <div id="customReportModal" class="modal-overlay">
+    <div class="modal modal-lg">
+      <div class="modal-header">
+        <h3 class="modal-title">Crear Reporte Personalizado</h3>
+        <button class="close-button" data-close="customReportModal">×</button>
+      </div>
+      
+      <div class="modal-body">
+        <form id="custom-report-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Nombre del Reporte <span class="required">*</span></label>
+              <input type="text" class="form-control" name="report_name" placeholder="Mi Reporte Personalizado" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Descripción</label>
+              <input type="text" class="form-control" name="report_description" placeholder="Breve descripción del reporte">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Tipo de Reporte <span class="required">*</span></label>
+              <select class="form-control" name="report_type" required>
+                <option value="">Seleccionar tipo</option>
+                <option value="sales">Ventas</option>
+                <option value="inventory">Inventario</option>
+                <option value="customers">Clientes</option>
+                <option value="performance">Rendimiento</option>
+                <option value="financial">Financiero</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Período <span class="required">*</span></label>
+              <select class="form-control" name="report_period" required>
+                <option value="custom">Personalizado</option>
+                <option value="today">Hoy</option>
+                <option value="yesterday">Ayer</option>
+                <option value="week">Última Semana</option>
+                <option value="month" selected>Último Mes</option>
+                <option value="quarter">Trimestre</option>
+                <option value="year">Año</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-row period-custom">
+            <div class="form-group">
+              <label class="form-label">Fecha Inicio</label>
+              <input type="date" class="form-control" name="start_date">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Fecha Fin</label>
+              <input type="date" class="form-control" name="end_date">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Secciones a Incluir <span class="required">*</span></label>
+            <div class="checkbox-group">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="section_summary" name="sections[]" value="summary" checked>
+                <label class="form-check-label" for="section_summary">Resumen</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="section_charts" name="sections[]" value="charts" checked>
+                <label class="form-check-label" for="section_charts">Gráficos</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="section_table" name="sections[]" value="table" checked>
+                <label class="form-check-label" for="section_table">Tabla Detallada</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="section_comparison" name="sections[]" value="comparison">
+                <label class="form-check-label" for="section_comparison">Comparativa</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Ordenar Por</label>
+              <select class="form-control" name="sort_by">
+                <option value="value_desc">Valor (Mayor a Menor)</option>
+                <option value="value_asc">Valor (Menor a Mayor)</option>
+                <option value="name_asc">Nombre (A-Z)</option>
+                <option value="name_desc">Nombre (Z-A)</option>
+                <option value="date_desc">Fecha (Reciente Primero)</option>
+                <option value="date_asc">Fecha (Antiguo Primero)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Límite de Registros</label>
+              <select class="form-control" name="record_limit">
+                <option value="10">10 registros</option>
+                <option value="25">25 registros</option>
+                <option value="50" selected>50 registros</option>
+                <option value="100">100 registros</option>
+                <option value="all">Todos los registros</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Filtros Adicionales</label>
+            <div class="filters-container">
+              <div class="filter-row">
+                <select class="form-control filter-field">
+                  <option value="">Seleccionar campo</option>
+                  <option value="category">Categoría</option>
+                  <option value="store">Tienda</option>
+                  <option value="product">Producto</option>
+                  <option value="price">Precio</option>
+                  <option value="stock">Stock</option>
+                </select>
+                <select class="form-control filter-operator">
+                  <option value="equals">Igual a</option>
+                  <option value="not_equals">Diferente de</option>
+                  <option value="greater">Mayor que</option>
+                  <option value="less">Menor que</option>
+                  <option value="contains">Contiene</option>
+                </select>
+                <input type="text" class="form-control filter-value" placeholder="Valor">
+                <button type="button" class="btn-icon remove-filter"><i>✖</i></button>
+              </div>
+              <button type="button" class="btn btn-sm btn-secondary add-filter">
+                <i>+</i> Agregar Filtro
+              </button>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Opciones de Visualización</label>
+            <div class="visualization-options">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Tipo de Gráfico</label>
+                  <select class="form-control" name="chart_type">
+                    <option value="bar">Barras</option>
+                    <option value="line">Líneas</option>
+                    <option value="pie">Circular</option>
+                    <option value="area">Área</option>
+                    <option value="mixed">Mixto</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Paleta de Colores</label>
+                  <select class="form-control" name="color_scheme">
+                    <option value="default">Predeterminada</option>
+                    <option value="blue">Azules</option>
+                    <option value="green">Verdes</option>
+                    <option value="rainbow">Multicolor</option>
+                    <option value="monochrome">Monocromática</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="modal-footer">
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save_report" name="save_report" checked>
+            <label class="form-check-label" for="save_report">Guardar este reporte</label>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" data-close="customReportModal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="generate-report">Generar Reporte</button>
+          <button type="button" class="btn btn-secondary">
+            <i>⏱️</i> Programar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Detalles de Destinatarios -->
+  <div id="recipientsModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Destinatarios del Reporte</h3>
+        <button class="close-button" data-close="recipientsModal">×</button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="recipients-list">
+          <div class="recipient-item">
+            <div class="recipient-info">
+              <div class="recipient-avatar">
+                <i>👤</i>
+              </div>
+              <div class="recipient-details">
+                <h4>Juan Pérez</h4>
+                <p>juan.perez@example.com</p>
+              </div>
+            </div>
+            <div class="recipient-role">
+              <span class="badge badge-primary">Administrador</span>
+            </div>
+          </div>
+          
+          <div class="recipient-item">
+            <div class="recipient-info">
+              <div class="recipient-avatar">
+                <i>👤</i>
+              </div>
+              <div class="recipient-details">
+                <h4>María Gómez</h4>
+                <p>maria.gomez@example.com</p>
+              </div>
+            </div>
+            <div class="recipient-role">
+              <span class="badge badge-success">Gerente</span>
+            </div>
+          </div>
+          
+          <div class="recipient-item">
+            <div class="recipient-info">
+              <div class="recipient-avatar">
+                <i>👤</i>
+              </div>
+              <div class="recipient-details">
+                <h4>Carlos Rodríguez</h4>
+                <p>carlos.rodriguez@example.com</p>
+              </div>
+            </div>
+            <div class="recipient-role">
+              <span class="badge badge-info">Vendedor</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="recipient-actions">
+          <button type="button" class="btn btn-secondary btn-block">
+            <i>✚</i> Agregar Destinatario
+          </button>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-close="recipientsModal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Compartir Reporte -->
+  <div id="shareReportModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Compartir Reporte</h3>
+        <button class="close-button" data-close="shareReportModal">×</button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Enlace de Acceso</label>
+          <div class="input-with-button">
+            <input type="text" class="form-control" value="https://hugotech.com/reportes/compartir/aB7cD9eF" readonly>
+            <button type="button" class="btn btn-secondary" id="copy-link">Copiar</button>
+          </div>
+          <p class="form-hint">Este enlace es válido por 7 días</p>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Opciones de Compartir</label>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="allow_download" checked>
+            <label class="form-check-label" for="allow_download">Permitir descarga</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="require_password">
+            <label class="form-check-label" for="require_password">Proteger con contraseña</label>
+          </div>
+        </div>
+        
+        <div class="form-group password-field" style="display: none;">
+          <label class="form-label">Contraseña</label>
+          <input type="password" class="form-control" placeholder="Ingrese una contraseña">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Enviar por Correo</label>
+          <input type="text" class="form-control" placeholder="correo1@ejemplo.com, correo2@ejemplo.com">
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-close="shareReportModal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Compartir</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- El modal de Programar Reporte se creará dinámicamente desde JS -->
+  
+  <script src="js/main.js"></script>
+  <script src="js/reportes.js"></script>
+</body>
+</html>
